@@ -13,7 +13,12 @@ class ActivitiesController < ApplicationController
   def create
     activity = Activity.new(activity_params)
     activity.save
-    redirect_to activitys_path
+    redirect_to activities_path
+  end
+
+  def destroy
+    @activity.destroy
+    redirect_to activities_path
   end
 
   private
