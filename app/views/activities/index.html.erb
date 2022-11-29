@@ -1,0 +1,20 @@
+<div class="container mt-5">
+  <h1>My Activities</h1>
+
+  <ul id="activities">
+    <% @activities.each do |activity| %>
+      <li>
+        <%= link_to activity.description, activity_path(activity.id) %>
+        <%= link_to activity_path(activity.id), data: {turbo_method: :delete, turbo_confirm: "Delete #{activity.description}?"} do %>
+          <i class="fa-regular fa-trash-can"></i>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+
+  <hr>
+
+  <%= link_to new_activity_path do %>
+    <i class="fa-solid fa-plus"></i> Add a new activity
+  <% end %>
+</div>
