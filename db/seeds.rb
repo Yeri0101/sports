@@ -8,6 +8,7 @@
 require 'faker'
 
 User.destroy_all
+
 Activity.destroy_all
 
 5.times do
@@ -29,6 +30,7 @@ end
     address: Faker::Address.street_address,
     category: Faker::Number.between(from: 1, to: 10),
     description: Faker::Lorem.sentence(word_count: 10, supplemental: true, random_words_to_add: 5),
+    name: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 2),
     end_date: Faker::Date.in_date_period(year: 2022, month: 11),
     start_date: Faker::Date.between(from: '2021-11-29', to: '2022-11-29'),
     user: User.all.sample
