@@ -11,6 +11,8 @@ User.destroy_all
 
 Activity.destroy_all
 
+Review.destroy_all
+
 5.times do
   User.create!(
     address: Faker::Address.street_address,
@@ -33,6 +35,14 @@ end
     name: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 2),
     end_date: Faker::Date.in_date_period(year: 2022, month: 11),
     start_date: Faker::Date.between(from: '2021-11-29', to: '2022-11-29'),
+    user: User.all.sample
+  )
+end
+
+5.times do
+  Review.create!(
+    activity: Activity.all.sample,
+    comment: Faker::Lorem.sentence(word_count: 10, supplemental: true, random_words_to_add: 5),
     user: User.all.sample
   )
 end
