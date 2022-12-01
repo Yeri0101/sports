@@ -1,3 +1,12 @@
+<%= search_form_for @q, url: search_activities_path,
+                        html: { method: :post },
+                        data: { turbo: false } do |f| %>
+
+  <%= f.search_field :description_or_name_or_reviews_comment_i_cont_any %>
+
+  <%= f.submit %>
+<% end %>
+
 <div class="container mt-5">
   <h1>My Activities</h1>
 
