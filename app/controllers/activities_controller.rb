@@ -27,8 +27,6 @@ class ActivitiesController < ApplicationController
     if @activity.save
       redirect_to @activity, notice: "The creation of this activity has been successfully completed"
     else
-      flash[:alert] = @activity.errors.full_messages.join("\n")
-
       render :new, status: :unprocessable_entity
     end
   end
