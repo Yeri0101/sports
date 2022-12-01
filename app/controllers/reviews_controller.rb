@@ -15,6 +15,18 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def edit; end
+
+  def update
+    @review = Review.find(params[:id])
+    @review.update(review_params)
+
+    respond_to do |format|
+      format.html { redirect_to @review.activity }
+      format.text { render partial: "activities/activity_reviews", locals: { review: @review }, formats: [:html] }
+    end
+  end
+
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
