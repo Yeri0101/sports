@@ -1,8 +1,14 @@
 class ActivitiesController < ApplicationController
   before_action :set_activity, only: %i[destroy edit show update]
 
+  def search
+    index
+    render :index
+  end
+
   def index
-    @activities = Activity.all
+    @q = Activity.ransack(params[:query])
+    @activities = @q.result(distinct: true)
   end
 
   def show
