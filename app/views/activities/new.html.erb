@@ -1,10 +1,21 @@
-<div class="container mt-5">
-  <h1>New activity</h1>
+<div class="container text-center">
 
-  <%= render "form", activity: @activity %>
+    <div class="form-group">
+      <p>Create a new activity</p><br>
 
-  <hr>
-  <%= link_to activities_path do %>
-    <i class="fa-solid fa-arrow-rotate-left"></i> Back to list
-  <% end %>
+        <%= simple_form_for @activity, wrapper: :horizontal_form do |f| %>
+            <%= f.input :name%>
+            <%= f.input :description%>
+            <%= f.input :address%>
+            <%= f.input :image%>
+            <br>
+            <%= f.input :start_date, as: :datetime, input_html: {class: "datepicker"} %>
+            <%= f.input :end_date, as: :datetime, input_html: {class: "datepicker"} %>
+
+           <div class="form-actions">
+             <div class="container text-center">
+               <%= f.button :submit, "New", class: "btn btn-dark" %>
+            </div>
+          <% end %>
+      </div>
 </div>
