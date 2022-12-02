@@ -1,12 +1,11 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
-}
+@import url("https://fonts.googleapis.com/css2?family=Caudex:wght@700&display=swap");
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
+.navbar-brand {
+  color: rgb(252, 207, 167);
+  font-family: "Caudex", serif;
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+  &:active, &:focus, &:hover {
+    color: rgb(255, 255, 255);
+    transition: color 0.15s ease-in-out;
+  }
 }
