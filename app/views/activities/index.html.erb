@@ -1,4 +1,6 @@
-<h1>Latest announcements</h1>
+<div class="my-5">
+  <h1 class="text-white">Activities</h1>
+</div>
 
 <% @activities.each do |activity| %>
   <%= link_to activity.description, activity_path(activity.id) %>

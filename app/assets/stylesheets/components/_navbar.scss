@@ -1,8 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Caudex:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
 
 .navbar-brand {
   color: rgb(252, 207, 167);
   font-family: "Caudex", serif;
+
+  &:active, &:focus, &:hover {
+    color: rgb(255, 255, 255);
+    transition: color 0.15s ease-in-out;
+  }
+}
+
+.nav-link {
+  color: rgb(255, 255, 255);
+  font-family: "Inter", sans-serif;
 
   &:active, &:focus, &:hover {
     color: rgb(255, 255, 255);

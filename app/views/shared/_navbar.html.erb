@@ -4,20 +4,23 @@
       Sports & Social
     <% end %>
 
-    <ul class="mb-lg-0 navbar-nav">
+    <ul class="gap-4 mb-lg-0 navbar-nav">
       <% if user_signed_in? %>
-        <li class="dropdown nav-item">
-          <%= image_tag "https://avatar.vercel.sh/mlanz.svg", class: "dropdown-toggle img-fluid rounded-circle w-25", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, "aria-haspopup": true, "aria-expanded": false %>
+        <li class="nav-item">
+          <%= link_to "Activities", activities_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign out", destroy_user_session_path, data: {turbo_method: :delete}, class: "border border-3 btn btn-outline-light" %>
+        </li>
+        <!-- <li class="dropdown nav-item">
+          <%= image_tag "https://avatar.vercel.sh/rauchg.svg/", class: "dropdown-toggle img-fluid rounded-circle w-25", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, "aria-haspopup": true, "aria-expanded": false %>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <li><%= link_to "Action", activities_path, class: "dropdown-item" %></li>
-            <li><%= link_to "Another action", activities_path, class: "dropdown-item" %></li>
-            <li><hr class="dropdown-divider"></li>
             <li><%= link_to "Sign out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %></li>
           </ul>
-        </li>
+        </li> -->
       <% else %>
         <li class="nav-item">
-          <%= link_to "Log in", new_user_session_path, class: "border border-3 btn btn-outline-light px-4 py-2" %>
+          <%= link_to "Log in", new_user_session_path, class: "border border-3 btn btn-outline-light" %>
         </li>
       <% end %>
     </ul>
