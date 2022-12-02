@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   resources :activities do
     resources :bookings, only: %i[create index new]
     resources :reviews, only: %i[create index new]
-    resources :users
   end
 
   resources :bookings, only: %i[destroy edit show update]
