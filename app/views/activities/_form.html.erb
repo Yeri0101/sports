@@ -1,5 +1,6 @@
 <%= simple_form_for @activity do |f| %>
   <%= f.input :address, as: :string %>
+  <%= f.input :name %>
    <div data-controller="character-counter">
     <%= f.input :description,
               wrapper_html: { class: "mb-1" },
@@ -8,5 +9,14 @@
     <p>Description is currently <strong data-character-counter-target="counter"></strong> characters long.</p>
    </div>
   <%= f.input :category, collection: Activity.categories.keys %>
+
+  <%= f.input :start_date, as: :string,
+              input_html: { data: { controller: "flatpickr" } } %>
+
+  <%= f.input :end_date, as: :string,
+              input_html: { data: { controller: "flatpickr" } } %>
+
   <%= f.submit class: "btn btn-primary mt-3" %>
+
+  <%= link_to "Cancel", activities_path, class: "btn btn-danger" %>
 <% end %>
