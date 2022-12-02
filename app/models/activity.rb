@@ -1,6 +1,8 @@
 class Activity < ApplicationRecord
   enum :category, %i[Badminton Basketball Bicycle Fitness Football Handball Running Squash Swimming Tennis Yoga]
 
+  belongs_to :users
+
   has_many :users
   has_one_attached :image
   has_many :bookings, dependent: :destroy

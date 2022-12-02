@@ -1,14 +1,22 @@
 <div class="my-5">
-  <h1 class="text-white">Activities</h1>
+  <h1>Activities</h1>
+
+  <%= link_to new_activity_path do %>
+    Add a new activity
+  <% end %>
 </div>
 
 <% @activities.each do |activity| %>
-  <%= link_to activity.description, activity_path(activity.id) %>
-  <%= link_to activity_path(activity.id), data: {turbo_method: :delete, turbo_confirm: "Delete #{activity.name}?"} do %>
-    Delete
-  <% end %>
-<% end %>
-
-<%= link_to new_activity_path do %>
-  Add a new activity
+  <div class="col">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+        <p class="card-text"><%= link_to activity.description, activity_path(activity.id) %></p>
+        <%= link_to activity_path(activity.id), data: {turbo_method: :delete, turbo_confirm: "Delete #{activity.name}?"} do %>
+          Delete
+        <% end %>
+        </div>
+      </div>
+    </div>
 <% end %>
