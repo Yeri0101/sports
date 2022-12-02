@@ -24,3 +24,6 @@
 
   <%= render 'reviews/form', activity: @activity, review: @review %>
 </div>
+
+  <% if policy(@activity).edit? %>
+    <% end %>

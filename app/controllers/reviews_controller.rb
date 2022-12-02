@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
 
     @review.activity = @activity
     @review.user = current_user
-
+    authorize @review
     if @review.save
       redirect_to @activity
     else
@@ -20,6 +20,7 @@ class ReviewsController < ApplicationController
   def update
     @review = Review.find(params[:id])
     @review.update(review_params)
+    authorize @review
 
     respond_to do |format|
       format.html { redirect_to @review.activity }

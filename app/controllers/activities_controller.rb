@@ -9,14 +9,17 @@ class ActivitiesController < ApplicationController
   def index
     @q = Activity.ransack(params[:query])
     @activities = @q.result(distinct: true)
+    @activities = policy_scope(Activity)
   end
 
   def show
     @review = Review.new
+    authorize @activity
   end
 
   def new
     @activity = Activity.new
+    authorize @activity
   end
 
   def create
@@ -24,9 +27,12 @@ class ActivitiesController < ApplicationController
 
     @activity.user = current_user
 
+    authorize @activity
+
     if @activity.save
       redirect_to @activity, notice: "The creation of this activity has been successfully completed"
     else
+      flash[:alert] = @activity.errors.full_messages
       render :new, status: :unprocessable_entity
     end
   end
@@ -51,9 +57,10 @@ class ActivitiesController < ApplicationController
 
   def set_activity
     @activity = Activity.find(params[:id])
+    authorize @activity
   end
 
   def activity_params
-    params.require(:activity).permit(%i[address category description end_date image start_date])
+    params.require(:activity).permit(%i[address name category description end_date image start_date])
   end
 end

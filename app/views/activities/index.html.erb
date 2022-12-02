@@ -13,17 +13,23 @@
   <ul id="activities">
     <% @activities.each do |activity| %>
       <li>
-        <%= link_to activity.description, activity_path(activity.id) %>
-        <%= link_to activity_path(activity.id), data: {turbo_method: :delete, turbo_confirm: "Delete #{activity.description}?"} do %>
+        <% if activity.user == current_user %>
+          <%= link_to activity.description, activity_path(activity.id) %>
+          <% if policy(@activity).destroy? %>
+          <%= link_to activity_path(activity.id), data: {turbo_method: :delete, turbo_confirm: "Delete #{activity.description}?"} do %>
           <i class="fa-regular fa-trash-can"></i>
+          <% end %>
         <% end %>
+      <% end %>
       </li>
     <% end %>
   </ul>
 
   <hr>
 
-  <%= link_to new_activity_path do %>
+  <% if policy(Activity).create? %>
+    <%= link_to new_activity_path do %>
     <i class="fa-solid fa-plus"></i> Add a new activity
+    <% end %>
   <% end %>
 </div>
