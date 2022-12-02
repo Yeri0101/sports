@@ -3,7 +3,7 @@ class ActivityPolicy < ApplicationPolicy
     # NOTE: Be explicit about which records you allow access to!
     def resolve
       # scope.all
-      scope.where(user: @user)
+      scope.where(user_id: user.id)
     end
   end
 
@@ -16,7 +16,7 @@ class ActivityPolicy < ApplicationPolicy
   end
 
   def update?
-    record.user == user
+    true
   end
 
   def destroy?

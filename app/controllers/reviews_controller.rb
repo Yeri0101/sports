@@ -7,10 +7,14 @@ class ReviewsController < ApplicationController
 
     @review.activity = @activity
     @review.user = current_user
+
     authorize @review
+
     if @review.save
       redirect_to @activity
     else
+      @booking = Booking.new
+
       render "activities/show", status: :unprocessable_entity
     end
   end
@@ -32,6 +36,8 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
 
     @review.destroy
+
+    authorize @review
 
     redirect_to activity_path(@review.activity), status: :see_other
   end

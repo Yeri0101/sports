@@ -41,6 +41,8 @@ class ActivitiesController < ApplicationController
   def update
     @activity.update(activity_params)
 
+    authorize @activity
+
     redirect_to @activity
   end
 

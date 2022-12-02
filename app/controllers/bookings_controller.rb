@@ -10,6 +10,8 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.activity = @activity
 
+    authorize @booking
+
     if @booking.save
       redirect_to @activity, notice: "The booking has been made correctly"
     else
@@ -21,6 +23,8 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
 
     @booking.destroy
+
+    authorize @booking
 
     redirect_to activity_path(@booking.activity)
   end

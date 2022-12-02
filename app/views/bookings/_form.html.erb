@@ -1,4 +1,4 @@
-<%= simple_form_for [activity, booking] do |f| %>
+<%= simple_form_for [@activity, @booking] do |f| %>
   <%= f.hint "don't wait anymore just do it" %>
   <%= f.button :submit, "Join!", class: "btn btn-outline-primary px-4" %>
 <% end %>
