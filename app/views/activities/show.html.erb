@@ -1,16 +1,32 @@
-<div class="container mt-5">
-  <div class="d-flex justify-content-between align-items-center mb-4">
-    <h1><%= @activity.description %></h1>
-    <%= link_to edit_activity_path(@activity.id), class: 'btn btn-light btn-sm border' do %>
-      <i class="fa fa-pencil"></i> Edit this activity
-    <% end %>
+<div class="text-center mt-3">
+  <span class="bg-secondary p-1 px-4 rounded text-white">Activity details</span>
+  <div class="card p-3" >
+    <span>-Name activity</span>
+    <h3><%= @activity.name %></h3> <br>
   </div>
 
-  <%= link_to activities_path do %>
-    <i class="fa-solid fa-arrow-rotate-left"></i> Back to list
-  <% end %>
+  <div class="card p-3" >
+    <span>-Description</span>
+    <h3><%= @activity.address %></h3> <br>
+  </div>
 
-  <h2><%= pluralize @activity.reviews.size, "review" %></h2>
+  <div class="card p-3" >
+    <span>-Address </span>
+    <h3><%= @activity.address %></h3> <br>
+  </div>
+
+  <div class="card p-3">
+    <h2>-Start date </h2>
+    <span> <%= @activity.start_date%> </span>
+  </div>
+  
+  <div class="card p-3">
+    <h2>-Start end  </h2>
+    <span> <%= @activity.end_date%> </span>
+  </div>
+
+  <%= render "shared/booking_form", activity: @activity, booking: @booking %>
+  <%= render 'activities/reviews' %>
 
   <div>
     <% if @activity.reviews.blank? %>
