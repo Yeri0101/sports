@@ -29,7 +29,22 @@
 
   <% if policy(Activity).create? %>
     <%= link_to new_activity_path do %>
-    <i class="fa-solid fa-plus"></i> Add a new activity
+    Add a new activity
     <% end %>
   <% end %>
 </div>
+
+<% @activities.each do |activity| %>
+  <div class="col">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+        <p class="card-text"><%= link_to activity.description, activity_path(activity.id) %></p>
+        <%= link_to activity_path(activity.id), data: {turbo_method: :delete, turbo_confirm: "Delete #{activity.name}?"} do %>
+          Delete
+        <% end %>
+        </div>
+      </div>
+    </div>
+<% end %>
