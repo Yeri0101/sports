@@ -2,5 +2,14 @@
   <%= f.input :address, as: :string %>
   <%= f.input :description %>
   <%= f.input :category, collection: Activity.categories.keys %>
+
+  <%= f.input :start_date, as: :string,
+              input_html: { data: { controller: "flatpickr" } } %>
+
+  <%= f.input :end_date, as: :string,
+              input_html: { data: { controller: "flatpickr" } } %>
+
   <%= f.submit class: "btn btn-primary mt-3" %>
+
+  <%= link_to "Cancel", activities_path, class: "btn btn-danger" %>
 <% end %>

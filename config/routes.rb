@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :activities do
     resources :bookings, only: %i[create index new]
-
     resources :reviews, only: %i[create index new]
+    resources :users
 
     collection do
       match 'search' => 'activities#search', via: %i[get post], as: :search
@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   end
 
   resources :bookings, only: %i[destroy edit show update]
-
   resources :reviews, only: %i[destroy edit show update]
   # Defines the root path route ("/")
   # root "articles#index"

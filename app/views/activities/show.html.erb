@@ -17,10 +17,11 @@
       Be the first to leave a review for <%= @activity.name %>
     <% else %>
       <% @activity.reviews.each do |review| %>
-        <%= render 'activities/activity_reviews', review: review %>
+        <%= render "activities/activity_reviews", review: review %>
       <% end %>
     <% end %>
   </div>
 
-  <%= render 'reviews/form', activity: @activity, review: @review %>
+
+  <%= render "reviews/form", activity: @activity, review: @review %>
 </div>

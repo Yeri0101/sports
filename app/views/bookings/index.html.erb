@@ -1,0 +1,7 @@
+<% @bookings.each do |booking| %>
+  <%= @booking.status %>
+
+  <%= link_to booking_path(booking.id), data: {turbo_method: :delete, turbo_confirm: "Delete #{booking.description}?"} do %>
+    Delete
+  <% end %>
+<% end %>
