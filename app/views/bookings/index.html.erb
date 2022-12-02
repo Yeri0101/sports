@@ -1,14 +1,7 @@
-<div class="container mt-5">
-  <h1>My bookings</h1>
+<% @bookings.each do |booking| %>
+  <%= @booking.status %>
 
-  <ul id="bookings">
-
-    <% @bookings.each do |booking| %>
-      <li>
-        <%= @booking.status %>
-        <%= link_to booking_path(booking.id), data: {turbo_method: :delete, turbo_confirm: "Delete #{booking.description}?"} do %>
-          <i class="fa-regular fa-trash-can"></i>
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
+  <%= link_to booking_path(booking.id), data: {turbo_method: :delete, turbo_confirm: "Delete #{booking.description}?"} do %>
+    Delete
+  <% end %>
+<% end %>

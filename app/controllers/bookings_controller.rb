@@ -3,19 +3,19 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
-  def show
-  end
+  def show; end
 
   def create
     @activity = Activity.find(params[:activity_id])
-    @booking = Booking.new()
+    @booking = Booking.new
+
     @booking.user = current_user
     @booking.activity = @activity
+
     if @booking.save
       redirect_to @activity, notice: "The booking has been made correctly"
     else
-      flash[:alert] = @booking.errors.full_messages.join("\n")
-      render 'activities/show', status: :see_other
+      render "activities/show", status: :see_other
     end
   end
 

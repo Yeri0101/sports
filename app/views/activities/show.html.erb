@@ -1,42 +1,17 @@
-<div class="text-center mt-3">
-  <span class="bg-secondary p-1 px-4 rounded text-white">Activity details</span>
-  <div class="card p-3" >
-    <span>-Name activity</span>
-    <h3><%= @activity.name %></h3> <br>
-  </div>
+<%= @activity.name %>
+<%= @activity.address %>
+<%= @activity.start_date %>
+<%= @activity.end_date %>
 
-  <div class="card p-3" >
-    <span>-Description</span>
-    <h3><%= @activity.address %></h3> <br>
-  </div>
+<%= render "shared/booking_form", activity: @activity, booking: @booking %>
+<%= render "activities/reviews" %>
 
-  <div class="card p-3" >
-    <span>-Address </span>
-    <h3><%= @activity.address %></h3> <br>
-  </div>
+<% if @activity.reviews.blank? %>
+  Be the first to leave a review for <%= @activity.name %>
+<% else %>
+  <% @activity.reviews.each do |review| %>
+    <%= render "activities/activity_reviews", review: review %>
+  <% end %>
+<% end %>
 
-  <div class="card p-3">
-    <h2>-Start date </h2>
-    <span> <%= @activity.start_date%> </span>
-  </div>
-  
-  <div class="card p-3">
-    <h2>-Start end  </h2>
-    <span> <%= @activity.end_date%> </span>
-  </div>
-
-  <%= render "shared/booking_form", activity: @activity, booking: @booking %>
-  <%= render 'activities/reviews' %>
-
-  <div>
-    <% if @activity.reviews.blank? %>
-      Be the first to leave a review for <%= @activity.name %>
-    <% else %>
-      <% @activity.reviews.each do |review| %>
-        <%= render 'activities/activity_reviews', review: review %>
-      <% end %>
-    <% end %>
-  </div>
-
-  <%= render 'reviews/form', activity: @activity, review: @review %>
-</div>
+<%= render "reviews/form", activity: @activity, review: @review %>
