@@ -1,8 +1,7 @@
 class Activity < ApplicationRecord
   enum :category, %i[Badminton Basketball Bicycle Fitness Football Handball Running Squash Swimming Tennis Yoga]
 
-  belongs_to :user
-
+  has_many :users
   has_one_attached :image
   has_many :bookings, dependent: :destroy
   has_many :reviews, dependent: :destroy
@@ -12,8 +11,7 @@ class Activity < ApplicationRecord
   validates :description, presence: true
   # validates :end_date, presence: true
   validates :name, presence: true
-  # validates :start_date, presence: true
-  # validates :date, presence: true
+  validates :start_date, presence: true
 
   # private
 

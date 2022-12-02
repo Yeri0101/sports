@@ -1,0 +1,30 @@
+<div class="text-center mt-3">
+  <span class="bg-secondary p-1 px-4 rounded text-white">Activity details</span>
+  <div class="card p-3" >
+    <span>-Name activity</span>
+    <h3><%= @activity.name %></h3> <br>
+  </div>
+
+  <div class="card p-3" >
+    <span>-Description</span>
+    <h3><%= @activity.address %></h3> <br>
+  </div>
+
+  <div class="card p-3" >
+    <span>-Address </span>
+    <h3><%= @activity.address %></h3> <br>
+  </div>
+
+  <div class="card p-3">
+    <h2>-Start date </h2>
+    <span> <%= @activity.start_date%> </span>
+  </div>
+
+  <div class="card p-3">
+    <h2>-Start end  </h2>
+    <span> <%= @activity.end_date%> </span>
+  </div>
+
+  <%= render "shared/booking_form", activity: @activity, booking: @booking %>
+  <%= render 'activities/reviews' %>
+</div>

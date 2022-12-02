@@ -21,13 +21,12 @@ class ActivitiesController < ApplicationController
   end
 
   def create
-    @activity = Activity.new(activity_params)
-
-    @activity.user = current_user
+    @activity = current_user.activities.new(activity_params)
 
     if @activity.save
       redirect_to @activity, notice: "The creation of this activity has been successfully completed"
     else
+      flash[:alert] = @activity.errors.full_messages
       render :new, status: :unprocessable_entity
     end
   end

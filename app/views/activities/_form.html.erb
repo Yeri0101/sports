@@ -1,5 +1,6 @@
 <%= simple_form_for @activity do |f| %>
   <%= f.input :address, as: :string %>
+  <%= f.input :name %>
   <%= f.input :description %>
   <%= f.input :category, collection: Activity.categories.keys %>
 
