@@ -21,7 +21,10 @@ class ActivitiesController < ApplicationController
   end
 
   def create
-    @activity = current_user.activities.new(activity_params)
+    @activity = Activity.new(activity_params)
+
+    @activity.user = current_user
+
     if @activity.save
       redirect_to @activity, notice: "The creation of this activity has been successfully completed"
     else

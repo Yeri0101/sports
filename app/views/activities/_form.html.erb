@@ -1,19 +1,15 @@
-<%= simple_form_for @activity, wrapper: :horizontal_form do |f| %>
+<%= simple_form_for @activity do |f| %>
   <%= f.input :address, as: :string %>
   <%= f.input :description %>
   <%= f.input :category, collection: Activity.categories.keys %>
 
   <%= f.input :start_date, as: :string,
-              wrapper_html: class: "mb-5",
-              label_html: class: "form-label",
               input_html: { data: { controller: "flatpickr" } } %>
 
   <%= f.input :end_date, as: :string,
-              wrapper_html: class: "mb-5",
-              label_html: class: "form-label",
               input_html: { data: { controller: "flatpickr" } } %>
 
-  <%= f.submit "Save" class: "btn btn-primary mt-3" %>
+  <%= f.submit class: "btn btn-primary mt-3" %>
 
-  <%= link_to "Cancel", :back, class: "btn btn-danger" %>
+  <%= link_to "Cancel", activities_path, class: "btn btn-danger" %>
 <% end %>
