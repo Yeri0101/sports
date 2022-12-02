@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :bookings, only: %i[destroy edit show update]
+  resources :bookings, only: %i[destroy index edit show update]
   resources :reviews, only: %i[destroy edit show update]
   # Defines the root path route ("/")
   # root "articles#index"
