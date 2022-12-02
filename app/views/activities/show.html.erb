@@ -19,7 +19,7 @@
     <h2>-Start date </h2>
     <span> <%= @activity.start_date%> </span>
   </div>
-
+  
   <div class="card p-3">
     <h2>-Start end  </h2>
     <span> <%= @activity.end_date%> </span>
@@ -27,4 +27,16 @@
 
   <%= render "shared/booking_form", activity: @activity, booking: @booking %>
   <%= render 'activities/reviews' %>
+
+  <div>
+    <% if @activity.reviews.blank? %>
+      Be the first to leave a review for <%= @activity.name %>
+    <% else %>
+      <% @activity.reviews.each do |review| %>
+        <%= render 'activities/activity_reviews', review: review %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <%= render 'reviews/form', activity: @activity, review: @review %>
 </div>

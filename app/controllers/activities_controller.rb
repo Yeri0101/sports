@@ -1,8 +1,14 @@
 class ActivitiesController < ApplicationController
   before_action :set_activity, only: %i[destroy edit show update]
 
+  def search
+    index
+    render :index
+  end
+
   def index
-    @activities = Activity.all
+    @q = Activity.ransack(params[:query])
+    @activities = @q.result(distinct: true)
   end
 
   def show
@@ -19,8 +25,6 @@ class ActivitiesController < ApplicationController
     if @activity.save
       redirect_to @activity, notice: "The creation of this activity has been successfully completed"
     else
-      flash[:alert] = @activity.errors.full_messages.join("\n")
-
       render :new, status: :unprocessable_entity
     end
   end
