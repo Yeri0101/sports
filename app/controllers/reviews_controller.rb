@@ -11,6 +11,8 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to @activity
     else
+      @booking = Booking.new
+
       render "activities/show", status: :unprocessable_entity
     end
   end

@@ -1,29 +1,22 @@
-<%= search_form_for @q, url: search_activities_path,
-                        html: { method: :post },
-                        data: { turbo: false } do |f| %>
-
-  <%= f.search_field :description_or_name_or_reviews_comment_i_cont_any %>
-
-  <%= f.submit %>
-<% end %>
-
-<div class="container mt-5">
-  <h1>My Activities</h1>
-
-  <ul id="activities">
-    <% @activities.each do |activity| %>
-      <li>
-        <%= link_to activity.description, activity_path(activity.id) %>
-        <%= link_to activity_path(activity.id), data: {turbo_method: :delete, turbo_confirm: "Delete #{activity.description}?"} do %>
-          <i class="fa-regular fa-trash-can"></i>
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
-
-  <hr>
+<div class="my-5">
+  <h1>Activities</h1>
 
   <%= link_to new_activity_path do %>
-    <i class="fa-solid fa-plus"></i> Add a new activity
+    Add a new activity
   <% end %>
 </div>
+
+<% @activities.each do |activity| %>
+  <div class="col">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+        <p class="card-text"><%= link_to activity.description, activity_path(activity.id) %></p>
+        <%= link_to activity_path(activity.id), data: {turbo_method: :delete, turbo_confirm: "Delete #{activity.name}?"} do %>
+          Delete
+        <% end %>
+        </div>
+      </div>
+    </div>
+<% end %>

@@ -8,6 +8,8 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   </head>
 
   <body>
@@ -15,10 +17,7 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-12">
-          <%= yield %>
-          <%= render "shared/flashes" %>
-        </div>
+        <%= yield %>
       </div>
     </div>
   </body>
