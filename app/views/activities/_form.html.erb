@@ -1,13 +1,24 @@
-<%= form_with model: @activity do |f| %>
-  <div class="form-group">
-    <%= f.label :address %>
-    <%= f.text_field :address, class: 'form-control' %>
+  <%= simple_form_for @activity, wrapper: :horizontal_form do |f| %>
+    <%= f.input :name%>
+    <%= f.input :category, collection: ['Of winter', 'aquatic', 'air' 'With ball' 'combined' 'Gym' ] %>
+    <%= f.input :description%>
+    <%= f.input :address%>
+    <%= f.input :image%>
+    <br>
+    <div class="row">
+  <div class="col">
+    <%= f.input :start_date, as: :string,
+                wrapper_html: { class: "mb-4" },
+                label_html: { class: "form-label text-secondary fw-bold" },
+                input_html: { data: { controller: "flatpickr" } } %>
   </div>
-
-  <div class="form-group">
-    <%= f.label :description %>
-    <%= f.text_area :description, class: 'form-control' %>
+  <div class="col">
+    <%= f.input :end_date, as: :string,
+                wrapper_html: { class: "mb-4" },
+                label_html: { class: "form-label text-secondary fw-bold" },
+                input_html: { data: { controller: "flatpickr" } } %>
   </div>
-
-  <%= f.submit class: 'btn btn-primary mt-3' %>
-<% end %>
+</div>
+    <%= f.submit "Save", class: "btn btn-primary" %>
+    <%= link_to "Cancel", :back, class: "btn btn-danger" %>
+  <% end %>

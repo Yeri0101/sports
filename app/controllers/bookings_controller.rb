@@ -1,22 +1,21 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = current_user.bookings
+    @bookings = Booking.all
   end
 
-  def new
-    @booking = Booking.new
-    @activity = Activity.find(params[:activity_id])
+  def show
   end
 
   def create
-    @booking = Booking.new(booking_params)
-
+    @activity = Activity.find(params[:activity_id])
+    @booking = Booking.new()
+    @booking.user = current_user
     @booking.activity = @activity
-
     if @booking.save
-      redirect_to activity_path(@activity), notice: "The booking has been made correctly"
+      redirect_to @activity, notice: "The booking has been made correctly"
     else
-      render :new, status: :see_other
+      flash[:alert] = @booking.errors.full_messages.join("\n")
+      render 'activities/show', status: :see_other
     end
   end
 
@@ -36,13 +35,5 @@ class BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(%i[activity_id user_id])
-  end
-
-  def end_date_after_start_date
-    return if end_date.blank? || start_date.blank?
-
-    if end_date < start_date
-      errors.add(:end_date, "must be after the start date")
-    end
   end
 end
