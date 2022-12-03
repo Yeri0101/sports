@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resources :bookings, only: %i[destroy index edit show update]
   resources :reviews, only: %i[destroy edit show update]
   resources :chatrooms, only: :show do
-    resources :messages, only: :create
+    resources :messages, only: [:create]
 
   # Defines the root path route ("/")
   # root "articles#index"
