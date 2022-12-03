@@ -3,7 +3,6 @@ Rails.application.routes.draw do
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :activities do
-    mount ActionCable.server => "/cable"
     resources :bookings, only: %i[create index new]
     resources :reviews, only: %i[create index new]
     resources :users
@@ -15,6 +14,7 @@ Rails.application.routes.draw do
 
   resources :bookings, only: %i[destroy index edit show update]
   resources :reviews, only: %i[destroy edit show update]
+  resources :chatrooms, only: :show
 
   # Defines the root path route ("/")
   # root "articles#index"
