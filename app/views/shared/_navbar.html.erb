@@ -16,13 +16,10 @@
           <li class="nav-item">
           <%= link_to "Message", chatroom_path, class: "nav-link" %>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link" href="#" data-bs-toggle="dropdown"><%= current_user.nickname %></a>
-          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+        <li class="nav-item">
+          <a><%= current_user.nickname %></a>
           <%= link_to "Sign out", destroy_user_session_path, data: {turbo_method: :delete}, class: "border border-3 btn btn-outline-dark" %>
-         </div>
         </li>
-
 
         <!-- <li class="dropdown nav-item">
           <%= image_tag "https://avatar.vercel.sh/rauchg.svg/", class: "dropdown-toggle img-fluid rounded-circle w-25", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, "aria-haspopup": true, "aria-expanded": false %>

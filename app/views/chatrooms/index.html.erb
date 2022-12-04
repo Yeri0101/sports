@@ -1,0 +1,7 @@
+<% @chatrooms.each do |chatroom| %>
+  <%= link_to chatroom.activity.name, activity_path(chatroom.activity.id) %>
+
+  <%= link_to chatroom_path(chatroom.id), data: {turbo_method: :delete, turbo_confirm: "Delete #{chatroom.activity.name}?"} do %>
+    Delete
+  <% end %>
+<% end %>
