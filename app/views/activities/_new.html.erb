@@ -4,48 +4,45 @@
   </div>
 </div>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: {turbo: false}, html: { class: "g-3 row"}) do |f| %>
-  <!-- <%= f.error_notification %> -->
-
-  <div class="col-md-4">
-    <%= f.input :first_name,
+<%= simple_form_for @activity, html: { class: "g-3 row"} do |f| %>
+  <div class="col-md-6">
+    <%= f.input :name,
                 as: :string,
                 input_html: { autocomplete: "string", class: "border-0 mb-2 shadow-sm" },
-                placeholder: "Maximilien",
+                placeholder: "Running",
                 required: true %>
   </div>
-  <div class="col-md-4">
-    <%= f.input :last_name,
+  <div class="col-md-6">
+    <%= f.input :category,
                 as: :string,
-                input_html: { autocomplete: "string", class: "border-0 mb-2 shadow-sm" },
-                placeholder: "LANZ",
-                required: true %>
-  </div>
-  <div class="col-md-4">
-    <%= f.input :phone_number,
-                as: :string,
-                autofocus: true,
-                input_html: { autocomplete: "tel", class: "border-0 mb-2 shadow-sm" },
+                # collection: Activity.categories.keys,
+                input_html: { autocomplete: "integer", class: "border-0 mb-2 shadow-sm" },
                 required: true %>
   </div>
   <div class="col-12">
-    <%= f.input :email,
-                autofocus: true,
-                input_html: { autocomplete: "email", class: "border-0 mb-2 shadow-sm" },
-                label: "E-mail address",
-                placeholder: "maximilien.lanz@lewagon.com",
+    <!-- <div data-controller="character-counter"> -->
+      <%= f.input :description,
+                  as: :string,
+                  input_html: { autocomplete: "string", class: "border-0 shadow-sm" },
+                  # input_html: { autocomplete: "description", class: "border-0 shadow-sm", data: { character_counter_target: "input" } },
+                  required: true %>
+      <!-- <small class="form-text">Description is currently <small data-character-counter-target="counter"></small> characters long</small> -->
+    <!-- </div> -->
+  </div>
+  <div class="col-md-6">
+    <%= f.input :start_date,
+                as: :string,
+                input_html: { autocomplete: "datetime", class: "border-0 mb-2 shadow-sm" },
+                label: "Start date and time",
+                # input_html: { class: "border-0 mb-2 shadow-sm", data: { controller: "flatpickr" } },
                 required: true %>
   </div>
   <div class="col-md-6">
-    <%= f.input :password,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password", class: "border-0 mb-2 shadow-sm" },
-                required: true %>
-  </div>
-  <div class="col-md-6">
-    <%= f.input :password_confirmation,
-                input_html: { autocomplete: "new-password", class: "border-0 mb-2 shadow-sm" },
-                label: "Confirm password",
+    <%= f.input :end_date,
+                as: :string,
+                input_html: { autocomplete: "datetime", class: "border-0 mb-2 shadow-sm" },
+                label: "End date and time",
+                # input_html: { class: "border-0 mb-2 shadow-sm", data: { controller: "flatpickr" } },
                 required: true %>
   </div>
   <div class="col-12">
@@ -88,8 +85,8 @@
   </div>
 
   <div class="col-md-6 d-flex d-md-flex gap-4 mb-5">
-    <%= f.button :submit, "Create an account", class: "btn btn-light px-4 py-2 shadow" %>
+    <%= f.button :submit, "Create an activity", class: "btn btn-light px-4 py-2 shadow" %>
 
-    <%= link_to "Cancel", root_path, class: "btn btn-light px-4 py-2 shadow" %>
+    <%= link_to "Cancel", activities_path, class: "btn btn-light px-4 py-2 shadow" %>
   </div>
 <% end %>

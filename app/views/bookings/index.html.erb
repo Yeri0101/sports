@@ -1,7 +1,16 @@
-<% @bookings.each do |booking| %>
-  <%= link_to booking.activity.name, activity_path(booking.activity.id) %>
+<div class="col-md-7">
+  <div class="mb-5">
+    <h2 class="fs-2">We invite you to come and discover with us a whole new way of sharing your sports sessions</h2>
+  </div>
+</div>
 
-  <%= link_to booking_path(booking.id), data: {turbo_method: :delete, turbo_confirm: "Delete #{booking.activity.name}?"} do %>
-    Delete
-  <% end %>
+<% @bookings.each do |booking| %>
+  <div class="border-0 card mb-5 rounded-3">
+    <div class="card-body">
+      <div class="align-items-center d-flex justify-content-end">
+        <%= link_to "Delete", booking_path(booking.id), data: {turbo_method: :delete, turbo_confirm: "Delete #{booking.activity.name}?"},
+                                                        class: "btn btn-light px-4 py-2 shadow-sm" %>
+      </div>
+    </div>
+  </div>
 <% end %>

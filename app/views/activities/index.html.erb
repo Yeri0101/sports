@@ -1,30 +1,48 @@
-<%= search_form_for @q, url: activities_path,
-                        html: { method: :get },
-                        data: { turbo: false } do |f| %>
+<div class="col-md-7">
+  <div class="mb-5">
+    <h2 class="fs-2">We invite you to come and discover with us a whole new way of sharing your sports sessions</h2>
+  </div>
+</div>
 
-  <%= f.search_field :description_or_name_or_reviews_comment_i_cont_any %>
+<div class="align-items-center d-flex justify-content-between mb-5">
+<%= search_form_for @q, url: search_activities_path,
+                            html: { class: "d-flex", method: :post },
+                            data: { turbo: false } do |f| %>
 
-  <%= f.submit %>
-<% end %>
+    <%= f.search_field :description_or_name_or_reviews_comment_i_cont_any,
+                        class: "border-0 form-control me-3 shadow-sm" %>
 
-<%= @activities.count %>
-
-<% @activities.each do |activity| %>
-<div>
-
-  <% if activity.user == current_user %>
-    <%= link_to activity.description, activity_path(activity.id) %>
-    <% if policy(activity).destroy? %>
-      <%= link_to activity_path(activity.id), data: {turbo_method: :delete, turbo_confirm: "Delete #{activity.description}?"} do %>
-        Delete
+    <%= f.submit class: "btn btn-dark px-4 py-2 shadow",
+                 placeholder: "Search" %>
+  <% end %>
+  <div class="d-grid d-md-flex">
+    <% if policy(Activity).create? %>
+      <%= link_to new_activity_path, class: "btn btn-light px-4 py-2 shadow" do %>
+        Create a new activity
       <% end %>
     <% end %>
-  <% end %>
   </div>
-<% end %>
+</div>
 
-<% if policy(Activity).create? %>
-  <%= link_to new_activity_path do %>
-    Add a new activity
+<div class="g-5 row">
+  <% @activities.each do |activity| %>
+    <div class="col-md-4">
+      <div class="border-0 card p-4 rounded-4 shadow-sm">
+        <!-- <img src="https://admin.itsnicethat.com/images/6zm_wjypsiSE8tSUFVV2iPyl8_Q=/234779/format-webp%7Cwidth-2880/INT_SEXINDESIGN_INARISIROLA_HEADER_02.png" class="card-img-top img-fluid mb-4 rounded-4 shadow-sm" alt="..."> -->
+        <div class="card-body">
+          <% if activity.user == current_user %>
+            <h6 class="card-title"><%= activity.name %></h6>
+            <p class="card-text mb-5 text-secondary"><%= activity.description %></p>
+            <div class="align-items-center d-flex justify-content-between">
+              <%= link_to "View", activity_path(activity.id), class: "btn btn-light card-link px-4 py-2 shadow" %>
+
+              <% if policy(activity).destroy? %>
+                <%= link_to "Delete", activity_path(activity.id), class: "btn btn-light card-link px-4 py-2 shadow", data: {turbo_method: :delete, turbo_confirm: "Delete #{activity.description}?"} %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
   <% end %>
-<% end %>
+</div>

@@ -8,11 +8,15 @@ class Activity < ApplicationRecord
   has_many :users
 
   validates :address, presence: true
-  validates :category, presence: true
+  # validates :category, presence: true
+  validates :city, presence: true
+  validates :country, presence: true
   validates :description, presence: true
   validates :end_date, presence: true
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
+  validates :postcode, presence: true
   validates :start_date, presence: true
+  validates :state, presence: true
 
-  enum :category, %i[Badminton Basketball Bicycle Fitness Football Handball Running Squash Swimming Tennis Yoga]
+  enum :category, %i[Badminton Basketball Bicycle Fitness Football Handball Running Swimming Tennis Yoga]
 end

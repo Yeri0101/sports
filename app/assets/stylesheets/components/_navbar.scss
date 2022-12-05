@@ -1,9 +1,15 @@
 .navbar-brand {
   color: rgb(37, 75, 69);
-  font-weight: 600;
+  font-weight: 700;
 
   &:active, &:focus, &:hover {
-    color: rgb(0, 0, 0);
+    color: rgb(37, 75, 69);
     transition: color 0.15s ease-in-out;
   }
+}
+
+.nav-link {
+  color: rgb(37, 75, 69);
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
 }
