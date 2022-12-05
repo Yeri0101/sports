@@ -1,11 +1,28 @@
-<%= search_form_for @q, url: search_activities_path,
-                        html: { method: :post },
-                        data: { turbo: false } do |f| %>
+<div class="col-md-7">
+  <div class="mb-5">
+    <h2 class="fs-2">We invite you to come and discover with us a whole new way of sharing your sports sessions</h2>
+  </div>
+</div>
 
-  <%= f.search_field :description_or_name_or_reviews_comment_i_cont_any %>
+<div class="align-items-center d-flex justify-content-between mb-5">
+  <div class="d-grid d-md-flex gap-5">
+    <% if policy(Activity).create? %>
+      <%= link_to new_activity_path, class: "btn btn-light px-4 py-2 shadow" do %>
+        Create a new activity
+      <% end %>
+    <% end %>
+  </div>
+  <%= search_form_for @q, url: search_activities_path,
+                            html: { class: "d-flex", method: :post },
+                            data: { turbo: false } do |f| %>
 
-  <%= f.submit %>
-<% end %>
+    <%= f.search_field :description_or_name_or_reviews_comment_i_cont_any,
+                        class: "border-0 form-control me-2 shadow-sm" %>
+
+    <%= f.submit class: "btn btn-dark px-4 py-2 shadow",
+                 placeholder: "Search" %>
+  <% end %>
+</div>
 
 <% @activities.each do |activity| %>
   <% if activity.user == current_user %>
@@ -15,11 +32,5 @@
         Delete
       <% end %>
     <% end %>
-  <% end %>
-<% end %>
-
-<% if policy(Activity).create? %>
-  <%= link_to new_activity_path do %>
-    Add a new activity
   <% end %>
 <% end %>

@@ -1,3 +1,9 @@
+<div class="col-md-7">
+  <div class="mb-5">
+    <h2 class="fs-2">We invite you to come and discover with us a whole new way of sharing your sports sessions</h2>
+  </div>
+</div>
+
 <% @bookings.each do |booking| %>
   <%= link_to booking.activity.name, activity_path(booking.activity.id) %>
 

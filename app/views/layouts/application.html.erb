@@ -1,10 +1,10 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
-    <title>Sports</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <title>Sports</title>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
@@ -12,14 +12,29 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   </head>
 
-  <body>
+  <body class="bg-light">
     <%= render "shared/navbar" %>
 
     <div class="container">
-      <div class="row">
-        <%= yield %>
-        <%= render "shared/flashes" %>
-      </div>
+      <%= yield %>
+
+      <%= render "shared/flashes" %>
     </div>
+
+    <script id="search-js" defer src="https://api.mapbox.com/search-js/v1.0.0-beta.14/web.js"></script>
+    <script>
+      const script = document.getElementById("search-js");
+
+      script.onload = function() {
+        mapboxsearch.autofill({
+          accessToken: "pk.eyJ1IjoibWF4aW1pbGllbi1sYW56IiwiYSI6ImNsYjg0YjhiMjBoYzE0MHJlaWdveXZzZWQifQ.CGbXmujxjvGbkML7IB9WNg",
+
+          options: {
+            country: "CH",
+            language: "fr",
+          }
+        });
+      };
+    </script>
   </body>
 </html>

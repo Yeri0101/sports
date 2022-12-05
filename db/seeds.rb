@@ -5,36 +5,38 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-require 'faker'
+require "faker"
 
 User.destroy_all
-
 Activity.destroy_all
-
 Review.destroy_all
 
 5.times do
   User.create!(
     address: Faker::Address.street_address,
+    city: Faker::Address.city,
+    country: Faker::Address.country,
+    email: Faker::Internet.email(domain: "sports.com"),
     first_name: Faker::Name.first_name,
-    email: Faker::Internet.email(domain: 'sports'),
-    height: Faker::Number.number(digits: 3),
     last_name: Faker::Name.last_name,
-    level: Faker::Lorem.words(number: 1, supplemental: false),
-    password: Faker::Internet.password(min_length: 6, max_length: 22),
+    password: Faker::Internet.password(min_length: 12, max_length: 24),
     phone_number: Faker::PhoneNumber.cell_phone_with_country_code,
-    weight: Faker::Number.number(digits: 3)
+    postcode: Faker::Address.postcode,
+    state: Faker::Address.state
   )
 end
 
 5.times do
   Activity.create!(
     address: Faker::Address.street_address,
-    category: Faker::Number.between(from: 1, to: 10),
+    city: Faker::Address.city,
+    country: Faker::Address.country,
     description: Faker::Lorem.sentence(word_count: 10, supplemental: true, random_words_to_add: 5),
-    name: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 2),
     end_date: Faker::Date.in_date_period(year: 2022, month: 11),
-    start_date: Faker::Date.between(from: '2021-11-29', to: '2022-11-29'),
+    name: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 2),
+    postcode: Faker::Address.postcode,
+    start_date: Faker::Date.between(from: "2021-11-29", to: "2022-11-29"),
+    state: Faker::Address.state,
     user: User.all.sample
   )
 end
