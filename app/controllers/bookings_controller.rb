@@ -27,7 +27,7 @@ class BookingsController < ApplicationController
 
     authorize @booking
 
-    redirect_to @bookings
+    redirect_to bookings_path, status: :unprocessable_entity
   end
 
   private
