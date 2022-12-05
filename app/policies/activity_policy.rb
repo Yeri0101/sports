@@ -1,7 +1,7 @@
 class ActivityPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      # scope.all
+      #scope.all
       scope.where(user_id: user.id)
     end
   end
@@ -19,6 +19,18 @@ class ActivityPolicy < ApplicationPolicy
   end
 
   def destroy?
-    record.user == user
+    right_user = user == host || user == client
+
+    right_user
+  end
+
+  private
+
+  def host
+    activity.user
+  end
+
+  def activity
+    @activity ||= record
   end
 end
