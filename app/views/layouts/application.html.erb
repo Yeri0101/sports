@@ -27,7 +27,7 @@
 
       script.onload = function() {
         mapboxsearch.autofill({
-          accessToken: "pk.eyJ1IjoibWF4aW1pbGllbi1sYW56IiwiYSI6ImNsYjg0YjhiMjBoYzE0MHJlaWdveXZzZWQifQ.CGbXmujxjvGbkML7IB9WNg",
+          accessToken: "<%= ENV["MAPBOX_ACCESS_TOKEN"] %>",
 
           options: {
             country: "CH",
