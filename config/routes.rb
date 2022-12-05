@@ -6,7 +6,6 @@ Rails.application.routes.draw do
     resources :bookings, only: %i[create index new]
     resources :reviews, only: %i[create index new]
     resources :users
-    resources :chatrooms
 
     collection do
       match 'search' => 'activities#search', via: %i[get post], as: :search
@@ -15,7 +14,7 @@ Rails.application.routes.draw do
 
   resources :bookings, only: %i[destroy index edit show update]
   resources :reviews, only: %i[destroy edit show update]
-  resources :chatrooms, only: :show do
+  resources :chatrooms, only: [:show] do
     resources :messages, only: [:create]
 
   # Defines the root path route ("/")

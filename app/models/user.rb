@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_one_attached :avatar
+  has_many :messages
 
   has_many :activities
   has_many :bookings
