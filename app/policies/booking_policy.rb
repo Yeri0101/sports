@@ -7,10 +7,28 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    right_user = user == host || user == client
+
+    right_user
   end
 
   def destroy?
-    record.user == user
+    right_user = user == host || user == client
+
+    right_user # && booking.pending?
+  end
+
+  private
+
+  def host
+    booking.activity.user
+  end
+
+  def client
+    booking.client
+  end
+
+  def booking
+    @booking ||= record
   end
 end

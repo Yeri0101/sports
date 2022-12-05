@@ -1,5 +1,5 @@
-<%= search_form_for @q, url: search_activities_path,
-                        html: { method: :post },
+<%= search_form_for @q, url: activities_path,
+                        html: { method: :get },
                         data: { turbo: false } do |f| %>
 
   <%= f.search_field :description_or_name_or_reviews_comment_i_cont_any %>
@@ -7,7 +7,11 @@
   <%= f.submit %>
 <% end %>
 
+<%= @activities.count %>
+
 <% @activities.each do |activity| %>
+<div>
+
   <% if activity.user == current_user %>
     <%= link_to activity.description, activity_path(activity.id) %>
     <% if policy(activity).destroy? %>
@@ -16,6 +20,7 @@
       <% end %>
     <% end %>
   <% end %>
+  </div>
 <% end %>
 
 <% if policy(Activity).create? %>
