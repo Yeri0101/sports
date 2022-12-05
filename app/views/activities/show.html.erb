@@ -1,23 +1,19 @@
 <% if policy(@activity).edit? %><% end %>
-  <%= @activity.description %>
-
-  <%= link_to edit_activity_path(@activity.id) do %>
-    Edit this activity
+<%= @activity.description %>
+<%= link_to edit_activity_path(@activity.id) do %>
+  Edit this activity
+<% end %>
+<%= link_to activities_path do %>
+  Back to list
+<% end %>
+<%= pluralize @activity.reviews.size, "review" %>
+<% if @activity.reviews.blank? %>
+  Be the first to leave a review for <%= @activity.name %>
+<% else %>
+  <% @activity.reviews.each do |review| %>
+    <%= render "activities/activity_reviews", review: review %>
   <% end %>
-
-  <%= link_to activities_path do %>
-    Back to list
-  <% end %>
-
-  <%= pluralize @activity.reviews.size, "review" %>
-
-  <% if @activity.reviews.blank? %>
-    Be the first to leave a review for <%= @activity.name %>
-  <% else %>
-    <% @activity.reviews.each do |review| %>
-      <%= render "activities/activity_reviews", review: review %>
-    <% end %>
-  <% end %>
-
-  <%= render "reviews/form", activity: @activity, review: @review %>
-  <%= render "bookings/form", activity: @activity, booking: @booking %>
+<% end %>
+<%= render "reviews/form", activity: @activity, review: @review %>
+<%= render "bookings/form", activity: @activity, booking: @booking %>
+<%= render "chatrooms/chatroom", activity: @activity, chatroom: @chatroom %>

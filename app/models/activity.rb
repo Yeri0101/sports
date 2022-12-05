@@ -1,5 +1,5 @@
 class Activity < ApplicationRecord
-  belongs_to :user
+  belongs_to :chatrooms
 
   has_one_attached :image
 
