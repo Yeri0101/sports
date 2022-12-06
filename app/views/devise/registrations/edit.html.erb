@@ -21,7 +21,15 @@
                 placeholder: "LANZ",
                 required: true %>
   </div>
-  <div class="col-md-4">
+  <div class="col-md-2">
+    <%= f.input :country_code,
+                as: :string,
+                autofocus: true,
+                input_html: { autocomplete: "tel", class: "border-0 mb-2 shadow-sm" },
+                placeholder: "+41",
+                required: true %>
+  </div>
+  <div class="col-md-2">
     <%= f.input :phone_number,
                 as: :string,
                 autofocus: true,
@@ -100,6 +108,6 @@
   <div class="col-md-6 d-flex d-md-flex gap-4">
     <%= f.button :submit, "Update", class: "btn btn-light px-4 py-2 shadow" %>
 
-    <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you really sure?" }, method: :delete, class: "btn btn-light px-4 py-2 shadow" %>
+    <%= link_to "Cancel my account", registration_path(resource_name), class: "btn btn-light px-4 py-2 shadow", data: { confirm: "Are you really sure?" }, method: :delete %>
   </div>
 <% end %>

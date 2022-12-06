@@ -7,20 +7,8 @@
     <title>Sports</title>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  </head>
-
-  <body class="bg-light">
-    <%= render "shared/navbar" %>
-
-    <div class="container">
-      <%= yield %>
-
-      <%= render "shared/flashes" %>
-    </div>
-
     <script id="search-js" defer src="https://api.mapbox.com/search-js/v1.0.0-beta.14/web.js"></script>
     <script>
       const script = document.getElementById("search-js");
@@ -36,5 +24,17 @@
         });
       };
     </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  </head>
+
+  <body class="bg-light">
+    <%= render "shared/navbar" %>
+
+    <div class="container">
+      <%= yield %>
+
+      <%= render "shared/flashes" %>
+    </div>
   </body>
 </html>

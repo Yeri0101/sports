@@ -15,7 +15,7 @@
   <div class="col-md-6">
     <%= f.input :category,
                 as: :string,
-                # collection: Activity.categories.keys,
+                collection: Activity.categories.keys,
                 input_html: { autocomplete: "integer", class: "border-0 mb-2 shadow-sm" },
                 required: true %>
   </div>
@@ -72,7 +72,7 @@
                 as: :string,
                 input_html: { autocomplete: "address-level1", class: "border-0 mb-2 shadow-sm" },
                 label: "State / Province / Region",
-                placeholder: "Vaud",
+                placeholder: "Canton de Vaud",
                 required: true %>
   </div>
   <div class="col-md-2">

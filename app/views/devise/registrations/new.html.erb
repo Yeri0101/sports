@@ -21,11 +21,20 @@
                 placeholder: "LANZ",
                 required: true %>
   </div>
-  <div class="col-md-4">
+  <div class="col-md-2">
+    <%= f.input :country_code,
+                as: :string,
+                autofocus: true,
+                input_html: { autocomplete: "tel", class: "border-0 mb-2 shadow-sm" },
+                placeholder: "+41",
+                required: true %>
+  </div>
+  <div class="col-md-2">
     <%= f.input :phone_number,
                 as: :string,
                 autofocus: true,
                 input_html: { autocomplete: "tel", class: "border-0 mb-2 shadow-sm" },
+                placeholder: "76 123 45 67",
                 required: true %>
   </div>
   <div class="col-12">
@@ -75,7 +84,7 @@
                 as: :string,
                 input_html: { autocomplete: "address-level1", class: "border-0 mb-2 shadow-sm" },
                 label: "State / Province / Region",
-                placeholder: "Vaud",
+                placeholder: "Canton de Vaud",
                 required: true %>
   </div>
   <div class="col-md-2">
