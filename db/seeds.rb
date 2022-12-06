@@ -16,6 +16,7 @@ Review.destroy_all
     address: Faker::Address.street_address,
     city: Faker::Address.city,
     country: Faker::Address.country,
+    country_code: Faker::PhoneNumber.country_code,
     email: Faker::Internet.email(domain: "sports.com"),
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
