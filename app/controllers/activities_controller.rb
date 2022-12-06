@@ -1,6 +1,6 @@
 class ActivitiesController < ApplicationController
   before_action :set_activity, only: %i[destroy edit show update]
-
+  
   def index
     @activities = policy_scope(Activity)
     @q = @activities.ransack(params[:query])
