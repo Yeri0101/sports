@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :users
 
     collection do
-      match 'search' => 'activities#search', via: %i[get post], as: :search
+      match "search" => "activities#index", via: %i[get post], as: :search
     end
   end
 
