@@ -1,4 +1,4 @@
-class RemovingFieldsFromTheUsersTable < ActiveRecord::Migration[7.0]
+class RemovingNotUsedFieldsFromTheUsersTable < ActiveRecord::Migration[7.0]
   def change
     remove_column :users, :height
     remove_column :users, :level
