@@ -15,7 +15,7 @@ class BookingPolicy < ApplicationPolicy
   def destroy?
     right_user = user == host || user == client
 
-    right_user # && booking.pending?
+    right_user
   end
 
   private

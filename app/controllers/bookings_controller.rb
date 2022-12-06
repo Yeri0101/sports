@@ -21,6 +21,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking = Booking.find(params[:id])
+
     @booking.destroy
 
     authorize @booking

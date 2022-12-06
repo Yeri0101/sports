@@ -3,8 +3,18 @@ class ActivitiesController < ApplicationController
 
   def index
     @activities = policy_scope(Activity)
+
     @q = @activities.ransack(params[:query])
     @activities = @q.result(distinct: true)
+  end
+
+  def me
+    @activities = policy_scope(Activity).where(user: current_user)
+
+    @q = @activities.ransack(params[:query])
+    @activities = @q.result(distinct: true)
+
+    authorize @activities
   end
 
   def show

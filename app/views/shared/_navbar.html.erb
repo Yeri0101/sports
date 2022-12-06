@@ -12,7 +12,10 @@
       <ul class="gap-4 mb-lg-0 navbar-nav">
         <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to "My activities", activities_path, class: "nav-link" %>
+            <%= link_to "Discover", activities_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "My activities", me_activities_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "My bookings", bookings_path, class: "nav-link" %>

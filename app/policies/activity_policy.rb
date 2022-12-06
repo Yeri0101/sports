@@ -1,9 +1,12 @@
 class ActivityPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      # scope.all
-      scope.where(user: user)
+      scope.all
     end
+  end
+
+  def me?
+    true
   end
 
   def create?
