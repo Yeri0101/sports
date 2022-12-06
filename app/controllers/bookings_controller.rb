@@ -1,7 +1,5 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = current_user.bookings
-
     @bookings = policy_scope(Booking)
   end
 
@@ -23,6 +21,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking = Booking.find(params[:id])
+
     @booking.destroy
 
     authorize @booking
