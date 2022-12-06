@@ -12,10 +12,10 @@ class User < ApplicationRecord
   validates :address, presence: true
   validates :city, presence: true
   validates :country, presence: true
-  validates :country_code, presence: true
+  validates :country_code, presence: false
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :phone_number, presence: true
+  validates :phone_number, presence: false
   validates :postcode, presence: true
   validates :state, presence: true
 end

@@ -21,13 +21,13 @@
 
   <div class="col-12">
     <%= f.input :remember_me,
-                class: "form-check-input",
-                label: "Remembering me",
+                class: "form-check-input shadow-sm",
+                label: "Remember me",
                 as: :boolean if devise_mapping.rememberable? %>
   </div>
 
   <div class="col-md-6 d-flex d-md-flex gap-4">
-    <%= f.button :submit, "Log in", class: "btn btn-light px-4 py-2 shadow" %>
+    <%= f.button :submit, "Log in", class: "btn btn-green px-4 py-2 shadow" %>
 
     <%= link_to "Forgot your password?", new_password_path(resource_name), class: "btn btn-light px-4 py-2 shadow" %>
   </div>

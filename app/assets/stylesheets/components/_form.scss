@@ -4,3 +4,8 @@ abbr[title] {
   text-decoration-skip-ink: none;
   -webkit-text-decoration: none;
 }
+
+.form-check-input[type="checkbox"] {
+  border: none;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}

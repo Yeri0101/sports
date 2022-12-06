@@ -2,22 +2,44 @@
   <div class="d-grid d-md-flex">
     <%= link_to "Back", activities_path, class: "btn btn-light px-4 py-2 shadow" %>
   </div>
+
   <% if policy(@activity).edit? %>
     <%= link_to "Update", edit_activity_path(@activity.id), class: "btn btn-light px-4 py-2 shadow" %>
   <% end %>
 </div>
-<%= pluralize @activity.reviews.size, "review" %>
-<% if @activity.reviews.blank? %>
-  Be the first to leave a review for <%= @activity.name %>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="border-0 card mb-5 p-4 rounded-4 shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title mb-5"><%= @activity.name %></h5>
+        <h6 class="card-subtitle mb-2">Description</h6>
+        <p class="card-text text-secondary"><%= @activity.description %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <% if @activity.reviews.blank? %>
+  <div class="my-5">
+    <h5 class="fs-5">Be the first user to leave a positive review about this activity</h5>
+  </div>
 <% else %>
   <% @activity.reviews.each do |review| %>
     <%= render "activities/activity_reviews", review: review %>
   <% end %>
 <% end %>
-<%= simple_form_for [@activity, @booking] do |f| %>
-  <%= f.button :submit, class: "btn btn-light px-4 py-2 shadow" %>
-<% end %>
-<% if policy(@review).create? %>
-  <%= render "reviews/form", activity: @activity, review: @review %>
-<% end %>
 
+<%= render "reviews/form", activity: @activity, review: @review %> -->

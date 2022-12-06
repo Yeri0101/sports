@@ -5,11 +5,17 @@
 </div>
 
 <% @bookings.each do |booking| %>
-  <div class="border-0 card mb-5 rounded-3">
+  <div class="border-0 card mb-2 p-4 rounded-4">
     <div class="card-body">
-      <div class="align-items-center d-flex justify-content-end">
-        <%= link_to "Delete", booking_path(booking.id), data: {turbo_method: :delete, turbo_confirm: "Delete #{booking.activity.name}?"},
-                                                        class: "btn btn-light px-4 py-2 shadow-sm" %>
+      <div class="align-items-center d-flex justify-content-between">
+        <h5 class="card-title"><%= booking.activity.name %></h5>
+        <p class="card-text mb-0 text-secondary"><%= booking.activity.description %></p>
+
+        <div class="d-flex gap-3 d-md-flex">
+          <%= link_to "View", booking_path(booking.id), class: "btn btn-green px-4 py-2 shadow-sm" %>
+          <%= link_to "Cancel", booking_path(booking.id), class: "btn btn-light px-4 py-2 shadow-sm",
+                                                          data: {turbo_method: :delete, turbo_confirm: "Would you like to continue?"} %>
+        </div>
       </div>
     </div>
   </div>

@@ -5,8 +5,6 @@
 </div>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: {turbo: false}, html: { class: "g-3 row"}) do |f| %>
-  <!-- <%= f.error_notification %> -->
-
   <div class="col-md-4">
     <%= f.input :first_name,
                 as: :string,
@@ -27,15 +25,15 @@
                 autofocus: true,
                 input_html: { autocomplete: "tel", class: "border-0 mb-2 shadow-sm" },
                 placeholder: "+41",
-                required: true %>
+                required: false %>
   </div>
   <div class="col-md-2">
     <%= f.input :phone_number,
                 as: :string,
                 autofocus: true,
                 input_html: { autocomplete: "tel", class: "border-0 mb-2 shadow-sm" },
-                placeholder: "76 123 45 67",
-                required: true %>
+                placeholder: "76 000 00 00",
+                required: false %>
   </div>
   <div class="col-12">
     <%= f.input :email,
@@ -97,7 +95,7 @@
   </div>
 
   <div class="col-md-6 d-flex d-md-flex gap-4 mb-5">
-    <%= f.button :submit, "Create an account", class: "btn btn-light px-4 py-2 shadow" %>
+    <%= f.button :submit, "Create an account", class: "btn btn-green px-4 py-2 shadow" %>
 
     <%= link_to "Cancel", root_path, class: "btn btn-light px-4 py-2 shadow" %>
   </div>
