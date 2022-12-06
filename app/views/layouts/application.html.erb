@@ -18,8 +18,7 @@
           accessToken: "<%= ENV["MAPBOX_ACCESS_TOKEN"] %>",
 
           options: {
-            country: "CH",
-            language: "fr",
+            language: "en",
           }
         });
       };
@@ -36,5 +35,7 @@
 
       <%= render "shared/flashes" %>
     </div>
+
+    <%= render "shared/footer" %>
   </body>
 </html>
