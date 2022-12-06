@@ -11,7 +11,7 @@ User.destroy_all
 Activity.destroy_all
 Review.destroy_all
 
-5.times do
+6.times do
   User.create!(
     address: Faker::Address.street_address,
     city: Faker::Address.city,
@@ -27,14 +27,14 @@ Review.destroy_all
   )
 end
 
-5.times do
+6.times do
   Activity.create!(
     address: Faker::Address.street_address,
     city: Faker::Address.city,
     country: Faker::Address.country,
-    description: Faker::Lorem.sentence(word_count: 10, supplemental: true, random_words_to_add: 5),
+    description: Faker::Lorem.sentence(word_count: 10, supplemental: false),
     end_date: Faker::Date.in_date_period(year: 2022, month: 11),
-    name: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 2),
+    name: Faker::Lorem.sentence(word_count: 2, supplemental: false),
     postcode: Faker::Address.postcode,
     start_date: Faker::Date.between(from: "2021-11-29", to: "2022-11-29"),
     state: Faker::Address.state,
@@ -42,7 +42,7 @@ end
   )
 end
 
-5.times do
+12.times do
   Review.create!(
     activity: Activity.all.sample,
     comment: Faker::Lorem.sentence(word_count: 10, supplemental: true, random_words_to_add: 5),
