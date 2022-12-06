@@ -18,7 +18,7 @@ class ActivitiesController < ApplicationController
   end
 
   def show
-    @review = Review.new
+    @review = Review.new(activity: @activity, user: current_user)
     @booking = Booking.new
 
     authorize @activity
