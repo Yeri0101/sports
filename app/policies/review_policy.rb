@@ -1,7 +1,7 @@
 class ReviewPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.where(user: user)
+      scope.all
     end
   end
 
@@ -10,15 +10,17 @@ class ReviewPolicy < ApplicationPolicy
   end
 
   def create?
-    Booking.exists?(activity: review.activity, user: review.user)
+    is_participant = Booking.exists?(activity: review.activity, user: review.user)
+    is_not_host = user != host
+    is_participant && is_not_host
   end
 
   def update?
-    review.user == user
+    user == host
   end
 
   def destroy?
-    review.user == user
+    user == host
   end
 
   private
@@ -27,8 +29,8 @@ class ReviewPolicy < ApplicationPolicy
     review.activity.user
   end
 
-  def client
-    review.client
+  def reviewer
+    review.user
   end
 
   def review

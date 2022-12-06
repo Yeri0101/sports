@@ -24,6 +24,7 @@
         <!-- <img src="https://admin.itsnicethat.com/images/6zm_wjypsiSE8tSUFVV2iPyl8_Q=/234779/format-webp%7Cwidth-2880/INT_SEXINDESIGN_INARISIROLA_HEADER_02.png" class="card-img-top img-fluid mb-4 rounded-4 shadow-sm" alt="..."> -->
         <div class="card-body">
             <h6 class="card-title"><%= activity.name %></h6>
+            <h6 class="card-subtitle text-secondary mb-3"><%= activity.city %></h6>
             <p class="card-text mb-5 text-secondary"><%= activity.description %></p>
             <div class="align-items-center d-flex justify-content-between">
               <%= link_to "View", activity_path(activity.id), class: "btn btn-light card-link px-4 py-2 shadow" %>

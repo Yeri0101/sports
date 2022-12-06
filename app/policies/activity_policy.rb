@@ -18,7 +18,7 @@ class ActivityPolicy < ApplicationPolicy
   end
 
   def update?
-    true
+    
   end
 
   def destroy?

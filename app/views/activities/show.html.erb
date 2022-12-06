@@ -6,19 +6,18 @@
     <%= link_to "Update", edit_activity_path(@activity.id), class: "btn btn-light px-4 py-2 shadow" %>
   <% end %>
 </div>
-
-
-
-
-
-  <%= pluralize @activity.reviews.size, "review" %>
-
-  <% if @activity.reviews.blank? %>
-    Be the first to leave a review for <%= @activity.name %>
-  <% else %>
-    <% @activity.reviews.each do |review| %>
-      <%= render "activities/activity_reviews", review: review %>
-    <% end %>
+<%= pluralize @activity.reviews.size, "review" %>
+<% if @activity.reviews.blank? %>
+  Be the first to leave a review for <%= @activity.name %>
+<% else %>
+  <% @activity.reviews.each do |review| %>
+    <%= render "activities/activity_reviews", review: review %>
   <% end %>
+<% end %>
+<%= simple_form_for [@activity, @booking] do |f| %>
+  <%= f.button :submit, class: "btn btn-light px-4 py-2 shadow" %>
+<% end %>
+<% if policy(@review).create? %>
+  <%= render "reviews/form", activity: @activity, review: @review %>
+<% end %>
 
-<%= render "reviews/form", activity: @activity, review: @review %>

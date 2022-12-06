@@ -25,7 +25,7 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def client
-    booking.client
+    booking.user
   end
 
   def booking
