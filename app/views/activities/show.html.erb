@@ -16,4 +16,4 @@
 <% end %>
 <%= render "reviews/form", activity: @activity, review: @review %>
 <%= render "bookings/form", activity: @activity, booking: @booking %>
-<%= render "chatrooms/chatroom", activity: @activity, chatroom: @chatroom %>
+<%= render "chatrooms/chatroom", activity: @activity, chatroom: @activity.chatroom, message: @message %>

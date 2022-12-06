@@ -1,14 +1,11 @@
 <%= search_form_for @q, url: search_activities_path,
                         html: { method: :post },
                         data: { turbo: false } do |f| %>
-
   <%= f.search_field :description_or_name_or_reviews_comment_i_cont_any %>
-
   <%= f.submit %>
 <% end %>
-
 <% @activities.each do |activity| %>
-  <% if activity.user == current_user %>
+  <% if activity.user_id == current_user %>
     <%= link_to activity.description, activity_path(activity.id) %>
     <% if policy(activity).destroy? %>
       <%= link_to activity_path(activity.id), data: {turbo_method: :delete, turbo_confirm: "Delete #{activity.description}?"} do %>
@@ -17,7 +14,6 @@
     <% end %>
   <% end %>
 <% end %>
-
 <% if policy(Activity).create? %>
   <%= link_to new_activity_path do %>
     Add a new activity

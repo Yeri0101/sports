@@ -1,5 +1,6 @@
 class Activity < ApplicationRecord
-  belongs_to :chatrooms
+  after_create :create_chatroom
+  has_one :chatroom
 
   has_one_attached :image
 
@@ -15,4 +16,8 @@ class Activity < ApplicationRecord
   validates :start_date, presence: true
 
   enum :category, %i[Badminton Basketball Bicycle Fitness Football Handball Running Squash Swimming Tennis Yoga]
+
+  def create_chatroom
+    Chatroom.create(activity: self)
+  end
 end

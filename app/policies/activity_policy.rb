@@ -6,6 +6,10 @@ class ActivityPolicy < ApplicationPolicy
     end
   end
 
+  def search?
+    true
+  end
+
   def create?
     true
   end
