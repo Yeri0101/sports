@@ -5,12 +5,13 @@
 </div>
 
 <div class="align-items-center d-flex justify-content-between mb-5">
-<%= search_form_for @q, url: search_activities_path,
-                            html: { class: "d-flex", method: :post },
+<%= search_form_for @q, url: activities_path,
+                            html: { class: "d-flex", method: :get },
                             data: { turbo: false } do |f| %>
 
     <%= f.search_field :description_or_name_or_reviews_comment_i_cont_any,
-                        class: "border-0 form-control me-3 shadow-sm" %>
+                        class: "border-0 form-control me-3 shadow-sm",
+                        placeholder: "Search for a keyword" %>
 
     <%= f.submit class: "btn btn-dark px-4 py-2 shadow",
                  placeholder: "Search" %>
@@ -32,7 +33,8 @@
         <!-- <img src="https://admin.itsnicethat.com/images/6zm_wjypsiSE8tSUFVV2iPyl8_Q=/234779/format-webp%7Cwidth-2880/INT_SEXINDESIGN_INARISIROLA_HEADER_02.png" class="card-img-top img-fluid mb-4 rounded-4 shadow-sm" alt="..."> -->
         <div class="card-body">
           <% if activity.user == current_user %>
-            <h6 class="card-title"><%= activity.name %></h6>
+            <h5 class="card-title"><%= activity.name %></h5>
+            <h6 class="card-subtitle mb-3 text-secondary"><%= activity.city %></h6>
             <p class="card-text mb-5 text-secondary"><%= activity.description %></p>
             <div class="align-items-center d-flex justify-content-between">
               <%= link_to "View", activity_path(activity.id), class: "btn btn-light card-link px-4 py-2 shadow" %>

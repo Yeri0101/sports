@@ -1,7 +1,7 @@
 class ReviewPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.where(user_id: user.id)
+      scope.where(user: user)
     end
   end
 

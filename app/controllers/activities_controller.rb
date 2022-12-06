@@ -1,6 +1,6 @@
 class ActivitiesController < ApplicationController
   before_action :set_activity, only: %i[destroy edit show update]
-  
+
   def index
     @activities = policy_scope(Activity)
     @q = @activities.ransack(params[:query])
@@ -59,7 +59,6 @@ class ActivitiesController < ApplicationController
   end
 
   def activity_params
-    params.require(:activity).permit(%i[address category city country description
-                                        end_date image name postcode state start_date])
+    params.require(:activity).permit(%i[address category city country description end_date image name postcode state start_date])
   end
 end

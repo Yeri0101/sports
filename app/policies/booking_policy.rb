@@ -2,7 +2,7 @@ class BookingPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       # scope.all
-      scope.where(user_id: user.id)
+      scope.where(user: user)
     end
   end
 
