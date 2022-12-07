@@ -12,29 +12,30 @@
   <div class="col-md-6">
     <div class="border-0 card mb-5 p-4 rounded-4 shadow-sm">
       <div class="card-body">
-        <h5 class="card-title mb-5"><%= @activity.name %></h5>
+        <div class="align-items-center d-flex justify-content-between mb-5">
+          <h5 class="card-title"><%= @activity.name %></h5>
+          <h6 class="card-subtitle"><%= pluralize @activity.reviews.size, "review" %></h6>
+        </div>
         <h6 class="card-subtitle mb-2">Description</h6>
         <p class="card-text text-secondary"><%= @activity.description %></p>
+
+        <% if policy(@booking).create? %>
+          <div class="mt-5">
+            <%= simple_form_for [@activity, @booking] do |f| %>
+              <%= f.button :submit, "Book now", class: "btn btn-green card-link px-4 py-2 shadow-sm" %>
+            <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <% if @activity.reviews.blank? %>
+<% if @activity.reviews.blank? %>
   <div class="my-5">
-    <h5 class="fs-5">Be the first user to leave a positive review about this activity</h5>
+    <h5 class="fs-5 mb-4">Be the first user to leave a review</h5>
+
+    <%= render "reviews/form", activity: @activity, review: @review %>
   </div>
 <% else %>
   <% @activity.reviews.each do |review| %>
@@ -42,4 +43,4 @@
   <% end %>
 <% end %>
 
-<%= render "reviews/form", activity: @activity, review: @review %> -->
+<div class="mb-5"></div>

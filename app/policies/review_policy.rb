@@ -5,10 +5,6 @@ class ReviewPolicy < ApplicationPolicy
     end
   end
 
-  def search?
-    true
-  end
-
   def create?
     is_participant = Booking.exists?(activity: review.activity, user: review.user)
     is_not_host = user != host
