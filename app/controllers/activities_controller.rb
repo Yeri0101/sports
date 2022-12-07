@@ -23,6 +23,8 @@ class ActivitiesController < ApplicationController
     @message = Message.new
 
     authorize @activity
+
+    @marker = { lat: @activity.latitude, lng: @activity.longitude } if @activity.geocoded?
   end
 
   def new
@@ -46,10 +48,8 @@ class ActivitiesController < ApplicationController
   def edit; end
 
   def update
-    @activity.update(activity_params)
-
     authorize @activity
-
+    @activity.update(activity_params)
     redirect_to @activity
   end
 

@@ -11,18 +11,17 @@ class Activity < ApplicationRecord
 
   validates :address, presence: true
   # validates :category, presence: true
-  validates :city, presence: true
-  validates :country, presence: true
   validates :description, presence: true
   validates :end_date, presence: true
   validates :name, presence: true, uniqueness: true
-  validates :postcode, presence: true
   validates :start_date, presence: true
-  validates :state, presence: true
 
   enum :category, %i[Badminton Basketball Bicycle Fitness Football Handball Running Swimming Tennis Yoga]
 
   def create_chatroom
     Chatroom.create(activity: self)
   end
+
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end

@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require "faker"
 
-User.destroy_all
+# User.destroy_all
 Activity.destroy_all
 Review.destroy_all
 
@@ -29,15 +29,12 @@ end
 
 6.times do
   Activity.create!(
-    address: Faker::Address.street_address,
-    city: Faker::Address.city,
-    country: Faker::Address.country,
+    address: Faker::Address.full_address,
+    # category: Faker::Number.between(from: 1, to: 10),
     description: Faker::Lorem.sentence(word_count: 10, supplemental: false),
     end_date: Faker::Date.in_date_period(year: 2022, month: 11),
     name: Faker::Lorem.sentence(word_count: 2, supplemental: false),
-    postcode: Faker::Address.postcode,
     start_date: Faker::Date.between(from: "2021-11-29", to: "2022-11-29"),
-    state: Faker::Address.state,
     user: User.all.sample
   )
 end
