@@ -6,3 +6,6 @@ import { application } from "./application"
 
 import FlatpickrController from "./flatpickr_controller"
 application.register("flatpickr", FlatpickrController)
+
+import MapController from "./map_controller"
+application.register("map", MapController)

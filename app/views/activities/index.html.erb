@@ -9,7 +9,7 @@
                           html: { class: "d-flex", method: :get },
                           data: { turbo: false } do |f| %>
 
-    <%= f.search_field :description_or_name_or_reviews_comment_i_cont_any,
+    <%= f.search_field :description_or_name_or_address_or_reviews_comment_i_cont_any,
                        class: "border-0 form-control me-3 shadow-sm",
                        placeholder: "Search for a keyword" %>
 
@@ -29,7 +29,7 @@
             <h6 class="card-subtitle"><%= pluralize activity.reviews.size, "review" %></h6>
           </div>
 
-          <h6 class="card-subtitle mb-4 text-secondary"><%= activity.city %>, <%= activity.country %></h6>
+          <h6 class="card-subtitle mb-5 text-secondary"><%= activity.address %></h6>
           <p class="card-text mb-5 text-secondary"><%= activity.description %></p>
 
           <div class="align-items-center d-flex justify-content-between">
