@@ -1,12 +1,13 @@
 class Activity < ApplicationRecord
+  belongs_to :user
   after_create :create_chatroom
-  has_one :chatroom
 
+  has_one :chatroom, dependent: :destroy
   has_one_attached :image
 
   has_many :bookings, dependent: :destroy
   has_many :reviews, dependent: :destroy
-  has_many :users
+  has_many :users, through: :bookings
 
   validates :address, presence: true
   # validates :category, presence: true
