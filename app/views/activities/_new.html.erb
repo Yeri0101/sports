@@ -13,7 +13,7 @@
   </div>
   <div class="col-md-6">
     <%= f.input :category,
-                as: :string,
+                as: :select,
                 collection: Activity.categories.keys,
                 input_html: { autocomplete: "integer", class: "border-0 mb-2 shadow-sm" },
                 required: true %>
@@ -31,7 +31,7 @@
   <div class="col-12">
     <%= f.input :image,
                 as: :file,
-                input_html: { autocomplete: "image", class: "border-0 mb-2 shadow-sm",  multiple: true },
+                input_html: { autocomplete: "image", class: "border-0 mb-2 shadow-sm" },
                 required: true %>
   </div>
   <div class="col-md-6">
