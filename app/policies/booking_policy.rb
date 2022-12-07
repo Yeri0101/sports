@@ -7,24 +7,28 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def create?
-    right_user = user == host || user == client
-
-    right_user
+    !host_user?
   end
 
   def destroy?
-    right_user = user == host || user == client
-
-    right_user
+    participant_user?
   end
 
   private
+
+  def host_user?
+    user == host
+  end
+
+  def participant_user?
+    user == host
+  end
 
   def host
     booking.activity.user
   end
 
-  def client
+  def participant
     booking.user
   end
 

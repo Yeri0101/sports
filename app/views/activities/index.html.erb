@@ -21,8 +21,12 @@
       <div class="border-0 card p-4 rounded-4 shadow-sm">
         <!-- <img src="https://admin.itsnicethat.com/images/6zm_wjypsiSE8tSUFVV2iPyl8_Q=/234779/format-webp%7Cwidth-2880/INT_SEXINDESIGN_INARISIROLA_HEADER_02.png" class="card-img-top img-fluid mb-4 rounded-4 shadow-sm" alt="..."> -->
         <div class="card-body">
-          <h5 class="card-title"><%= activity.name %></h5>
-          <h6 class="card-subtitle mb-3 text-secondary"><%= activity.city %>, <%= activity.country %></h6>
+          <div class="align-items-center d-flex justify-content-between">
+            <h5 class="card-title"><%= activity.name %></h5>
+            <h6 class="card-subtitle"><%= pluralize activity.reviews.size, "review" %></h6>
+          </div>
+
+          <h6 class="card-subtitle mb-4 text-secondary"><%= activity.city %>, <%= activity.country %></h6>
           <p class="card-text mb-5 text-secondary"><%= activity.description %></p>
           <div class="align-items-center d-flex justify-content-between">
             <%= link_to "View", activity_path(activity.id), class: "btn btn-green card-link px-4 py-2 shadow" %>
