@@ -2,16 +2,34 @@ class BookingPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       # scope.all
-      scope.where(user_id: user.id)
+      scope.where(user: user)
     end
   end
 
   def create?
-    true
+    right_user = user == host || user == client
+
+    right_user
   end
 
   def destroy?
-    record.user == user
+    right_user = user == host || user == client
+
+    right_user
+  end
+
+  private
+
+  def host
+    booking.activity.user
+  end
+
+  def client
+    booking.user
+  end
+
+  def booking
+    @booking ||= record
   end
 
   def show?

@@ -1,24 +1,23 @@
 Rails.application.routes.draw do
+  root to: "pages#home"
+
   devise_for :users
 
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :activities do
-    resources :bookings, only: %i[create index new]
-    resources :reviews, only: %i[create index new]
-    resources :users
+    resources :bookings, only: %i[create]
+    resources :reviews, only: %i[create index]
     resources :chatrooms
 
     collection do
-      match 'search' => 'activities#search', via: %i[get post], as: :search
+      get :me
     end
   end
 
-  resources :bookings, only: %i[destroy index edit show update]
-  resources :reviews, only: %i[destroy edit show update]
+  resources :bookings, only: %i[destroy index]
+
+  resources :reviews, only: %i[destroy edit update]
+
   resources :chatrooms, only: [:show] do
     resources :messages, only: [:create]
   end
-  # Defines the root path route ("/")
-  # root "articles#index"
-  root to: "pages#home"
 end

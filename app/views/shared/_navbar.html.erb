@@ -1,30 +1,36 @@
-<nav class="d-flex justify-content-between navbar navbar-expand-lg pt-5 sticky-top">
-  <div class="container">
-    <%= link_to "/", class: "fs-1 navbar-brand" do %>
+<nav class="navbar navbar-expand-lg py-5">
+  <div class="align-items-center container d-flex justify-content-between">
+    <%= link_to "/", class: "fs-2 navbar-brand" do %>
       Sports & Social
     <% end %>
-    <ul class="gap-4 mb-lg-0 navbar-nav">
-      <% if user_signed_in? %>
-        <li class="nav-item">
-          <%= link_to "Activities", activities_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Bookings", bookings_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Sign out", destroy_user_session_path, data: {turbo_method: :delete}, class: "border border-3 btn btn-outline-dark" %>
-        </li>
-        <!-- <li class="dropdown nav-item">
-          <%= image_tag "https://avatar.vercel.sh/rauchg.svg/", class: "dropdown-toggle img-fluid rounded-circle w-25", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, "aria-haspopup": true, "aria-expanded": false %>
-          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <li><%= link_to "Sign out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %></li>
-          </ul>
-        </li> -->
-      <% else %>
-        <li class="nav-item">
-          <%= link_to "Log in", new_user_session_path, class: "border border-3 btn btn-outline-dark" %>
-        </li>
-      <% end %>
-    </ul>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse flex-grow-0 navbar-collapse" id="navbarSupportedContent">
+      <ul class="gap-4 mb-lg-0 navbar-nav">
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to "Discover", activities_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "My activities", me_activities_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "My bookings", bookings_path, class: "nav-link" %>
+          </li>
+          <li class="align-items-center d-flex dropdown nav-item">
+            <%= image_tag "https://avatar.vercel.sh/rauchg.svg/", class: "dropdown-toggle img-fluid rounded-circle", height: "30px", width: "30px", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, "aria-haspopup": true, "aria-expanded": false %>
+            <ul class="border-0 dropdown-menu shadow-sm">
+              <li><%= link_to "Edit my profile", edit_user_registration_path, class: "dropdown-item" %></li>
+              <li><%= link_to "Sign out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %></li>
+            </ul>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Log in", new_user_session_path, class: "btn btn-light px-4 py-2 rounded-5 shadow-sm" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </nav>

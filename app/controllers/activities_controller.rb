@@ -1,21 +1,24 @@
 class ActivitiesController < ApplicationController
   before_action :set_activity, only: %i[destroy edit show update]
 
-  def search
-    index
+  def index
+    @activities = policy_scope(Activity)
 
-    render :index
+    @q = @activities.ransack(params[:query])
+    @activities = @q.result(distinct: true)
   end
 
-  def index
-    @q = Activity.ransack(params[:query])
+  def me
+    @activities = policy_scope(Activity).where(user: current_user)
+
+    @q = @activities.ransack(params[:query])
     @activities = @q.result(distinct: true)
 
-    @activities = policy_scope(Activity)
+    authorize @activities
   end
 
   def show
-    @review = Review.new
+    @review = Review.new(activity: @activity, user: current_user)
     @booking = Booking.new
     @message = Message.new
 
@@ -67,6 +70,6 @@ class ActivitiesController < ApplicationController
   end
 
   def activity_params
-    params.require(:activity).permit(%i[address category description end_date image name start_date])
+    params.require(:activity).permit(%i[address category city country description end_date image name postcode state start_date])
   end
 end

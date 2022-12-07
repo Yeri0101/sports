@@ -6,9 +6,10 @@ class User < ApplicationRecord
   after_create_commit { broadcast_append_to 'users' }
   after_update_commit { broadcast_update }
   has_one_attached :avatar
-  has_many :activities
-  has_many :bookings
-  has_many :messages
+  has_many :activities, dependent: :destroy
+  has_many :bookings, dependent: :destroy
+  has_many :reviews, dependent: :destroy
+  has_many :messages, dependent: :destroy
   belongs_to :chatroom
   validates :address, presence: true
   validates :city, presence: true
@@ -59,4 +60,20 @@ class User < ApplicationRecord
       content_type: 'image/png'
     )
   end
+
+  has_one_attached :avatar
+
+  has_many :activities, dependent: :destroy
+  has_many :bookings, dependent: :destroy
+  has_many :reviews, dependent: :destroy
+
+  validates :address, presence: true
+  validates :city, presence: true
+  validates :country, presence: true
+  validates :country_code, presence: false
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :phone_number, presence: false
+  validates :postcode, presence: true
+  validates :state, presence: true
 end
