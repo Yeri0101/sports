@@ -22,9 +22,7 @@ class ActivityPolicy < ApplicationPolicy
   end
 
   def destroy?
-    right_user = user == host || user == client
-
-    right_user
+    user == host || user == client
   end
 
   private

@@ -4,8 +4,8 @@
 
 import { application } from "./application"
 
-import UpdateReviewController from "./update_review_controller"
-application.register("update-review", UpdateReviewController)
-
 import FlatpickrController from "./flatpickr_controller"
 application.register("flatpickr", FlatpickrController)
+
+import MapController from "./map_controller"
+application.register("map", MapController)
