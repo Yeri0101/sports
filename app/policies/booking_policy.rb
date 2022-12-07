@@ -2,7 +2,7 @@ class BookingPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       # scope.all
-      scope.where(user: user)
+      scope.where(user:)
     end
   end
 
@@ -21,7 +21,7 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def participant_user?
-    user == host
+    user == participant
   end
 
   def host

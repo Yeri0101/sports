@@ -23,9 +23,9 @@ class ReviewsController < ApplicationController
   def update
     @review = Review.find(params[:id])
 
-    @review.update(review_params)
-
     authorize @review
+
+    @review.update(review_params)
 
     respond_to do |format|
       format.html { redirect_to @review.activity }
@@ -36,9 +36,9 @@ class ReviewsController < ApplicationController
   def destroy
     @review = Review.find(params[:id])
 
-    @review.destroy
-
     authorize @review
+
+    @review.destroy
 
     redirect_to activity_path(@review.activity), status: :see_other
   end

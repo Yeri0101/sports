@@ -22,6 +22,8 @@ class ActivitiesController < ApplicationController
     @booking = Booking.new(activity: @activity, user: current_user)
 
     authorize @activity
+
+    @marker = { lat: @activity.latitude, lng: @activity.longitude } if @activity.geocoded?
   end
 
   def new

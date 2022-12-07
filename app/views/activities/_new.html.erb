@@ -14,7 +14,7 @@
   </div>
   <div class="col-md-6">
     <%= f.input :category,
-                as: :string,
+                as: :select,
                 collection: Activity.categories.keys,
                 input_html: { autocomplete: "integer", class: "border-0 mb-2 shadow-sm" },
                 required: true %>
@@ -34,6 +34,7 @@
                 as: :string,
                 input_html: { autocomplete: "datetime", class: "border-0 mb-2 shadow-sm" },
                 label: "Start date and time",
+                placeholder: "09.12.2022",
                 # input_html: { class: "border-0 mb-2 shadow-sm", data: { controller: "flatpickr" } },
                 required: true %>
   </div>
@@ -48,39 +49,8 @@
   <div class="col-12">
     <%= f.input :address,
                 as: :string,
-                hint: "Automatically completed",
                 input_html: { autocomplete: "address-line1", class: "border-0 mb-2 shadow-sm" },
-                placeholder: "Rue de Lausanne 64",
-                required: true %>
-  </div>
-  <div class="col-md-4">
-    <%= f.input :country,
-                as: :string,
-                input_html: { autocomplete: "country", class: "border-0 mb-2 shadow-sm" },
-                placeholder: "Switzerland",
-                required: true %>
-  </div>
-  <div class="col-md-4">
-    <%= f.input :city,
-                as: :string,
-                input_html: { autocomplete: "address-level2", class: "border-0 mb-2 shadow-sm" },
-                placeholder: "Renens",
-                required: true %>
-  </div>
-  <div class="col-md-2">
-    <%= f.input :state,
-                as: :string,
-                input_html: { autocomplete: "address-level1", class: "border-0 mb-2 shadow-sm" },
-                label: "State / Province / Region",
-                placeholder: "Canton de Vaud",
-                required: true %>
-  </div>
-  <div class="col-md-2">
-    <%= f.input :postcode,
-                as: :string,
-                input_html: { autocomplete: "postal-code", class: "border-0 mb-2 shadow-sm" },
-                label: "Postal code",
-                placeholder: "1020",
+                placeholder: "Rue de Lausanne 64, 1020 Renens, Switzerland",
                 required: true %>
   </div>
 

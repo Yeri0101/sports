@@ -1,26 +1,3 @@
-<!-- <div class="border-0 card mb-3 p-4 rounded-4 shadow-sm">
-  <div class="card-body">
-    <div class="align-items-center d-flex justify-content-between">
-      <p data-update-review-target="comment" class="<%= "d-none" if review.errors.any? %>">
-
-        <%= review.comment %>
-
-        <%= link_to "Edit", "#", class: "btn btn-green card-link px-4 py-2 shadow",
-                                 data: {action: "update-review#revealForm"} %>
-        <%= link_to "Delete", review_path(review), class: "btn btn-light card-link px-4 py-2 shadow",
-                                                   data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this comment?"} %>
-      </p>
-    </div>
-    <div data-controller="update-review" data-update-review-target="commentInfo" >
-      <%= simple_form_for review, html: { class:review.errors.any? ? "" : "d-none", data: { update_review_target: "form", action: "submit->update-review#update" } } do |f| %>
-
-        <%= f.input :comment %>
-        <%= f.submit %>
-      <% end %>
-    </div>
-  </div>
-</div> -->
-
 <div class="border-0 card mb-3 p-4 rounded-4 shadow-sm">
   <div class="card-body">
     <div class="align-items-center d-flex justify-content-between">
