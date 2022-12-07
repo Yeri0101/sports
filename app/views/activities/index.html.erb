@@ -1,9 +1,8 @@
 <div class="col-md-7">
   <div class="mb-5">
-    <h2 class="fs-2">Let yourself be fully guided</h2>
+    <h2 class="fs-2">Let yourself be guided and enjoy discovering all the activities in which you could participate</h2>
   </div>
 </div>
-
 <div class="align-items-center d-flex justify-content-start mb-5">
   <%= search_form_for @q, url: activities_path,
                           html: { class: "d-flex", method: :get },
@@ -12,12 +11,10 @@
     <%= f.search_field :description_or_name_or_address_or_reviews_comment_i_cont_any,
                        class: "border-0 form-control me-3 shadow-sm",
                        placeholder: "Search for a keyword" %>
-
     <%= f.submit class: "btn btn-light px-4 py-2 shadow",
                  placeholder: "Search" %>
   <% end %>
 </div>
-
 <div class="g-5 row">
   <% @activities.each do |activity| %>
     <div class="col-md-6">
@@ -31,7 +28,6 @@
 
           <h6 class="card-subtitle mb-5 text-secondary"><%= activity.address %></h6>
           <p class="card-text mb-5 text-secondary"><%= activity.description %></p>
-
           <div class="align-items-center d-flex justify-content-between">
             <%= link_to "View", activity_path(activity.id), class: "btn btn-green card-link px-4 py-2 shadow" %>
           </div>
@@ -40,5 +36,4 @@
     </div>
   <% end %>
 </div>
-
 <div class="mb-5"></div>

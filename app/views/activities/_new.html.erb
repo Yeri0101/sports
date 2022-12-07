@@ -3,7 +3,6 @@
     <h2 class="fs-2">We invite you to come and discover with us a whole new way of sharing your sports sessions</h2>
   </div>
 </div>
-
 <%= simple_form_for @activity, html: { class: "g-3 row"} do |f| %>
   <div class="col-md-6">
     <%= f.input :name,
@@ -21,13 +20,19 @@
   </div>
   <div class="col-12">
     <!-- <div data-controller="character-counter"> -->
-      <%= f.input :description,
+    <%= f.input :description,
                   as: :string,
                   input_html: { autocomplete: "string", class: "border-0 shadow-sm" },
                   # input_html: { autocomplete: "description", class: "border-0 shadow-sm", data: { character_counter_target: "input" } },
                   required: true %>
-      <!-- <small class="form-text">Description is currently <small data-character-counter-target="counter"></small> characters long</small> -->
+    <!-- <small class="form-text">Description is currently <small data-character-counter-target="counter"></small> characters long</small> -->
     <!-- </div> -->
+  </div>
+  <div class="col-12">
+    <%= f.input :image,
+                as: :file,
+                input_html: { autocomplete: "image", class: "border-0 mb-2 shadow-sm" },
+                required: true %>
   </div>
   <div class="col-md-6">
     <%= f.input :start_date,
@@ -53,10 +58,8 @@
                 placeholder: "Rue de Lausanne 64, 1020 Renens, Switzerland",
                 required: true %>
   </div>
-
   <div class="col-md-6 d-flex d-md-flex gap-4 mb-5">
     <%= f.button :submit, "Create an activity", class: "btn btn-green px-4 py-2 shadow" %>
-
     <%= link_to "Cancel", me_activities_path, class: "btn btn-light px-4 py-2 shadow" %>
   </div>
 <% end %>
