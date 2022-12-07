@@ -6,9 +6,6 @@
     <%= link_to "Update", edit_activity_path(@activity.id), class: "btn btn-light px-4 py-2 shadow" %>
   <% end %>
 </div>
-<% @activity.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
 <div class="row">
   <div class="col-md-6">
     <div class="border-0 card mb-5 p-4 rounded-4 shadow-sm">
@@ -19,7 +16,6 @@
         </div>
         <h6 class="card-subtitle mb-2">Description</h6>
         <p class="card-text text-secondary"><%= @activity.description %></p>
-
         <% if policy(@booking).create? %>
           <div class="mt-5">
             <%= simple_form_for [@activity, @booking] do |f| %>
@@ -31,11 +27,9 @@
     </div>
   </div>
 </div>
-
 <% if @activity.reviews.blank? %>
   <div class="my-5">
     <h5 class="fs-5 mb-4">Be the first user to leave a review</h5>
-
     <%= render "reviews/form", activity: @activity, review: @review %>
   </div>
 <% else %>
@@ -43,5 +37,4 @@
     <%= render "activities/activity_reviews", review: review %>
   <% end %>
 <% end %>
-
 <div class="mb-5"></div>
