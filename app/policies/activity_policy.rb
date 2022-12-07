@@ -18,6 +18,7 @@ class ActivityPolicy < ApplicationPolicy
   end
 
   def update?
+    activity.user == user
   end
 
   def destroy?

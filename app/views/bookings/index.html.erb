@@ -1,20 +1,33 @@
 <div class="col-md-7">
   <div class="mb-5">
-    <h2 class="fs-2">We invite you to come and discover with us a whole new way of sharing your sports sessions</h2>
+    <h2 class="fs-2">Fully manage your entire organization</h2>
   </div>
 </div>
-<% @bookings.each do |booking| %>
-  <div class="border-0 card mb-2 p-4 rounded-4">
-    <div class="card-body">
-      <div class="align-items-center d-flex justify-content-between">
-        <h5 class="card-title"><%= booking.activity.name %></h5>
-        <p class="card-text mb-0 text-secondary"><%= booking.activity.description %></p>
-        <div class="d-flex gap-3 d-md-flex">
-          <%= link_to "View", booking_path(booking.id), class: "btn btn-green px-4 py-2 shadow-sm" %>
-          <%= link_to "Cancel", booking_path(booking.id), class: "btn btn-light px-4 py-2 shadow-sm",
-                                                          data: {turbo_method: :delete, turbo_confirm: "Would you like to continue?"} %>
+<% if @bookings.blank? %>
+  <div class="col-md-6">
+    <div class="border-0 card p-4 rounded-4 shadow-sm">
+      <div class="card-body">
+        <div class="align-items-center d-flex justify-content-between">
+          <h5 class="card-title">Come back later</h5>
+          <%= link_to "Discover", activities_path, class: "btn btn-green card-link px-4 py-2 shadow" %>
         </div>
       </div>
     </div>
   </div>
+<% else %>
+  <% @bookings.each do |booking| %>
+    <div class="border-0 card mb-2 p-4 rounded-4">
+      <div class="card-body">
+        <div class="align-items-center d-flex justify-content-between">
+          <h5 class="card-title"><%= booking.activity.name %></h5>
+          <p class="card-text mb-0 text-secondary"><%= booking.activity.description %></p>
+          <div class="d-flex gap-3 d-md-flex">
+            <%= link_to "View", activity_path(booking.activity), class: "btn btn-green px-4 py-2 shadow-sm" %>
+            <%= link_to "Cancel", booking_path(booking.id), class: "btn btn-light px-4 py-2 shadow-sm",
+                                                            data: {turbo_method: :delete, turbo_confirm: "Would you like to continue?"} %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
 <% end %>
