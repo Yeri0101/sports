@@ -21,7 +21,7 @@
       <div class="card-body">
         <div class="align-items-center d-flex justify-content-between">
           <h5 class="card-title"><%= booking.activity.name %></h5>
-          <p class="card-text mb-0 text-secondary"><%= booking.activity.description %></p>
+          <p class="card-text mb-0 text-secondary"><%= booking.activity.address %></p>
           <div class="d-flex gap-3 d-md-flex">
             <%= link_to "View", activity_path(booking.activity), class: "btn btn-green px-4 py-2 shadow-sm" %>
             <%= link_to "Cancel", booking_path(booking.id), class: "btn btn-light px-4 py-2 shadow-sm",

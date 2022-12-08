@@ -1,15 +1,14 @@
-<div class="border-0 card mb-4 p-4 rounded-4 shadow-sm" data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%= activity.chatroom.id %>">
-  <div class="card-body" data-chatroom-subscription-target="messages">
+<div data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%= activity.chatroom.id %>">
+  <div data-chatroom-subscription-target="messages">
     <% chatroom.messages.each do |message| %>
       <%= render "messages/message", message: message %>
     <% end %>
 
-    <%= simple_form_for [chatroom, message], remote: true, html: { data: { action:"turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex align-items-center gap-5" } do |f|%>
+    <%= simple_form_for [chatroom, message], remote: true, html: { data: { action:"turbo:submit-end->chatroom-subscription#resetForm" } } do |f|%>
       <%= f.input :content,
-                  input_html: { autocomplete: "string", class: "border-0 h-100 p-4 rounded-4 shadow"},
+                  input_html: { autocomplete: "string", class: "border-0 h-100 mb-5 p-5 rounded-4 shadow-sm"},
                   label: false,
-                  placeholder: "Send a message to other users",
-                  wrapper_html: { class: "flex-grow-1 h-100", style: "margin-bottom: 0 !important" } %>
+                  placeholder: "Send a message to other participants" %>
 
       <%= f.submit "Send", class: "btn btn-green px-4 py-2 shadow" %>
     <% end %>
