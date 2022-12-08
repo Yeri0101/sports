@@ -11,7 +11,7 @@ class MessegesPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    Booking.exists?(activity: message.activity, user: message.user)
   end
 
   def update?

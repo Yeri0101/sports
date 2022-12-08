@@ -1,14 +1,13 @@
 <%= simple_form_for([ activity, review ], html: { class: "g-3"}) do |f| %>
-  <div data-controller="character-counter">
-    <div class="col-12">
-      <%= f.input :comment,
+  <%# <div data-controller="character-counter"> %>
+  <div class="col-12">
+    <%= f.input :comment,
                   as: :string,
                   autofocus: false,
                   input_html: { class: "border-0 mb-5 p-5 rounded-4 shadow-sm", data: { character_counter_target: "input" } },
                   label: false,
                   required: false %>
-
-      <%= f.button :submit, "Comment", class: "btn btn-green card-link px-4 py-2 shadow" %>
-    </div>
+    <%= f.button :submit, "Comment", class: "btn btn-green card-link px-4 py-2 shadow" %>
   </div>
+  <%# </div> %>
 <% end %>

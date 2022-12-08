@@ -42,6 +42,7 @@
     </div>
   </div>
 </div>
+<%= render "chatrooms/chatroom", activity: @activity, chatroom: @activity.chatroom, message: @message %>
 <% if @activity.reviews.blank? %>
   <h4 class="fs-4 mb-5">Comments area</h4>
   <h5 class="fs-5 mb-4">Be the first user to leave a review</h5>
