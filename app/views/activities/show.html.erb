@@ -16,16 +16,18 @@
 <div class="row">
   <div class="col-md-6">
     <div class="border-0 card mb-5 p-4 rounded-4 shadow-sm">
-      <%= cl_image_tag @activity.image.key.to_s, class: "card-img-top img-fluid mb-2 rounded-4 shadow-sm", alt: "", crop: :fill %>
+      <% if @activity.image.attached? %>
+        <%= cl_image_tag @activity.image.key, class: "card-img-top img-fluid mb-4 rounded-4 shadow-sm" %>
+      <% else %>
+        <% false %>
+      <% end %>
       <div class="card-body">
         <div class="align-items-center d-flex justify-content-between">
           <h5 class="card-title"><%= @activity.name %></h5>
           <h6 class="card-subtitle"><%= pluralize @activity.reviews.size, "review" %></h6>
         </div>
-
         <h6 class="card-subtitle mb-5 text-secondary"><%= @activity.address %></h6>
         <p class="card-text mb-5 text-secondary"><%= @activity.description %></p>
-
         <% if policy(@booking).create? %>
           <div class="mt-5">
             <%= simple_form_for [@activity, @booking] do |f| %>
@@ -36,7 +38,6 @@
       </div>
     </div>
   </div>
-
   <div class="col-md-6">
     <div class="border-0 card mb-5 p-4 rounded-4 shadow-sm">
       <div class="card-body">
