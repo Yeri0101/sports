@@ -7,6 +7,7 @@
   <div class="col-md-4">
     <%= f.input :first_name,
                 as: :string,
+                autofocus: true,
                 input_html: { autocomplete: "string", class: "border-0 mb-2 shadow-sm" },
                 placeholder: "Maximilien",
                 required: true %>
@@ -21,7 +22,6 @@
   <div class="col-md-2">
     <%= f.input :country_code,
                 as: :string,
-                autofocus: true,
                 input_html: { autocomplete: "tel", class: "border-0 mb-2 shadow-sm" },
                 placeholder: "+41",
                 required: false %>
@@ -29,14 +29,12 @@
   <div class="col-md-2">
     <%= f.input :phone_number,
                 as: :string,
-                autofocus: true,
                 input_html: { autocomplete: "tel", class: "border-0 mb-2 shadow-sm" },
                 placeholder: "76 000 00 00",
                 required: false %>
   </div>
   <div class="col-12">
     <%= f.input :email,
-                autofocus: true,
                 input_html: { autocomplete: "email", class: "border-0 mb-2 shadow-sm" },
                 label: "E-mail address",
                 placeholder: "maximilien.lanz@lewagon.com",
@@ -57,8 +55,8 @@
   <div class="col-12">
     <%= f.input :avatar,
                 as: :file,
-                input_html: { autocomplete: "avatar", class: "border-0 mb-2 shadow-sm" },
-                required: true %>
+                input_html: { autocomplete: "file", class: "border-0 mb-2 shadow-sm" },
+                required: false %>
   </div>
   <div class="col-12">
     <%= f.input :address,

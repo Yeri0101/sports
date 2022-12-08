@@ -1,3 +1,9 @@
+<div class="col-md-7">
+  <div class="mb-5">
+    <h2 class="fs-2">About this activity</h2>
+  </div>
+</div>
+
 <div class="align-items-center d-flex justify-content-between mb-5">
   <div class="d-grid d-md-flex">
     <%= link_to "Back", activities_path, class: "btn btn-light px-4 py-2 shadow" %>
@@ -6,6 +12,7 @@
     <%= link_to "Update", edit_activity_path(@activity.id), class: "btn btn-light px-4 py-2 shadow" %>
   <% end %>
 </div>
+
 <div class="row">
   <div class="col-md-6">
     <div class="border-0 card mb-5 p-4 rounded-4 shadow-sm">
@@ -46,17 +53,28 @@
     </div>
   </div>
 </div>
+
 <% if @activity.reviews.blank? %>
-  <h4 class="fs-4 mb-5">Comments area</h4>
-  <h5 class="fs-5 mb-4">Be the first user to leave a review</h5>
-  <%= render "reviews/form", activity: @activity, review: @review %>
-</div>
+  <div>
+    <h4 class="fs-4 mb-5">Comments area</h4>
+    <h5 class="fs-5 mb-3">Be the first user to leave a review</h5>
+
+    <%= render "reviews/form", activity: @activity, review: @review %>
+  </div>
 <% else %>
   <div class="mb-5">
-    <h4 class="fs-4">Comments area</h4>
+    <h5 class="fs-5 mb-3">Leave a review</h5>
+
+    <%= render "reviews/form", activity: @activity, review: @review %>
   </div>
+
+  <div class="mb-5">
+    <h2 class="fs-2">Comments area</h2>
+  </div>
+
   <% @activity.reviews.each do |review| %>
     <%= render "activities/activity_reviews", review: review %>
   <% end %>
 <% end %>
+
 <div class="mb-5"></div>

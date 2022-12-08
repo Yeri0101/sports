@@ -9,6 +9,7 @@ class ReviewPolicy < ApplicationPolicy
     is_participant = Booking.exists?(activity: review.activity, user: review.user)
 
     is_not_host = user != host
+
     is_participant && is_not_host
   end
 
