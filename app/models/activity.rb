@@ -1,4 +1,9 @@
 class Activity < ApplicationRecord
+  enum :category, %i[Badminton Basketball Bicycle Fitness Football Handball Running Swimming Tennis Yoga]
+
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
   belongs_to :user
 
   has_one_attached :image
@@ -13,9 +18,4 @@ class Activity < ApplicationRecord
   validates :end_date, presence: true
   validates :name, presence: true, uniqueness: true
   validates :start_date, presence: true
-
-  enum :category, %i[Badminton Basketball Bicycle Fitness Football Handball Running Swimming Tennis Yoga]
-
-  geocoded_by :address
-  after_validation :geocode, if: :will_save_change_to_address?
 end
