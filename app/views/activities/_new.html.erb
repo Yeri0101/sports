@@ -20,14 +20,13 @@
                 required: true %>
   </div>
   <div class="col-12">
-    <!-- <div data-controller="character-counter"> -->
-    <%= f.input :description,
-                  as: :string,
-                  input_html: { autocomplete: "string", class: "border-0 shadow-sm" },
-                  # input_html: { autocomplete: "string", class: "border-0 shadow-sm", data: { character_counter_target: "input" } },
+    <div data-controller="character-counter">
+      <%= f.input :description,
+                  as: :text,
+                  input_html: { autocomplete: "string", class: "border-0 shadow-sm", rows: 5, data: { character_counter_target: "input" } },
                   required: true %>
-    <!-- <small class="form-text">Description is currently <small data-character-counter-target="counter"></small> characters long</small> -->
-    <!-- </div> -->
+      <small class="form-text">Your description is currently <small data-character-counter-target="counter"></small> characters long</small>
+    </div>
   </div>
   <div class="col-12">
     <%= f.input :image,

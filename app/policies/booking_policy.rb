@@ -7,7 +7,7 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def create?
-    !host_user?
+    !host_user? && !Booking.exists?(activity: booking.activity, user:)
   end
 
   def destroy?

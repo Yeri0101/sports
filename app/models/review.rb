@@ -3,5 +3,5 @@ class Review < ApplicationRecord
   belongs_to :user
 
   validates :comment, presence: true
-  validates :comment, length: { minimum: 10 }
+  validates :comment, length: { maximum: 1000, minimum: 10 }
 end
