@@ -20,14 +20,13 @@
                 required: true %>
   </div>
   <div class="col-12">
-    <!-- <div data-controller="character-counter"> -->
-    <%= f.input :description,
-                  as: :string,
-                  input_html: { autocomplete: "string", class: "border-0 shadow-sm" },
-                  # input_html: { autocomplete: "string", class: "border-0 shadow-sm", data: { character_counter_target: "input" } },
+    <div data-controller="character-counter">
+      <%= f.input :description,
+                  as: :text,
+                  input_html: { autocomplete: "string", class: "border-0 shadow-sm", rows: 5, data: { character_counter_target: "input" } },
                   required: true %>
-    <!-- <small class="form-text">Description is currently <small data-character-counter-target="counter"></small> characters long</small> -->
-    <!-- </div> -->
+      <small class="form-text">Your description is currently <small data-character-counter-target="counter"></small> characters long</small>
+    </div>
   </div>
   <div class="col-12">
     <%= f.input :image,
@@ -63,6 +62,7 @@
 
   <div class="col-md-6 d-flex d-md-flex gap-4 mb-5">
     <%= f.button :submit, "Create an activity", class: "btn btn-green px-4 py-2 shadow" %>
+
     <%= link_to "Cancel", me_activities_path, class: "btn btn-light px-4 py-2 shadow" %>
   </div>
 <% end %>

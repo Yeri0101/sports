@@ -107,12 +107,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_07_155227) do
     t.text "first_name"
     t.text "last_name"
     t.text "phone_number"
-    t.string "nickname"
     t.text "city"
     t.text "country"
     t.integer "postcode"
     t.text "state"
     t.text "country_code"
+    t.text "nickname"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -5,8 +5,10 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <title>Sports</title>
+
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css" rel="stylesheet">
+
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js"></script>
     <script id="search-js" defer src="https://api.mapbox.com/search-js/v1.0.0-beta.14/web.js"></script>
@@ -23,15 +25,17 @@
         });
       };
     </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   </head>
   <body class="bg-light">
     <%= render "shared/navbar" %>
+
     <div class="container">
       <%= yield %>
+
       <%= render "shared/flashes" %>
     </div>
-    <%= render "shared/footer" %>
   </body>
 </html>

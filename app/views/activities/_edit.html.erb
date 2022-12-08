@@ -59,39 +59,10 @@
                 placeholder: "Rue de Lausanne 64",
                 required: true %>
   </div>
-  <div class="col-md-4">
-    <%= f.input :country,
-                as: :string,
-                input_html: { autocomplete: "country", class: "border-0 mb-2 shadow-sm" },
-                placeholder: "Switzerland",
-                required: true %>
-  </div>
-  <div class="col-md-4">
-    <%= f.input :city,
-                as: :string,
-                input_html: { autocomplete: "address-level2", class: "border-0 mb-2 shadow-sm" },
-                placeholder: "Renens",
-                required: true %>
-  </div>
-  <div class="col-md-2">
-    <%= f.input :state,
-                as: :string,
-                input_html: { autocomplete: "address-level1", class: "border-0 mb-2 shadow-sm" },
-                label: "State / Province / Region",
-                placeholder: "Vaud",
-                required: true %>
-  </div>
-  <div class="col-md-2">
-    <%= f.input :postcode,
-                as: :string,
-                input_html: { autocomplete: "postal-code", class: "border-0 mb-2 shadow-sm" },
-                label: "Postal code",
-                placeholder: "1020",
-                required: true %>
-  </div>
 
   <div class="col-md-6 d-flex d-md-flex gap-4 mb-5">
     <%= f.button :submit, "Update", class: "btn btn-green px-4 py-2 shadow" %>
+
     <%= link_to "Cancel", activity_path, class: "btn btn-light px-4 py-2 shadow" %>
   </div>
 <% end %>

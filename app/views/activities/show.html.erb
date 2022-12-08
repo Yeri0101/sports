@@ -9,7 +9,7 @@
     <%= link_to "Back", activities_path, class: "btn btn-light px-4 py-2 shadow" %>
   </div>
   <% if policy(@activity).edit? %>
-    <%= link_to "Update", edit_activity_path(@activity.id), class: "btn btn-light px-4 py-2 shadow" %>
+    <%= link_to "Update", edit_activity_path(@activity.id), class: "btn btn-green px-4 py-2 shadow" %>
   <% end %>
 </div>
 
@@ -38,11 +38,12 @@
       </div>
     </div>
   </div>
+
   <div class="col-md-6">
     <div class="border-0 card mb-5 p-4 rounded-4 shadow-sm">
       <div class="card-body">
         <% if @marker %>
-          <div style="width: 100%; height: 594px;" data-controller="map"
+          <div style="width: 100%; height: 578px;" data-controller="map"
                                                    data-map-marker-value="<%= @marker.to_json %>"
                                                    data-map-api-key-value="<%= ENV["MAPBOX_ACCESS_TOKEN"] %>">
           </div>
@@ -54,34 +55,37 @@
   </div>
 </div>
 
-<%= render "chatrooms/chatroom", activity: @activity, chatroom: @activity.chatroom, message: @message %>
-
-<% if @activity.reviews.blank? %>
-  <h4 class="fs-4 mb-5">Comments area</h4>
-  <h5 class="fs-5 mb-4">Be the first user to leave a review</h5>
-  <%= render "reviews/form", activity: @activity, review: @review %>
-</div>
-
-<% if @activity.reviews.blank? %>
-  <div>
-    <h4 class="fs-4 mb-5">Comments area</h4>
-    <h5 class="fs-5 mb-3">Be the first user to leave a review</h5>
-
-    <%= render "reviews/form", activity: @activity, review: @review %>
-  </div>
-<% else %>
+<div class="col-12">
   <div class="mb-5">
-    <h5 class="fs-5 mb-3">Leave a review</h5>
+    <h2 class="fs-2 mb-5">Discussion area</h2>
+    <h5 class="fs-5 mb-3">Discuss with others</h5>
 
-    <%= render "reviews/form", activity: @activity, review: @review %>
+    <%= render "chatrooms/chatroom", activity: @activity, chatroom: @activity.chatroom, message: @message %>
   </div>
 
-  <div class="mb-5">
-    <h2 class="fs-2">Comments area</h2>
-  </div>
-  <% @activity.reviews.each do |review| %>
-    <%= render "activities/activity_reviews", review: review %>
+  <% if @activity.reviews.blank? %>
+    <section>
+      <h4 class="fs-4 mb-5">Reviews area</h4>
+      <h5 class="fs-5 mb-3">Be the first user to leave a review</h5>
+
+      <%= render "reviews/form", activity: @activity, review: @review %>
+    </section>
+  <% else %>
+    <div class="mb-5">
+      <h2 class="fs-2 mb-5">Reviews area</h2>
+      <h5 class="fs-5 mb-3">Leave a review</h5>
+
+      <%= render "reviews/form", activity: @activity, review: @review %>
+    </div>
+
+    <div class="mb-3">
+      <h5 class="fs-5">All reviews</h5>
+    </div>
+
+    <% @activity.reviews.each do |review| %>
+      <%= render "activities/activity_reviews", review: review %>
+    <% end %>
   <% end %>
-<% end %>
+</div>
 
 <div class="mb-5"></div>

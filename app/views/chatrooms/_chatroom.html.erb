@@ -1,12 +1,17 @@
-<div class="container chatroom" data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%= activity.chatroom.id %>">
-  <p> <%= chatroom.activity.name %></p>
-  <div class="messages" data-chatroom-subscription-target="messages">
+<div class="border-0 card mb-4 p-4 rounded-4 shadow-sm" data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%= activity.chatroom.id %>">
+  <div class="card-body" data-chatroom-subscription-target="messages">
     <% chatroom.messages.each do |message| %>
       <%= render "messages/message", message: message %>
     <% end %>
+
+    <%= simple_form_for [chatroom, message], remote: true, html: { data: { action:"turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex align-items-center gap-5" } do |f|%>
+      <%= f.input :content,
+                  input_html: { autocomplete: "string", class: "border-0 h-100 p-4 rounded-4 shadow"},
+                  label: false,
+                  placeholder: "Send a message to other users",
+                  wrapper_html: { class: "flex-grow-1 h-100", style: "margin-bottom: 0 !important" } %>
+
+      <%= f.submit "Send", class: "btn btn-green px-4 py-2 shadow" %>
+    <% end %>
   </div>
-  <%= simple_form_for [chatroom, message], remote: true, html: { data: { action:"turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f|%>
-    <%= f.input :content,label: false,placeholder: "Message #{chatroom.activity.name}",wrapper_html: {class: "flex-grow-1"}%>
-    <%= f.submit "Send", class: "btn btn-primary mb-3" %>
-  <% end %>
 </div>

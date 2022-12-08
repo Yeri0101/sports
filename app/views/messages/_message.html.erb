@@ -1,7 +1,10 @@
 <div id="message-<%= message.id %>">
-  <small>
-    <strong><%= message.user.first_name %></strong>
-    <i class="time"><%= time_ago_in_words(message.created_at) %>ago</i>
-  </small>
-  <p><%= message.content %></p>
+  <div class="align-items-center d-flex justify-content-between">
+    <p class="card-text mb-0"><%= message.user.first_name %></p>
+    <small class="text-secondary"><%= time_ago_in_words(message.created_at) %> ago</small>
+  </div>
+
+  <div class="mb-5">
+    <p class="card-text mb-0 text-secondary"><%= message.content %></p>
+  </div>
 </div>

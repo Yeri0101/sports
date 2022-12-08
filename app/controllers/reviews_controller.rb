@@ -13,23 +13,9 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to @activity
     else
-      @booking = Booking.new
+      @booking = Booking.new(activity: @activity, user: current_user)
+
       render "activities/show", status: :unprocessable_entity
-    end
-  end
-
-  def edit; end
-
-  def update
-    @review = Review.find(params[:id])
-
-    authorize @review
-
-    @review.update(review_params)
-
-    respond_to do |format|
-      format.html { redirect_to @review.activity }
-      format.text { render partial: "activities/activity_reviews", locals: { review: @review }, formats: [:html] }
     end
   end
 

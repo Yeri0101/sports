@@ -13,12 +13,8 @@ class ReviewPolicy < ApplicationPolicy
     is_participant && is_not_host
   end
 
-  def update?
-    user == host
-  end
-
   def destroy?
-    user == host
+    user == reviewer
   end
 
   private

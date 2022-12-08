@@ -1,6 +1,6 @@
 require "faker"
 
-# User.destroy_all
+User.destroy_all
 Activity.destroy_all
 Review.destroy_all
 
