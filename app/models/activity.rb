@@ -8,12 +8,13 @@ class Activity < ApplicationRecord
 
   belongs_to :user
 
-  has_one :chatroom, dependent: :destroy
   has_one_attached :image
+
+  has_one :chatroom, dependent: :destroy
 
   has_many :bookings, dependent: :destroy
   has_many :reviews, dependent: :destroy
-  has_many :users, through: :bookings # participants of the activity
+  has_many :users, through: :bookings
 
   validates :address, presence: true
   # validates :category, presence: true
