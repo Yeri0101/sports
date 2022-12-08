@@ -5,8 +5,8 @@ Rails.application.routes.draw do
 
   resources :activities do
     resources :bookings, only: %i[create]
-    resources :reviews, only: %i[create index]
     resources :chatrooms
+    resources :reviews, only: %i[create index]
 
     collection do
       get :me
@@ -15,9 +15,9 @@ Rails.application.routes.draw do
 
   resources :bookings, only: %i[destroy index]
 
-  resources :reviews, only: %i[destroy edit update]
-
   resources :chatrooms, only: [:show] do
     resources :messages, only: [:create]
   end
+
+  resources :reviews, only: %i[destroy edit update]
 end

@@ -3,7 +3,7 @@ class Activity < ApplicationRecord
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
-  
+
   after_create :create_chatroom
 
   belongs_to :user
@@ -22,9 +22,9 @@ class Activity < ApplicationRecord
   validates :end_date, presence: true
   validates :name, presence: true, uniqueness: true
   validates :start_date, presence: true
-  
+
   private
-  
+
   def create_chatroom
     Chatroom.create(activity: self)
   end

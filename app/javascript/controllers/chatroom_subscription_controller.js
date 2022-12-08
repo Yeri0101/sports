@@ -1,4 +1,3 @@
-// app/javascript/controllers/chatroom_subscription_controller.js
 import { Controller } from "@hotwired/stimulus"
 import { createConsumer } from "@rails/actioncable"
 
@@ -7,8 +6,6 @@ export default class extends Controller {
   static targets = ["messages"]
 
   connect() {
-    console.log("hello")
-
     this.channel = createConsumer().subscriptions.create(
       { channel: "ChatroomChannel", id: this.chatroomIdValue },
       { received: data => this.#insertMessageAndScrollDown(data) }
@@ -25,6 +22,7 @@ export default class extends Controller {
     this.messagesTarget.insertAdjacentHTML("beforeend", data)
     this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
   }
+
   resetForm(event) {
     event.target.reset()
   }

@@ -6,7 +6,7 @@
 
       <% if policy(review).destroy? %>
         <%= link_to "Delete", review_path(review), class: "btn btn-light card-link px-4 py-2 shadow-sm",
-                                                  data: {turbo_method: :delete, turbo_confirm: "Would you like to continue?"} %>
+                                                   data: {turbo_method: :delete, turbo_confirm: "Would you like to continue?"} %>
       <% end %>
     </div>
   </div>
