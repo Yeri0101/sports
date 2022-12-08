@@ -35,4 +35,8 @@ class BookingPolicy < ApplicationPolicy
   def booking
     @booking ||= record
   end
+
+  def show?
+    true
+  end
 end

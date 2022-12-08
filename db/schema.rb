@@ -67,6 +67,24 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_07_155227) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
+  create_table "chatrooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "activity_id"
+    t.index ["activity_id"], name: "index_chatrooms_on_activity_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "chatroom_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.text "comment"
     t.bigint "activity_id", null: false
@@ -89,6 +107,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_07_155227) do
     t.text "first_name"
     t.text "last_name"
     t.text "phone_number"
+    t.string "nickname"
     t.text "city"
     t.text "country"
     t.integer "postcode"
@@ -103,6 +122,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_07_155227) do
   add_foreign_key "activities", "users"
   add_foreign_key "bookings", "activities"
   add_foreign_key "bookings", "users"
+  add_foreign_key "chatrooms", "activities"
+  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "users"
   add_foreign_key "reviews", "activities"
   add_foreign_key "reviews", "users"
 end

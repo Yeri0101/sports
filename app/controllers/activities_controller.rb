@@ -20,6 +20,7 @@ class ActivitiesController < ApplicationController
   def show
     @review = Review.new(activity: @activity, user: current_user)
     @booking = Booking.new(activity: @activity, user: current_user)
+    @message = Message.new
 
     authorize @activity
 
@@ -71,6 +72,7 @@ class ActivitiesController < ApplicationController
   end
 
   def activity_params
-    params.require(:activity).permit(%i[address category city country description end_date image name postcode state start_date])
+    params.require(:activity).permit(%i[address category city country description end_date image name postcode state
+                                        start_date])
   end
 end

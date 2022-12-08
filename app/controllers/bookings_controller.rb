@@ -3,6 +3,12 @@ class BookingsController < ApplicationController
     @bookings = policy_scope(Booking)
   end
 
+  def show
+    @booking = Booking.new
+
+    authorize @booking
+  end
+
   def create
     @activity = Activity.find(params[:activity_id])
     @booking = Booking.new
