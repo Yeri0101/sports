@@ -17,7 +17,7 @@ class Activity < ApplicationRecord
   has_many :users, through: :bookings
 
   validates :address, presence: true
-  # validates :category, presence: true
+  validates :category, presence: true
   validates :description, presence: true
   validates :description, length: { maximum: 1000, minimum: 10 }
   validates :end_date, presence: true
