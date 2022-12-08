@@ -5,7 +5,6 @@ Rails.application.routes.draw do
 
   resources :activities do
     resources :bookings, only: %i[create]
-    resources :chatrooms
     resources :reviews, only: %i[create index]
 
     collection do
