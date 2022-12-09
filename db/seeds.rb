@@ -8,7 +8,7 @@ Review.destroy_all
 
 Booking.destroy_all
 
-5.times do
+8.times do
   User.create!(
     address: Faker::Address.street_address,
     city: Faker::Address.city,
@@ -17,14 +17,14 @@ Booking.destroy_all
     email: Faker::Internet.email(domain: "sports.osc-fr1.scalingo.io"),
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    password: Faker::Internet.password(min_length: 12, max_length: 24),
+    password: "maximilien.lanz@lewagon.com",
     phone_number: Faker::PhoneNumber.phone_number,
     postcode: Faker::Address.postcode,
     state: Faker::Address.state
   )
 end
 
-User.create!(
+a = User.create!(
   address: "Rue de Lausanne 64",
   city: "Renens",
   country: "Switzerland",
@@ -32,36 +32,8 @@ User.create!(
   email: "maximilien.lanz@lewagon.com",
   first_name: "Maximilien",
   last_name: "LANZ",
-  password: "PK^.DQ19yDx2",
+  password: "maximilien.lanz@lewagon.com",
   phone_number: "76 373 33 77",
-  postcode: "1020",
-  state: "Canton de Vaud"
-)
-
-User.create!(
-  address: "Rue de Lausanne 64",
-  city: "Renens",
-  country: "Switzerland",
-  country_code: "+33",
-  email: "sylvain.maslard@lewagon.com",
-  first_name: "Sylvain",
-  last_name: "MASLARD",
-  password: "3kxZzG#TvQ)V",
-  phone_number: "6 66 29 82 47",
-  postcode: "1020",
-  state: "Canton de Vaud"
-)
-
-User.create!(
-  address: "Rue de Lausanne 64",
-  city: "Renens",
-  country: "Switzerland",
-  country_code: "+41",
-  email: "yerinto.martinez@lewagon.com",
-  first_name: "Yerinto",
-  last_name: "MARTINEZ",
-  password: "0WkDjeT*n4A#",
-  phone_number: "76 536 06 58",
   postcode: "1020",
   state: "Canton de Vaud"
 )
@@ -69,11 +41,11 @@ User.create!(
 Activity.create!(
   address: "Mühlebachstrasse 172, 8008 Zürich, Switzerland",
   category: "Running",
-  description: "Does waking up early in the morning scare you? If so, you may well miss out on one of the foot races with views that are simply breathtaking.",
-  end_date: "2022-12-09 09:30:00 UTC",
+  description: "Does waking up early in the morning scare you? If so, you may well miss out on one of the foot races with views that are simply breathtaking. Believe me.",
+  end_date: "2022-12-09 06:45:00 UTC",
   name: "Running",
-  start_date: "2022-12-09 08:30:00 UTC",
-  user: User.all.sample
+  start_date: "2022-12-09 05:45:00 UTC",
+  user: a
 )
 
 Activity.create!(
@@ -89,7 +61,7 @@ Activity.create!(
 Activity.create!(
   address: "Rue des Cerisiers 1, 1530 Payerne, Switzerland",
   category: "Football",
-  description: Faker::Lorem.sentence(word_count: 8, supplemental: false),
+  description: "Today we are in the middle of the World Cup in Qatar. I invite you to come and build a team, with me, that could potentially become the best of all.",
   end_date: "2022-12-25 11:00:00 UTC",
   name: "Football",
   start_date: "2022-12-25 10:00:00 UTC",
@@ -103,13 +75,13 @@ Activity.create!(
   end_date: "2023-01-15 17:30:00 UTC",
   name: "Snowboard",
   start_date: "2023-01-15 08:30:00 UTC",
-  user: User.all.sample
+  user: a
 )
 
 Activity.create!(
   address: "Route de Longirod, 1261 Marchissy, Switzerland",
   category: "Bicycle",
-  description: Faker::Lorem.sentence(word_count: 8, supplemental: false),
+  description: "If you can easily get around by car, I would like to show you the place where I live, which is surrounded by dense forests that are ideal for leisurely cycling.",
   end_date: "2023-02-05 17:45:00 UTC",
   name: "Bicycle",
   start_date: "2023-02-05 16:45:00 UTC",
@@ -119,7 +91,7 @@ Activity.create!(
 Activity.create!(
   address: "Piazza Indipendenza 3, 6900 Lugano, Switzerland",
   category: "Tennis",
-  description: Faker::Lorem.sentence(word_count: 8, supplemental: false),
+  description: "I prefer to be very honest with you. If you think you have the level of play to maybe hope to beat me, then I will see you on the court and try to match me.",
   end_date: "2023-07-30 20:30:00 UTC",
   name: "Tennis",
   start_date: "2023-07-30 19:30:00 UTC",
@@ -129,21 +101,21 @@ Activity.create!(
 Activity.create!(
   address: "Route du Grand-Paradis 7, 1874 Champéry, Switzerland",
   category: "Basketball",
-  description: Faker::Lorem.sentence(word_count: 8, supplemental: false),
+  description: "You know, no matter how big you are, no matter how good you are, with me everyone is welcome. Come and play with me, and discover new sensations.",
   end_date: "2024-09-05 08:45:00 UTC",
   name: "Basketball",
   start_date: "2023-09-05 07:45:00 UTC",
-  user: User.all.sample
+  user: a
 )
 
 Activity.create!(
   address: "Schulgässli 4-8, 3715 Adelboden, Switzerland",
   category: "Swimming",
-  description: Faker::Lorem.sentence(word_count: 8, supplemental: false),
+  description: "You may have dreamed of being able to swim across an entire ocean, but that day will never come. I can still try to make that dream come true.",
   end_date: "2024-03-17 15:30:00 UTC",
   name: "Swimming",
   start_date: "2023-03-17 14:30:00 UTC",
-  user: User.all.sample
+  user: a
 )
 
 Review.create!(
@@ -154,7 +126,7 @@ Review.create!(
 
 Review.create!(
   activity: Activity.all.sample,
-  comment: "Breathtaking views and an incredible atmosphere for running",
+  comment: "Breathtaking views and an incredible atmosphere",
   user: User.all.sample
 )
 
@@ -208,13 +180,13 @@ Review.create!(
 
 Review.create!(
   activity: Activity.all.sample,
-  comment: "Even in the rain, I had a lot of fun cycling in the mountains",
+  comment: "Even in the rain, I must admit that I had a lot of fun",
   user: User.all.sample
 )
 
 Review.create!(
   activity: Activity.all.sample,
-  comment: "I am thinking of trying again as I was not entirely satisfied with this activity",
+  comment: "I am thinking of trying again as I was not entirely satisfied",
   user: User.all.sample
 )
 

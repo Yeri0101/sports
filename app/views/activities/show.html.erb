@@ -1,6 +1,6 @@
 <div class="col-md-7">
   <div class="mb-5">
-    <h2 class="fs-2"><%= @activity.name %></h2>
+    <h2 class="fs-2"><%= @activity.name %> <span class="text-secondary">with <%= @activity.user.first_name %></span></h2>
   </div>
 </div>
 
@@ -16,7 +16,7 @@
 <div class="row">
   <div class="col-md-6">
     <div class="mb-5">
-      <h5 class="fs-5 mb-5">About this activity</h5>
+      <h5 class="fs-5">About this activity</h5>
     </div>
 
     <div class="border-0 card mb-5 p-4 rounded-4 shadow-sm">
@@ -27,12 +27,11 @@
       <% end %>
 
       <div class="card-body">
-        <div class="align-items-center d-flex justify-content-between">
+        <div class="align-items-center d-flex justify-content-between mb-5">
           <h5 class="card-title"><%= @activity.name %></h5>
-          <h6 class="card-subtitle"><%= pluralize @activity.reviews.size, "review" %></h6>
+          <h6 class="card-subtitle text-secondary"><%= @activity.start_date %></h6>
         </div>
 
-        <h6 class="card-subtitle mb-5 text-secondary"><%= @activity.start_date %></h6>
         <p class="card-text mb-5 text-secondary"><%= @activity.description %></p>
 
         <% if policy(@booking).create? %>
@@ -47,14 +46,15 @@
   </div>
 
   <div class="col-md-6">
-    <div class="mb-5">
-      <h5 class="fs-5 mb-5">Location</h5>
+    <div class="align-items-center d-flex justify-content-between mb-5">
+      <h5 class="fs-5">Location</h5>
+      <h6 class="card-subtitle text-secondary"><%= @activity.address %></h6>
     </div>
 
     <div class="border-0 card mb-5 p-4 rounded-4 shadow-sm">
       <div class="card-body">
         <% if @marker %>
-          <div style="width: 100%; height: 500px;" data-controller="map"
+          <div style="width: 100%; height: 593px;" data-controller="map"
                                                    data-map-marker-value="<%= @marker.to_json %>"
                                                    data-map-api-key-value="<%= ENV["MAPBOX_ACCESS_TOKEN"] %>">
           </div>
@@ -71,20 +71,23 @@
     <div class="col-12">
       <h5 class="fs-5 mb-5">Be the first user to leave a review</h5>
 
-      <%= render "reviews/form", activity: @activity, review: @review %>
+      <%= render "reviews/new", activity: @activity, review: @review %>
     </div>
   <% else %>
     <div class="col-md-6">
       <div class="mb-5">
         <h5 class="fs-5 mb-5">Leave a review</h5>
 
-        <%= render "reviews/form", activity: @activity, review: @review %>
+        <%= render "reviews/new", activity: @activity, review: @review %>
       </div>
     </div>
 
     <div class="col-md-6">
       <div class="mb-5">
-        <h5 class="fs-5 mb-5">All reviews</h5>
+        <div class="align-items-center d-flex justify-content-between mb-5">
+          <h5 class="fs-5">All reviews</h5>
+          <h6 class="card-subtitle text-secondary"><%= pluralize @activity.reviews.size, "review" %></h6>
+        </div>
 
         <% @activity.reviews.each do |review| %>
           <%= render "activities/activity_reviews", review: review %>
