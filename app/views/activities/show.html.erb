@@ -15,7 +15,7 @@
     <% else %>
       <% if policy(@booking).create? %>
         <%= simple_form_for [@activity, @booking] do |f| %>
-          <%= f.button :submit, "Book now", class: "btn btn-green card-link px-4 py-2 shadow-sm" %>
+          <%= f.button :submit, "Book now", class: "btn btn-green px-4 py-2 shadow-sm" %>
         <% end %>
       <% end %>
     <% end %>
