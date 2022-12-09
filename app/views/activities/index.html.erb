@@ -8,9 +8,11 @@
   <%= search_form_for @q, url: activities_path,
                           html: { class: "d-flex", method: :get },
                           data: { turbo: false } do |f| %>
+
     <%= f.search_field :description_or_name_or_address_or_reviews_comment_i_cont_any,
                        class: "border-0 form-control me-3 shadow-sm",
                        placeholder: "Search for a keyword" %>
+
     <%= f.submit class: "btn btn-light px-4 py-2 shadow",
                  placeholder: "Search" %>
   <% end %>
@@ -20,6 +22,7 @@
   <% @activities.each do |activity| %>
     <div class="col-md-6">
       <div class="border-0 card p-4 rounded-4 shadow-sm">
+
         <% if activity.image.attached? %>
           <%= cl_image_tag activity.image.key, class: "card-img-top mb-4 rounded-4 shadow-sm" %>
         <% else %>
@@ -31,6 +34,7 @@
             <h5 class="card-title"><%= activity.name %></h5>
             <h6 class="card-subtitle"><%= pluralize activity.reviews.size, "review" %></h6>
           </div>
+
           <h6 class="card-subtitle mb-5 text-secondary"><%= activity.address %></h6>
           <p class="card-text mb-5 text-secondary"><%= activity.description %></p>
 

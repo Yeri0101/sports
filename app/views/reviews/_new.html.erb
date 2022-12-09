@@ -8,11 +8,10 @@
                   label: false,
                   placeholder: "Exceptional discovery and welcoming host",
                   required: false %>
+      <div class="align-items-center d-flex justify-content-between my-5">
+        <%= f.button :submit, "Comment", class: "btn btn-green px-4 py-2 shadow" %>
 
-      <small class="form-text">Your review is currently <small data-character-counter-target="counter"></small> characters long</small>
-
-      <div class="align-items-center d-flex justify-content-end">
-        <%= f.button :submit, "Validate", class: "btn btn-green px-4 py-2 shadow" %>
+        <small class="form-text">Your review is currently <small data-character-counter-target="counter"></small> characters long</small>
       </div>
     </div>
   </div>

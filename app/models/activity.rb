@@ -1,5 +1,5 @@
 class Activity < ApplicationRecord
-  enum :category, %i[Badminton Basketball Bicycle Fitness Football Handball Running Swimming Tennis Yoga]
+  enum :category, %i[Badminton Basketball Bicycle Fitness Football Handball Running Snowboard Swimming Tennis Yoga]
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
