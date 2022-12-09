@@ -56,9 +56,9 @@
               <h6 class="card-subtitle mb-4 text-secondary"><%= activity.address %></h6>
               <p class="card-text mb-5 text-secondary"><%= activity.description %></p>
               <div class="align-items-center d-flex justify-content-between">
-                <%= link_to "View", activity_path(activity.id), class: "btn btn-green card-link px-4 py-2 shadow" %>
+                <%= link_to "View", activity_path(activity.id), class: "btn btn-green px-4 py-2 shadow" %>
                 <% if policy(activity).destroy? %>
-                  <%= link_to "Delete", activity_path(activity.id), class: "btn btn-light card-link px-4 py-2 shadow-sm", data: {turbo_method: :delete, turbo_confirm: "Would you like to continue?"} %>
+                  <%= link_to "Delete", activity_path(activity.id), class: "btn btn-light px-4 py-2 shadow-sm", data: {turbo_method: :delete, turbo_confirm: "Would you like to continue?"} %>
                 <% end %>
               </div>
             <% end %>

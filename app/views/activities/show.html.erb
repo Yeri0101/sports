@@ -8,12 +8,21 @@
   <div class="d-grid d-md-flex">
     <%= link_to "Back", activities_path, class: "btn btn-light px-4 py-2 shadow" %>
   </div>
-  <% if policy(@activity).edit? %>
-    <%= link_to "Update", edit_activity_path(@activity.id), class: "btn btn-green px-4 py-2 shadow" %>
-  <% end %>
+
+  <div class="d-grid d-md-flex">
+    <% if policy(@activity).edit? %>
+      <%= link_to "Update", edit_activity_path(@activity.id), class: "btn btn-green px-4 py-2 shadow" %>
+    <% else %>
+      <% if policy(@booking).create? %>
+        <%= simple_form_for [@activity, @booking] do |f| %>
+          <%= f.button :submit, "Book now", class: "btn btn-green px-4 py-2 shadow-sm" %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
 </div>
 
-<div class="row">
+<div class="g-5 row">
   <div class="col-md-6">
     <div class="mb-5">
       <h5 class="fs-5">About this activity</h5>
@@ -27,20 +36,12 @@
       <% end %>
 
       <div class="card-body">
-        <div class="align-items-center d-flex justify-content-between mb-5">
+        <div class="align-items-center d-flex justify-content-between mb-4">
           <h5 class="card-title"><%= @activity.name %></h5>
           <h6 class="card-subtitle text-secondary"><%= @activity.start_date %></h6>
         </div>
 
-        <p class="card-text mb-5 text-secondary"><%= @activity.description %></p>
-
-        <% if policy(@booking).create? %>
-          <div class="mt-5">
-            <%= simple_form_for [@activity, @booking] do |f| %>
-              <%= f.button :submit, "Book now", class: "btn btn-green card-link px-4 py-2 shadow-sm" %>
-            <% end %>
-          </div>
-        <% end %>
+        <p class="card-text text-secondary"><%= @activity.description %></p>
       </div>
     </div>
   </div>
@@ -54,7 +55,7 @@
     <div class="border-0 card mb-5 p-4 rounded-4 shadow-sm">
       <div class="card-body">
         <% if @marker %>
-          <div style="width: 100%; height: 593px;" data-controller="map"
+          <div style="width: 100%; height: 515px;" data-controller="map"
                                                    data-map-marker-value="<%= @marker.to_json %>"
                                                    data-map-api-key-value="<%= ENV["MAPBOX_ACCESS_TOKEN"] %>">
           </div>
@@ -66,7 +67,7 @@
   </div>
 </div>
 
-<div class="row">
+<div class="g-5 row">
   <% if @activity.reviews.blank? %>
     <div class="col-12">
       <h5 class="fs-5 mb-5">Be the first user to leave a review</h5>
