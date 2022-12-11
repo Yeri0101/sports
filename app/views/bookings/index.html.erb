@@ -1,35 +1,55 @@
-<div class="col-md-7">
+<div class="col-md-8">
   <div class="mb-5">
-    <h2 class="fs-2">My bookings</h2>
+    <h2 class="fs-2">
+      My bookings
+    </h2>
   </div>
 </div>
-
 <% if @bookings.blank? %>
   <div class="col-md-6">
-    <div class="border-0 card mb-5 p-4 rounded-4 shadow-sm">
+    <div class="border-0 card p-4 rounded-4 shadow-sm">
       <div class="card-body">
         <div class="align-items-center d-flex justify-content-between">
-          <h6 class="card-subtitle text-secondary">No activity booked at the moment</h6>
+          <h6 class="card-subtitle text-secondary">
+            No activity booked at the moment
+          </h6>
           <%= link_to "Discover", activities_path, class: "btn btn-green px-4 py-2 shadow" %>
         </div>
       </div>
     </div>
   </div>
 <% else %>
-
-  <% @bookings.each do |booking| %>
-    <div class="border-0 card mb-5 p-4 rounded-4">
-      <div class="card-body">
-        <div class="align-items-center d-flex justify-content-between">
-          <h5 class="card-title"><%= booking.activity.name %> <span class="text-secondary">with <%= booking.activity.user.first_name %></span></h5>
-          <p class="card-text mb-0 text-secondary"><%= booking.activity.address %></p>
-          <div class="d-flex gap-3 d-md-flex">
-            <%= link_to "View", activity_path(booking.activity), class: "btn btn-green px-4 py-2 shadow-sm" %>
-            <%= link_to "Cancel", booking_path(booking.id), class: "btn btn-light px-4 py-2 shadow-sm",
-                                                            data: {turbo_method: :delete, turbo_confirm: "Would you like to continue?"} %>
+  <div class="g-5 row">
+    <% @bookings.each do |booking| %>
+      <div class="col-md-6">
+        <div class="border-0 card p-4 rounded-4 shadow-sm">
+          <div class="card-body">
+            <div class="align-items-center d-flex justify-content-between">
+              <h5 class="card-title fs-5">
+                <%= booking.activity.name %>
+              </h5>
+              <h6 class="card-subtitle fs-6">
+                <%= pluralize booking.activity.reviews.size, "review" %>
+              </h6>
+            </div>
+            <div class="mb-5">
+              <h6 class="card-subtitle text-secondary">
+                <%= booking.activity.address %>
+              </h6>
+            </div>
+            <div class="mb-5">
+              <p class="card-text text-secondary">
+                <%= booking.activity.description %>
+              </p>
+            </div>
+            <div class="align-items-center d-flex justify-content-between">
+              <%= link_to "View", activity_path(booking.activity), class: "btn btn-green px-4 py-2 shadow" %>
+              <%= link_to "Cancel", booking_path(booking.id), class: "btn btn-light px-4 py-2 shadow-sm",
+                                                              data: {turbo_method: :delete, turbo_confirm: "Would you like to continue?"} %>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 <% end %>

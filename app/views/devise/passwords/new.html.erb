@@ -1,12 +1,12 @@
 <div class="col-7">
   <div class="mb-5">
-    <h2 class="fs-2">Reset your password</h2>
+    <h2 class="fs-2">
+      Reset your password
+    </h2>
   </div>
 </div>
-
-<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: "g-3 row" }) do |f| %>
+<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: "g-4 row" }) do |f| %>
   <%= f.error_notification %>
-
   <div class="col-12">
     <%= f.input :email,
                 autofocus: true,
@@ -15,10 +15,8 @@
                 placeholder: "yerinto.martinez@lewagon.com",
                 required: true %>
   </div>
-
   <div class="col-md-6 d-flex d-md-flex gap-4">
     <%= f.button :submit, "Send", class: "btn btn-green px-4 py-2 shadow" %>
-
     <%= link_to "Cancel", user_session_path, class: "btn btn-light px-4 py-2 shadow" %>
   </div>
 <% end %>
