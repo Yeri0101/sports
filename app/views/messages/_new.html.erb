@@ -1,0 +1,21 @@
+<div id="message-<%= message.id %>">
+  <div class="align-items-center d-flex justify-content-between mt-5">
+    <% if message.user == message.chatroom.activity.user %>
+      <p class="card-text">
+        <%="Organizer"%>
+      </p>
+    <% else %>
+      <p class="card-text text-secondary">
+        <%= message.user.username %>
+      </p>
+    <% end %>
+    <small class="text-secondary">
+      <%= time_ago_in_words(message.created_at) %> ago
+    </small>
+  </div>
+  <div class="mb-5">
+    <p class="card-text">
+      <%= message.content %>
+    </p>
+  </div>
+</div>

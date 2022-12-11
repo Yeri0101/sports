@@ -7,9 +7,7 @@ Rails.application.routes.draw do
     resources :bookings, only: %i[create]
     resources :reviews, only: %i[create index]
 
-    collection do
-      get :me
-    end
+    collection { get :me }
   end
 
   resources :bookings, only: %i[destroy index]

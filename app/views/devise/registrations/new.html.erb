@@ -1,9 +1,11 @@
-<div class="col-md-7">
+<div class="col-md-8">
   <div class="mb-5">
-    <h2 class="fs-2">Create your account</h2>
+    <h2 class="fs-2">
+      Create your account
+    </h2>
   </div>
 </div>
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: {turbo: false}, html: { class: "g-3 row"}) do |f| %>
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: {turbo: false}, html: { class: "g-4 row"}) do |f| %>
   <div class="col-md-4">
     <%= f.input :first_name,
                 as: :string,
@@ -33,11 +35,18 @@
                 placeholder: "76 000 00 00",
                 required: false %>
   </div>
-  <div class="col-12">
+  <div class="col-md-6">
     <%= f.input :email,
                 input_html: { autocomplete: "email", class: "border-0 mb-2 shadow-sm" },
                 label: "E-mail address",
                 placeholder: "maximilien.lanz@lewagon.com",
+                required: true %>
+  </div>
+  <div class="col-md-6">
+    <%= f.input :username,
+                as: :string,
+                input_html: { autocomplete: "string", class: "border-0 mb-2 shadow-sm" },
+                placeholder: "maximilien.lanz",
                 required: true %>
   </div>
   <div class="col-md-6">
@@ -96,10 +105,8 @@
                 placeholder: "1020",
                 required: true %>
   </div>
-
   <div class="col-md-6 d-flex d-md-flex gap-4 mb-5">
     <%= f.button :submit, "Create an account", class: "btn btn-green px-4 py-2 shadow" %>
-
     <%= link_to "Cancel", root_path, class: "btn btn-light px-4 py-2 shadow" %>
   </div>
 <% end %>

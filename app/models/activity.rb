@@ -1,21 +1,27 @@
 class Activity < ApplicationRecord
-  enum :category, %i[Badminton Basketball Bicycle Fitness Football Handball Running Snowboard Swimming Tennis Yoga]
-
+  enum :category,
+       %i[
+         Badminton
+         Basketball
+         Bicycle
+         Fitness
+         Football
+         Handball
+         Running
+         Snowboard
+         Swimming
+         Tennis
+         Yoga
+       ]
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
-
   after_create :create_chatroom
-
   belongs_to :user
-
   has_one_attached :image
-
   has_one :chatroom, dependent: :destroy
-
   has_many :bookings, dependent: :destroy
   has_many :reviews, dependent: :destroy
   has_many :users, through: :bookings
-
   validates :address, presence: true
   validates :category, presence: true
   validates :description, presence: true

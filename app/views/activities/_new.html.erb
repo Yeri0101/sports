@@ -1,10 +1,11 @@
-<div class="col-md-7">
+<div class="col-md-8">
   <div class="mb-5">
-    <h2 class="fs-2">Create a new activity</h2>
+    <h2 class="fs-2">
+      Create a new activity
+    </h2>
   </div>
 </div>
-
-<%= simple_form_for @activity, html: { class: "g-3 row"} do |f| %>
+<%= simple_form_for @activity, html: { class: "g-4 row"} do |f| %>
   <div class="col-md-6">
     <%= f.input :name,
                 as: :string,
@@ -25,7 +26,9 @@
                   as: :text,
                   input_html: { autocomplete: "string", class: "border-0 shadow-sm", rows: 5, data: { character_counter_target: "input" } },
                   required: true %>
-      <small class="form-text">Your description is currently <small data-character-counter-target="counter"></small> characters long</small>
+      <small class="form-text">
+        Your description is currently <small data-character-counter-target="counter"></small> characters long
+      </small>
     </div>
   </div>
   <div class="col-12">
@@ -40,7 +43,6 @@
                 input_html: { autocomplete: "datetime", class: "border-0 mb-2 shadow-sm" },
                 label: "Start date and time",
                 placeholder: "09.12.2022",
-                # input_html: { class: "border-0 mb-2 shadow-sm", data: { controller: "flatpickr" } },
                 required: true %>
   </div>
   <div class="col-md-6">
@@ -49,7 +51,6 @@
                 input_html: { autocomplete: "datetime", class: "border-0 mb-2 shadow-sm" },
                 label: "End date and time",
                 placeholder: "09.12.2022",
-                # input_html: { class: "border-0 mb-2 shadow-sm", data: { controller: "flatpickr" } },
                 required: true %>
   </div>
   <div class="col-12">
@@ -59,10 +60,8 @@
                 placeholder: "Rue de Lausanne 64, 1020 Renens, Switzerland",
                 required: true %>
   </div>
-
   <div class="col-md-6 d-flex d-md-flex gap-4 mb-5">
     <%= f.button :submit, "Create", class: "btn btn-green px-4 py-2 shadow" %>
-
     <%= link_to "Cancel", me_activities_path, class: "btn btn-light px-4 py-2 shadow" %>
   </div>
 <% end %>

@@ -1,10 +1,11 @@
 <div class="col-7">
   <div class="mb-5">
-    <h2 class="fs-2">Log in</h2>
+    <h2 class="fs-2">
+      Log in
+    </h2>
   </div>
 </div>
-
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: {turbo: false}, html: { class: "g-3 row"}) do |f| %>
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: {turbo: false}, html: { class: "g-4 row"}) do |f| %>
   <div class="col-12">
     <%= f.input :email,
                 autofocus: true,
@@ -25,10 +26,8 @@
                 label: "Remember me",
                 as: :boolean if devise_mapping.rememberable? %>
   </div>
-
   <div class="col-md-6 d-flex d-md-flex gap-4">
     <%= f.button :submit, "Log in", class: "btn btn-green px-4 py-2 shadow" %>
-
     <%= link_to "Forgot your password?", new_password_path(resource_name), class: "btn btn-light px-4 py-2 shadow" %>
   </div>
 <% end %>

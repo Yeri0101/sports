@@ -24,7 +24,10 @@ class ActivitiesController < ApplicationController
 
     authorize @activity
 
-    @marker = { lat: @activity.latitude, lng: @activity.longitude } if @activity.geocoded?
+    @marker = {
+      lat: @activity.latitude,
+      lng: @activity.longitude
+    } if @activity.geocoded?
   end
 
   def new
@@ -39,13 +42,16 @@ class ActivitiesController < ApplicationController
     authorize @activity
 
     if @activity.save
-      redirect_to @activity, notice: "The creation of this activity has been successfully completed."
+      redirect_to @activity,
+                  notice:
+                    "The creation of this activity has been successfully completed."
     else
       render :new, status: :unprocessable_entity
     end
   end
 
-  def edit; end
+  def edit
+  end
 
   def update
     authorize @activity
@@ -72,6 +78,20 @@ class ActivitiesController < ApplicationController
   end
 
   def activity_params
-    params.require(:activity).permit(%i[address category city country description end_date image name postcode state start_date])
+    params.require(:activity).permit(
+      %i[
+        address
+        category
+        city
+        country
+        description
+        end_date
+        image
+        name
+        postcode
+        state
+        start_date
+      ]
+    )
   end
 end
