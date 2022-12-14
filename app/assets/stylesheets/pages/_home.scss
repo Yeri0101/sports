@@ -1,14 +1,4 @@
-// Specific CSS for your home-page
 body {
-  font-family: "Syne", sans-serif;
-  font-weight: 400;
-}
-
-h1, h2, h3, h4, h5, h6, p, small, span {
-  margin-bottom: 0;
-}
-
-small {
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
+  font-family: $body-font;
+  font-weight: $regular-weight-font;
 }

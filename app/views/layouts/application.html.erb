@@ -4,37 +4,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <title>Sports</title>
-
+    <title>Discover a whole new way to share your sports sessions</title>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css" rel="stylesheet">
-
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js"></script>
     <script id="search-js" defer src="https://api.mapbox.com/search-js/v1.0.0-beta.14/web.js"></script>
     <script>
       const script = document.getElementById("search-js");
-
       script.onload = function() {
         mapboxsearch.autofill({
           accessToken: "<%= ENV["MAPBOX_ACCESS_TOKEN"] %>",
-
           options: {
+            country: "CH",
             language: "en",
           }
         });
       };
     </script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   </head>
   <body class="bg-light">
     <%= render "shared/navbar" %>
-
     <div class="container">
       <%= yield %>
-
       <%= render "shared/flashes" %>
     </div>
   </body>

@@ -1,15 +1,10 @@
-// Import Google fonts
 @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;700&display=swap");
 
-// Define fonts for body and headers
+$body-font: "Syne", sans-serif;
+$inter-font: "Inter", sans-serif;
+$navigation-brand-font: "Syne", sans-serif;
+$navigation-links-font: "Inter", sans-serif;
 
-// To use a font file (.woff) uncomment following lines
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
-// }
-// $my-font: "Font Name";
+$bold-weight-font: 700;
+$regular-weight-font: 400;

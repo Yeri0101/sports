@@ -11,11 +11,11 @@
   </div>
   <div class="d-grid d-md-flex">
     <% if policy(@activity).edit? %>
-      <%= link_to "Update", edit_activity_path(@activity.id), class: "btn btn-green px-4 py-2 shadow" %>
+      <%= link_to "Update", edit_activity_path(@activity.id), class: "btn btn-bd-green px-4 py-2 shadow" %>
     <% else %>
       <% if policy(@booking).create? %>
         <%= simple_form_for [@activity, @booking] do |f| %>
-          <%= f.button :submit, "Book now", class: "btn btn-green px-4 py-2 shadow-sm" %>
+          <%= f.button :submit, "Book now", class: "btn btn-bd-green px-4 py-2 shadow-sm" %>
         <% end %>
       <% end %>
     <% end %>

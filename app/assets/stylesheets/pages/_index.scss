@@ -1,2 +1,6 @@
-// Import page-specific CSS files here.
 @import "home";
+
+small {
+  color: $grey-color;
+  font-family: $inter-font;
+}
