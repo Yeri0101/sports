@@ -13,7 +13,7 @@
           <h6 class="card-subtitle text-secondary">
             No activity booked at the moment
           </h6>
-          <%= link_to "Discover", activities_path, class: "btn btn-green px-4 py-2 shadow" %>
+          <%= link_to "Discover", activities_path, class: "btn btn-bd-green px-4 py-2 shadow" %>
         </div>
       </div>
     </div>
@@ -43,7 +43,7 @@
               </p>
             </div>
             <div class="align-items-center d-flex justify-content-between">
-              <%= link_to "View", activity_path(booking.activity), class: "btn btn-green px-4 py-2 shadow" %>
+              <%= link_to "View", activity_path(booking.activity), class: "btn btn-bd-green px-4 py-2 shadow" %>
               <%= link_to "Cancel", booking_path(booking.id), class: "btn btn-light px-4 py-2 shadow-sm",
                                                               data: {turbo_method: :delete, turbo_confirm: "Would you like to continue?"} %>
             </div>
