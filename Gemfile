@@ -46,15 +46,8 @@ gem "bootsnap", require: false
 gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-gem "autoprefixer-rails"
-gem "font-awesome-sass"
-gem "simple_form", github: "heartcombo/simple_form"
-gem "devise"
-gem "cloudinary"
-gem "faker", git: "https://github.com/faker-ruby/faker.git", branch: "main"
-gem "ransack", github: "activerecord-hackery/ransack", branch: "main"
-gem "pundit"
-gem "geocoder"
+gem "cloudinary", github: "cloudinary/cloudinary_gem", branch: "master"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri mingw x64_mingw]
@@ -78,5 +71,13 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "autoprefixer-rails", github: "ai/autoprefixer-rails", branch: "master"
+gem "devise", github: "heartcombo/devise", branch: "main"
+gem "faker", git: "https://github.com/faker-ruby/faker.git", branch: "main"
+gem "geocoder", github: "alexreisner/geocoder", branch: "master"
+gem "pundit", github: "varvet/pundit", branch: "main"
+gem "ransack", github: "activerecord-hackery/ransack", branch: "main"
+gem "simple_form", github: "heartcombo/simple_form", branch: "main"
 
 gem "ruby-lsp", "~> 0.3.6", group: :development
