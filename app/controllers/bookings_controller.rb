@@ -1,6 +1,9 @@
 class BookingsController < ApplicationController
   def index
     @bookings = policy_scope(Booking)
+
+    @q = @bookings.ransack(params[:query])
+    @bookings = @q.result(distinct: true)
   end
 
   def show

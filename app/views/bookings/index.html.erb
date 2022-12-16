@@ -5,6 +5,17 @@
     </h2>
   </div>
 </div>
+<div class="align-items-center d-flex justify-content-start mb-5">
+  <%= search_form_for @q, url: bookings_path,
+                          html: { class: "d-flex", method: :get },
+                          data: { turbo: false } do |f| %>
+    <%= f.search_field :activity_name_i_cont_any,
+                       class: "border-0 form-control me-3 shadow-sm",
+                       placeholder: "Search for a booking" %>
+    <%= f.submit class: "btn btn-light px-4 py-2 shadow-sm",
+                 placeholder: "Search" %>
+  <% end %>
+</div>
 <% if @bookings.blank? %>
   <div class="col-md-6">
     <div class="border-0 card p-4 rounded-4 shadow-sm">
