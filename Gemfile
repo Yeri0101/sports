@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.1.2"
+ruby "3.2.0"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails"
@@ -74,7 +74,7 @@ end
 
 gem "autoprefixer-rails", github: "ai/autoprefixer-rails", branch: "master"
 gem "devise", github: "heartcombo/devise", branch: "main"
-gem "faker", git: "https://github.com/faker-ruby/faker.git", branch: "main"
+gem "faker", github: "faker-ruby/faker", branch: "main"
 gem "geocoder", github: "alexreisner/geocoder", branch: "master"
 gem "pundit", github: "varvet/pundit", branch: "main"
 gem "ransack", github: "activerecord-hackery/ransack", branch: "main"
