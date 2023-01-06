@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://github.com/alexreisner/geocoder.git
-  revision: e82f09aa3bec7b173f5c3f444555b7e12631e340
+  revision: 6f2f423ce84dac5bca5ed01cedb2f045d89b5e0b
   branch: master
   specs:
     geocoder (1.8.1)
@@ -284,7 +284,7 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    sorbet-runtime (0.5.10601)
+    sorbet-runtime (0.5.10607)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
