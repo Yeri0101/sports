@@ -14,7 +14,7 @@
       const script = document.getElementById("search-js");
       script.onload = function() {
         mapboxsearch.autofill({
-          accessToken: "<%= ENV["MAPBOX_ACCESS_TOKEN"] %>",
+          accessToken: "<%= ENV["VARIABLE_TOKEN_MAPBOX"] %>",
           options: {
             country: "CH",
             language: "en",

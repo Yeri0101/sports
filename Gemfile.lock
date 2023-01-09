@@ -255,7 +255,7 @@ GEM
     rake (13.0.6)
     redis (5.0.5)
       redis-client (>= 0.9.0)
-    redis-client (0.11.2)
+    redis-client (0.12.0)
       connection_pool
     regexp_parser (2.6.1)
     responders (3.0.1)
@@ -284,7 +284,7 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    sorbet-runtime (0.5.10607)
+    sorbet-runtime (0.5.10611)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
