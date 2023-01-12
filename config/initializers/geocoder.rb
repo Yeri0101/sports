@@ -14,7 +14,7 @@ Geocoder.configure(
   # supports SocketError and Timeout::Error
   # always_raise: [],
   # Calculation options
-  units: :km # :km for kilometers or :mi for miles
+  units: :km                    # :km for kilometers or :mi for miles
   # distances: :linear          # :spherical or :linear
   # Cache configuration
   # cache_options: {

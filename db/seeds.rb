@@ -22,7 +22,7 @@ Message.destroy_all
     # mix_case: true,
     # special_characters: true
     # ),
-    password: ENV["USERS_PASSWORD"],
+    password: ENV["VARIABLE_PASSWORD_USER"],
     phone_number: Faker::PhoneNumber.phone_number,
     postcode: Faker::Address.postcode,
     state: Faker::Address.state,
@@ -38,7 +38,7 @@ User.create!(
   email: "maximilien.lanz@lewagon.com",
   first_name: "Maximilien",
   last_name: "LANZ",
-  password: ENV["ADMINISTRATOR_PASSWORD"],
+  password: ENV["VARIABLE_PASSWORD_ADMINISTRATOR"],
   phone_number: "76 373 33 77",
   postcode: "1110",
   state: "Canton de Vaud",
