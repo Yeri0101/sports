@@ -1,0 +1,11 @@
+development:
+  cloud_name: "dxwptqse3"
+  api_key: "268915686244553"
+  api_secret: "jI-5D9N4VL6BowH6jrVWMcz5G5A"
+  secure: true
+
+production:
+  cloud_name: "dxwptqse3"
+  api_key: "268915686244553"
+  api_secret: "jI-5D9N4VL6BowH6jrVWMcz5G5A"
+  secure: true

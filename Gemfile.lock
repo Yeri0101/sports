@@ -34,7 +34,7 @@ GIT
 
 GIT
   remote: https://github.com/faker-ruby/faker.git
-  revision: 0d2fe5909206ea684579b0cad780be1d0a365a05
+  revision: 85c9938107bc199ffc3726e41d551241448b877c
   branch: main
   specs:
     faker (3.1.0)
@@ -284,7 +284,7 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    sorbet-runtime (0.5.10611)
+    sorbet-runtime (0.5.10624)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
