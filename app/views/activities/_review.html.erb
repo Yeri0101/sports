@@ -6,7 +6,7 @@
     <div class="align-items-end d-flex justify-content-between">
       <p class="card-text text-secondary"><%= review.comment %></p>
       <% if policy(review).destroy? %>
-        <%= link_to "Delete", review_path(review), class: "btn btn-light px-4 py-2 shadow-sm",
+        <%= link_to "Delete", review_path(review), class: "text-dark text-decoration-none",
                                                    data: {turbo_method: :delete, turbo_confirm: "Would you like to continue?"} %>
       <% end %>
     </div>

@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/activerecord-hackery/ransack.git
-  revision: 007075761375bce1f481717985647423db961a38
+  revision: 555d55808f71eae9ebfe484faa1b35a4f66c7b0f
   branch: main
   specs:
     ransack (3.2.1)
@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://github.com/alexreisner/geocoder.git
-  revision: 6f2f423ce84dac5bca5ed01cedb2f045d89b5e0b
+  revision: 6f752594dd00472835917d475c4d84c1741e1470
   branch: master
   specs:
     geocoder (1.8.1)
@@ -34,7 +34,7 @@ GIT
 
 GIT
   remote: https://github.com/faker-ruby/faker.git
-  revision: 85c9938107bc199ffc3726e41d551241448b877c
+  revision: 1c868b22beeb164962c955c4a81c98b000e3ec71
   branch: main
   specs:
     faker (3.1.0)
@@ -42,7 +42,7 @@ GIT
 
 GIT
   remote: https://github.com/heartcombo/devise.git
-  revision: 6d32d2447cc0f3739d9732246b5a5bde98d9e032
+  revision: 032c4476aeaf8eacd96331e37ba758cbae0f6248
   branch: main
   specs:
     devise (4.8.1)
@@ -54,7 +54,7 @@ GIT
 
 GIT
   remote: https://github.com/heartcombo/simple_form.git
-  revision: 341e36c087d78e0d5dbf768652e54cc42663f055
+  revision: ad1bb2ef24fc1a90459e7c4c18821edb38c57c2d
   branch: main
   specs:
     simple_form (5.1.0)
@@ -72,67 +72,67 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    actioncable (7.0.4)
-      actionpack (= 7.0.4)
-      activesupport (= 7.0.4)
+    actioncable (7.0.4.2)
+      actionpack (= 7.0.4.2)
+      activesupport (= 7.0.4.2)
       nio4r (~> 2.0)
       websocket-driver (>= 0.6.1)
-    actionmailbox (7.0.4)
-      actionpack (= 7.0.4)
-      activejob (= 7.0.4)
-      activerecord (= 7.0.4)
-      activestorage (= 7.0.4)
-      activesupport (= 7.0.4)
+    actionmailbox (7.0.4.2)
+      actionpack (= 7.0.4.2)
+      activejob (= 7.0.4.2)
+      activerecord (= 7.0.4.2)
+      activestorage (= 7.0.4.2)
+      activesupport (= 7.0.4.2)
       mail (>= 2.7.1)
       net-imap
       net-pop
       net-smtp
-    actionmailer (7.0.4)
-      actionpack (= 7.0.4)
-      actionview (= 7.0.4)
-      activejob (= 7.0.4)
-      activesupport (= 7.0.4)
+    actionmailer (7.0.4.2)
+      actionpack (= 7.0.4.2)
+      actionview (= 7.0.4.2)
+      activejob (= 7.0.4.2)
+      activesupport (= 7.0.4.2)
       mail (~> 2.5, >= 2.5.4)
       net-imap
       net-pop
       net-smtp
       rails-dom-testing (~> 2.0)
-    actionpack (7.0.4)
-      actionview (= 7.0.4)
-      activesupport (= 7.0.4)
+    actionpack (7.0.4.2)
+      actionview (= 7.0.4.2)
+      activesupport (= 7.0.4.2)
       rack (~> 2.0, >= 2.2.0)
       rack-test (>= 0.6.3)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.2.0)
-    actiontext (7.0.4)
-      actionpack (= 7.0.4)
-      activerecord (= 7.0.4)
-      activestorage (= 7.0.4)
-      activesupport (= 7.0.4)
+    actiontext (7.0.4.2)
+      actionpack (= 7.0.4.2)
+      activerecord (= 7.0.4.2)
+      activestorage (= 7.0.4.2)
+      activesupport (= 7.0.4.2)
       globalid (>= 0.6.0)
       nokogiri (>= 1.8.5)
-    actionview (7.0.4)
-      activesupport (= 7.0.4)
+    actionview (7.0.4.2)
+      activesupport (= 7.0.4.2)
       builder (~> 3.1)
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
-    activejob (7.0.4)
-      activesupport (= 7.0.4)
+    activejob (7.0.4.2)
+      activesupport (= 7.0.4.2)
       globalid (>= 0.3.6)
-    activemodel (7.0.4)
-      activesupport (= 7.0.4)
-    activerecord (7.0.4)
-      activemodel (= 7.0.4)
-      activesupport (= 7.0.4)
-    activestorage (7.0.4)
-      actionpack (= 7.0.4)
-      activejob (= 7.0.4)
-      activerecord (= 7.0.4)
-      activesupport (= 7.0.4)
+    activemodel (7.0.4.2)
+      activesupport (= 7.0.4.2)
+    activerecord (7.0.4.2)
+      activemodel (= 7.0.4.2)
+      activesupport (= 7.0.4.2)
+    activestorage (7.0.4.2)
+      actionpack (= 7.0.4.2)
+      activejob (= 7.0.4.2)
+      activerecord (= 7.0.4.2)
+      activesupport (= 7.0.4.2)
       marcel (~> 1.0)
       mini_mime (>= 1.1.0)
-    activesupport (7.0.4)
+    activesupport (7.0.4.2)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
@@ -142,7 +142,7 @@ GEM
     aws_cf_signer (0.1.3)
     bcrypt (3.1.18)
     bindex (0.8.1)
-    bootsnap (1.15.0)
+    bootsnap (1.16.0)
       msgpack (~> 1.2)
     builder (3.2.4)
     capybara (3.38.0)
@@ -154,7 +154,7 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
-    concurrent-ruby (1.1.10)
+    concurrent-ruby (1.2.0)
     connection_pool (2.3.0)
     crass (1.0.6)
     date (3.3.3)
@@ -168,7 +168,7 @@ GEM
     erubi (1.12.0)
     execjs (2.8.1)
     ffi (1.15.5)
-    globalid (1.0.0)
+    globalid (1.1.0)
       activesupport (>= 5.0)
     http-accept (1.7.0)
     http-cookie (1.0.5)
@@ -187,7 +187,7 @@ GEM
     loofah (2.19.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
-    mail (2.8.0)
+    mail (2.8.0.1)
       mini_mime (>= 0.1.1)
       net-imap
       net-pop
@@ -199,7 +199,6 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2022.0105)
     mini_mime (1.1.2)
-    mini_portile2 (2.8.1)
     minitest (5.17.0)
     msgpack (1.6.0)
     net-imap (0.3.4)
@@ -213,8 +212,11 @@ GEM
       net-protocol
     netrc (0.11.0)
     nio4r (2.5.8)
-    nokogiri (1.13.10)
-      mini_portile2 (~> 2.8.0)
+    nokogiri (1.14.0-arm64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.14.0-x86_64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.14.0-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.4.5)
@@ -223,41 +225,41 @@ GEM
     puma (6.0.2)
       nio4r (~> 2.0)
     racc (1.6.2)
-    rack (2.2.5)
+    rack (2.2.6.2)
     rack-test (2.0.2)
       rack (>= 1.3)
-    rails (7.0.4)
-      actioncable (= 7.0.4)
-      actionmailbox (= 7.0.4)
-      actionmailer (= 7.0.4)
-      actionpack (= 7.0.4)
-      actiontext (= 7.0.4)
-      actionview (= 7.0.4)
-      activejob (= 7.0.4)
-      activemodel (= 7.0.4)
-      activerecord (= 7.0.4)
-      activestorage (= 7.0.4)
-      activesupport (= 7.0.4)
+    rails (7.0.4.2)
+      actioncable (= 7.0.4.2)
+      actionmailbox (= 7.0.4.2)
+      actionmailer (= 7.0.4.2)
+      actionpack (= 7.0.4.2)
+      actiontext (= 7.0.4.2)
+      actionview (= 7.0.4.2)
+      activejob (= 7.0.4.2)
+      activemodel (= 7.0.4.2)
+      activerecord (= 7.0.4.2)
+      activestorage (= 7.0.4.2)
+      activesupport (= 7.0.4.2)
       bundler (>= 1.15.0)
-      railties (= 7.0.4)
+      railties (= 7.0.4.2)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
-    rails-html-sanitizer (1.4.4)
+    rails-html-sanitizer (1.5.0)
       loofah (~> 2.19, >= 2.19.1)
-    railties (7.0.4)
-      actionpack (= 7.0.4)
-      activesupport (= 7.0.4)
+    railties (7.0.4.2)
+      actionpack (= 7.0.4.2)
+      activesupport (= 7.0.4.2)
       method_source
       rake (>= 12.2)
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
-    redis (5.0.5)
+    redis (5.0.6)
       redis-client (>= 0.9.0)
-    redis-client (0.12.0)
+    redis-client (0.12.1)
       connection_pool
-    regexp_parser (2.6.1)
+    regexp_parser (2.6.2)
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -267,10 +269,10 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     rexml (3.2.5)
-    ruby-lsp (0.3.7)
+    ruby-lsp (0.3.8)
       language_server-protocol (~> 3.17.0)
       sorbet-runtime
-      syntax_tree (>= 4.0.2, < 5.0.0)
+      syntax_tree (>= 5.0.0, < 6)
     rubyzip (2.3.2)
     sassc (2.4.0)
       ffi (~> 1.9)
@@ -280,11 +282,11 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    selenium-webdriver (4.7.1)
+    selenium-webdriver (4.8.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    sorbet-runtime (0.5.10624)
+    sorbet-runtime (0.5.10634)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -294,8 +296,8 @@ GEM
       sprockets (>= 3.0.0)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
-    syntax_tree (4.3.0)
-      prettier_print (>= 1.0.2)
+    syntax_tree (5.2.0)
+      prettier_print (>= 1.2.0)
     thor (1.2.1)
     tilt (2.0.11)
     timeout (0.3.1)

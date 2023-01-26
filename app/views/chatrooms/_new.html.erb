@@ -1,15 +1,22 @@
-<div data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%= activity.chatroom.id %>">
-  <div data-chatroom-subscription-target="messages">
-    <% chatroom.messages.each do |message| %>
-      <%= render "messages/new", message: message %>
+<div data-controller="character-counter chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%= activity.chatroom.id %>">
+  <div class="col-12">
+    <div data-chatroom-subscription-target="messages">
+      <% chatroom.messages.each do |message| %>
+        <%= render "messages/new", message: message %>
+      <% end %>
+    </div>
+    <%= simple_form_for [chatroom, message], remote: true, html: { data: { action:"turbo:submit-end->chatroom-subscription#resetForm" } } do |f|%>
+      <%= f.input :content,
+                  as: :string,
+                  input_html: { autocomplete: "string", class: "border-0 h-100 mb-5 p-5 rounded-4 shadow-sm", data: { character_counter_target: "input" } },
+                  label: false,
+                  placeholder: "Send a message to other participants" %>
+      <div class="align-items-center d-flex justify-content-between my-5">
+        <%= f.submit "Send", class: "btn btn-bd-green px-4 py-2 shadow" %>
+        <small class="form-text">
+          Your message is currently <small data-character-counter-target="counter"></small> characters long
+        </small>
+      </div>
     <% end %>
   </div>
-  <%= simple_form_for [chatroom, message], remote: true, html: { data: { action:"turbo:submit-end->chatroom-subscription#resetForm" } } do |f|%>
-    <%= f.input :content,
-                as: :string,
-                input_html: { autocomplete: "string", class: "border-0 h-100 mb-5 p-5 rounded-4 shadow-sm"},
-                label: false,
-                placeholder: "Send a message to other participants" %>
-    <%= f.submit "Send", class: "btn btn-bd-green px-4 py-2 shadow" %>
-  <% end %>
 </div>
