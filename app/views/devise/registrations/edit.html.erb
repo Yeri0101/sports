@@ -47,7 +47,7 @@
                 required: true %>
   </div>
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <small>
+    <small class="form-text text-secondary">
       Currently waiting confirmation for: <%= resource.unconfirmed_email %>
     </small>
   <% end %>

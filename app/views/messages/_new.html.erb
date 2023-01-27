@@ -5,11 +5,11 @@
         <%="Organizer"%>
       </p>
     <% else %>
-      <small class="form-text">
+      <small class="form-text text-secondary">
         @<%= message.user.username %>
       </small>
     <% end %>
-    <small class="fst-italic text-secondary">
+    <small class="form-text fst-italic text-secondary">
       <%= time_ago_in_words(message.created_at) %> ago
     </small>
   </div>

@@ -10,7 +10,7 @@
                           html: { class: "d-flex", method: :get },
                           data: { turbo: false } do |f| %>
     <%= f.search_field :activity_name_i_cont_any,
-                       class: "border-0 form-control me-3 shadow-sm",
+                       class: "border-0 form-control me-4 shadow-sm",
                        placeholder: "Search for a booking" %>
     <%= f.submit class: "btn btn-light px-4 py-2 shadow-sm",
                  placeholder: "Search" %>
@@ -35,18 +35,13 @@
       <div class="col-md-6">
         <div class="border-0 card p-4 rounded-4 shadow-sm">
           <div class="card-body">
-            <div class="align-items-center d-flex justify-content-between">
+            <div class="align-items-center d-flex justify-content-between mb-5">
               <h5 class="card-title fs-5">
                 <%= booking.activity.name %>
               </h5>
-              <h6 class="card-subtitle fs-6">
+              <small class="form-text text-secondary">
                 <%= pluralize booking.activity.reviews.size, "review" %>
-              </h6>
-            </div>
-            <div class="mb-5">
-              <h6 class="card-subtitle text-secondary">
-                <%= booking.activity.address %>
-              </h6>
+              </small>
             </div>
             <div class="mb-5">
               <p class="card-text text-secondary">
