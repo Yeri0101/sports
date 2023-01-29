@@ -30,18 +30,18 @@
     </div>
     <div class="border-0 card mb-5 p-4 rounded-4 shadow-sm">
       <% if @activity.image.attached? %>
-        <%= cl_image_tag @activity.image.key, class: "card-img-top img-fluid mb-4 rounded-4 shadow-sm" %>
+        <%= cl_image_tag @activity.image.key, class: "card-img-top img-fluid mb-5 rounded-4 shadow-sm" %>
       <% else %>
         <% false %>
       <% end %>
       <div class="card-body">
-        <div class="align-items-center d-flex justify-content-between mb-4">
+        <div class="align-items-center d-flex justify-content-between mb-5">
           <h5 class="card-title fs-5">
             <%= @activity.name %>
           </h5>
-          <h6 class="card-subtitle fs-6 text-secondary">
+          <small class="form-text text-secondary">
             <%= @activity.start_date %>
-          </h6>
+          </small>
         </div>
         <p class="card-text text-secondary">
           <%= @activity.description %>
@@ -54,16 +54,16 @@
       <h5 class="fs-5">
         Location
       </h5>
-      <h6 class="card-subtitle text-secondary">
+      <small class="form-text text-secondary">
         <%= @activity.address %>
-      </h6>
+      </small>
     </div>
     <div class="border-0 card mb-5 p-4 rounded-4 shadow-sm">
       <div class="card-body">
         <% if @marker %>
-          <div style="height: 512px; width: 100%;" data-controller="map"
+          <div style="height: 552px; width: 100%;" data-controller="map"
                                                    data-map-marker-value="<%= @marker.to_json %>"
-                                                   data-map-api-key-value="<%= ENV["VARIABLE_TOKEN_MAPBOX"] %>">
+                                                   data-map-api-key-value="<%= ENV["MAPBOX_TOKEN"] %>">
           </div>
         <% else %>
           <h6 class="card-subtitle text-secondary">Unable to locate this activity</h6>
@@ -96,9 +96,9 @@
         <h5 class="fs-5">
           All reviews
         </h5>
-        <h6 class="card-subtitle fs-6 text-secondary">
+        <small class="form-text text-secondary">
           <%= pluralize @activity.reviews.size, "review" %>
-        </h6>
+        </small>
       </div>
       <% @activity.reviews.each do |review| %>
         <%= render "activities/review", review: review %>
