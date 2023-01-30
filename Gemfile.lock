@@ -54,7 +54,7 @@ GIT
 
 GIT
   remote: https://github.com/heartcombo/simple_form.git
-  revision: 485175830ce36a9b5b431f3ad16730a2a5211c7b
+  revision: d17d97f32c3b0020cfc080344bffb29bac49d091
   branch: main
   specs:
     simple_form (5.2.0)
