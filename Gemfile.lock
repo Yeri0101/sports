@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/activerecord-hackery/ransack.git
-  revision: d658628a212f5c88fc268b2d0aa14f7abe7647db
+  revision: fc4b83d4bd04bab5060b6fcdcc917e4c1929a793
   branch: main
   specs:
     ransack (3.2.1)
@@ -34,7 +34,7 @@ GIT
 
 GIT
   remote: https://github.com/faker-ruby/faker.git
-  revision: 1c868b22beeb164962c955c4a81c98b000e3ec71
+  revision: 3088c5a9c6ca44cc232b249df95bf3b81607cc35
   branch: main
   specs:
     faker (3.1.0)
@@ -42,7 +42,7 @@ GIT
 
 GIT
   remote: https://github.com/heartcombo/devise.git
-  revision: cddba289459d922d40eabf6c8475008995a78783
+  revision: 3632ddf67473880ed9583201ce13f108c620514f
   branch: main
   specs:
     devise (4.8.1)
@@ -54,10 +54,10 @@ GIT
 
 GIT
   remote: https://github.com/heartcombo/simple_form.git
-  revision: ad1bb2ef24fc1a90459e7c4c18821edb38c57c2d
+  revision: d17d97f32c3b0020cfc080344bffb29bac49d091
   branch: main
   specs:
-    simple_form (5.1.0)
+    simple_form (5.2.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
 
@@ -183,7 +183,7 @@ GEM
     kredis (1.3.0)
       activesupport (>= 6.0.0)
       redis (>= 4.2, < 6)
-    language_server-protocol (3.17.0.2)
+    language_server-protocol (3.17.0.3)
     loofah (2.19.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -212,11 +212,11 @@ GEM
       net-protocol
     netrc (0.11.0)
     nio4r (2.5.8)
-    nokogiri (1.14.0-arm64-darwin)
+    nokogiri (1.14.1-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.14.0-x86_64-darwin)
+    nokogiri (1.14.1-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.14.0-x86_64-linux)
+    nokogiri (1.14.1-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.4.5)
@@ -288,7 +288,7 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    sorbet-runtime (0.5.10634)
+    sorbet-runtime (0.5.10644)
     spring (4.1.1)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
@@ -304,11 +304,11 @@ GEM
     thor (1.2.1)
     tilt (2.0.11)
     timeout (0.3.1)
-    turbo-rails (1.3.2)
+    turbo-rails (1.3.3)
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
       railties (>= 6.0.0)
-    tzinfo (2.0.5)
+    tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unf (0.1.4)
       unf_ext

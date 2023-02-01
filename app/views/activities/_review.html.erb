@@ -1,7 +1,7 @@
 <div class="border-0 card mb-5 p-4 rounded-4 shadow-sm">
   <div class="card-body">
     <p class="card-text">
-      <%= review.user.first_name %>
+      <%= review.user.first_name %> <%= review.user.last_name.upcase %>
     </p>
     <div class="align-items-end d-flex justify-content-between">
       <p class="card-text text-secondary"><%= review.comment %></p>
