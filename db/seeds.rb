@@ -15,14 +15,13 @@ Message.destroy_all
     email: Faker::Internet.email(domain: "sports.osc-fr1.scalingo.io"),
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    # password:
-    # Faker::Internet.password(
-    # min_length: 12,
-    # max_length: 22,
-    # mix_case: true,
-    # special_characters: true
-    # ),
-    password: ENV["PASSWORD_USER"],
+    password:
+      Faker::Internet.password(
+        min_length: 12,
+        max_length: 22,
+        mix_case: true,
+        special_characters: true
+      ),
     phone_number: Faker::PhoneNumber.phone_number,
     postcode: Faker::Address.postcode,
     state: Faker::Address.state,
@@ -38,7 +37,13 @@ User.create!(
   email: "maximilien.lanz@lewagon.com",
   first_name: "Maximilien",
   last_name: "LANZ",
-  password: ENV["PASSWORD_ADMINISTRATOR"],
+  password:
+    Faker::Internet.password(
+      min_length: 12,
+      max_length: 22,
+      mix_case: true,
+      special_characters: true
+    ),
   phone_number: "76 373 33 77",
   postcode: "1110",
   state: "Canton de Vaud",
