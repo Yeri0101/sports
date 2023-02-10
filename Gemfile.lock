@@ -42,10 +42,10 @@ GIT
 
 GIT
   remote: https://github.com/heartcombo/devise.git
-  revision: d0f0853c75defb10d83f4b2576b8df9e4cbb3695
+  revision: 8e2e3f6fda1ceabe2eff08cf34a6e663527c438b
   branch: main
   specs:
-    devise (4.8.1)
+    devise (4.9.0.alpha)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0)
@@ -288,7 +288,7 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    sorbet-runtime (0.5.10655)
+    sorbet-runtime (0.5.10657)
     spring (4.1.1)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
@@ -330,7 +330,7 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.6.6)
+    zeitwerk (2.6.7)
 
 PLATFORMS
   arm64-darwin-21
