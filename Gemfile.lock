@@ -34,7 +34,7 @@ GIT
 
 GIT
   remote: https://github.com/faker-ruby/faker.git
-  revision: 01e4c1e3dd333283a47f038fa488ed8e7da62a81
+  revision: 0f47ff04fec32445703323834ce824f9312a168c
   branch: main
   specs:
     faker (3.1.1)
@@ -42,7 +42,7 @@ GIT
 
 GIT
   remote: https://github.com/heartcombo/devise.git
-  revision: 8e2e3f6fda1ceabe2eff08cf34a6e663527c438b
+  revision: 2d655ea46e0267c05fd6a389fa3156f33fcc9856
   branch: main
   specs:
     devise (4.9.0.alpha)
@@ -212,11 +212,11 @@ GEM
       net-protocol
     netrc (0.11.0)
     nio4r (2.5.8)
-    nokogiri (1.14.1-arm64-darwin)
+    nokogiri (1.14.2-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.14.1-x86_64-darwin)
+    nokogiri (1.14.2-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.14.1-x86_64-linux)
+    nokogiri (1.14.2-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.4.5)
@@ -288,7 +288,7 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    sorbet-runtime (0.5.10658)
+    sorbet-runtime (0.5.10666)
     spring (4.1.1)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
