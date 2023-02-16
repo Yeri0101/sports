@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/activerecord-hackery/ransack.git
-  revision: fc4b83d4bd04bab5060b6fcdcc917e4c1929a793
+  revision: dbffa8bed3e4cad9d7f51cd9233466ae4b68fb4d
   branch: main
   specs:
-    ransack (3.2.1)
+    ransack (4.0.0)
       activerecord (>= 6.1.5)
       activesupport (>= 6.1.5)
       i18n
@@ -34,18 +34,18 @@ GIT
 
 GIT
   remote: https://github.com/faker-ruby/faker.git
-  revision: 3088c5a9c6ca44cc232b249df95bf3b81607cc35
+  revision: 0f47ff04fec32445703323834ce824f9312a168c
   branch: main
   specs:
-    faker (3.1.0)
+    faker (3.1.1)
       i18n (>= 1.8.11, < 2)
 
 GIT
   remote: https://github.com/heartcombo/devise.git
-  revision: 3632ddf67473880ed9583201ce13f108c620514f
+  revision: 2d655ea46e0267c05fd6a389fa3156f33fcc9856
   branch: main
   specs:
-    devise (4.8.1)
+    devise (4.9.0.alpha)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0)
@@ -54,7 +54,7 @@ GIT
 
 GIT
   remote: https://github.com/heartcombo/simple_form.git
-  revision: d17d97f32c3b0020cfc080344bffb29bac49d091
+  revision: 159b70aea62443aeb0e32382de3095bcb571ee0e
   branch: main
   specs:
     simple_form (5.2.0)
@@ -187,7 +187,7 @@ GEM
     loofah (2.19.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
-    mail (2.8.0.1)
+    mail (2.8.1)
       mini_mime (>= 0.1.1)
       net-imap
       net-pop
@@ -212,17 +212,17 @@ GEM
       net-protocol
     netrc (0.11.0)
     nio4r (2.5.8)
-    nokogiri (1.14.1-arm64-darwin)
+    nokogiri (1.14.2-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.14.1-x86_64-darwin)
+    nokogiri (1.14.2-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.14.1-x86_64-linux)
+    nokogiri (1.14.2-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.4.5)
     prettier_print (1.2.0)
     public_suffix (5.0.1)
-    puma (6.0.2)
+    puma (6.1.0)
       nio4r (~> 2.0)
     racc (1.6.2)
     rack (2.2.6.2)
@@ -261,10 +261,10 @@ GEM
       redis-client (>= 0.9.0)
     redis-client (0.12.1)
       connection_pool
-    regexp_parser (2.6.2)
-    responders (3.0.1)
-      actionpack (>= 5.0)
-      railties (>= 5.0)
+    regexp_parser (2.7.0)
+    responders (3.1.0)
+      actionpack (>= 5.2)
+      railties (>= 5.2)
     rest-client (2.1.0)
       http-accept (>= 1.7.0, < 2.0)
       http-cookie (>= 1.0.2, < 2.0)
@@ -288,7 +288,7 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    sorbet-runtime (0.5.10644)
+    sorbet-runtime (0.5.10667)
     spring (4.1.1)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
@@ -303,7 +303,7 @@ GEM
       prettier_print (>= 1.2.0)
     thor (1.2.1)
     tilt (2.0.11)
-    timeout (0.3.1)
+    timeout (0.3.2)
     turbo-rails (1.3.3)
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
@@ -330,7 +330,7 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.6.6)
+    zeitwerk (2.6.7)
 
 PLATFORMS
   arm64-darwin-21
@@ -372,7 +372,7 @@ DEPENDENCIES
   webdrivers
 
 RUBY VERSION
-   ruby 3.2.0p0
+   ruby 3.2.1p31
 
 BUNDLED WITH
-   2.3.26
+   2.4.7
