@@ -35,4 +35,25 @@ class Activity < ApplicationRecord
   def create_chatroom
     Chatroom.create(activity: self)
   end
+
+  def self.ransackable_associations(auth_object = nil)
+    %w[bookings chatroom image_attachment image_blob reviews user users]
+  end
+
+  def self.ransackable_attributes(auth_object = nil)
+    %w[
+      address
+      category
+      created_at
+      description
+      end_date
+      id
+      latitude
+      longitude
+      name
+      start_date
+      updated_at
+      user_id
+    ]
+  end
 end

@@ -37,7 +37,7 @@ gem "kredis"
 gem "bcrypt"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
+gem "tzinfo-data", platforms: %i[jruby mingw mswin x64_mingw]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
@@ -50,7 +50,7 @@ gem "cloudinary", github: "cloudinary/cloudinary_gem", branch: "master"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[mri mingw x64_mingw]
+  gem "debug", platforms: %i[mingw mri x64_mingw]
   gem "dotenv-rails"
 end
 
@@ -59,10 +59,13 @@ group :development do
   gem "web-console"
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
-  gem "rack-mini-profiler"
+  # gem "rack-mini-profiler"
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   gem "spring"
+
+  # An opinionated language server for Ruby [https://github.com/Shopify/ruby-lsp]
+  gem "ruby-lsp", github: "Shopify/ruby-lsp", branch: "main"
 end
 
 group :test do
@@ -79,5 +82,3 @@ gem "geocoder", github: "alexreisner/geocoder", branch: "master"
 gem "pundit", github: "varvet/pundit", branch: "main"
 gem "ransack", github: "activerecord-hackery/ransack", branch: "main"
 gem "simple_form", github: "heartcombo/simple_form", branch: "main"
-
-gem "ruby-lsp", "~> 0.3.6", group: :development

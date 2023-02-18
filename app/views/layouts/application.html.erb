@@ -14,7 +14,7 @@
       const script = document.getElementById("search-js");
       script.onload = function() {
         mapboxsearch.autofill({
-          accessToken: "<%= ENV["MAPBOX_URL"] %>",
+          accessToken: "<%= ENV["MAPBOX_TOKEN"] %>",
           options: {
             country: "CH",
             language: "en",
@@ -29,7 +29,6 @@
     <%= render "shared/navbar" %>
     <div class="container">
       <%= yield %>
-      <%= render "shared/flashes" %>
     </div>
   </body>
 </html>
