@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/Shopify/ruby-lsp.git
-  revision: 5e4f4dab6fe7dc4dfea4b7750f58d07350ad123c
+  revision: d9fbb9488e7c83ca890f95ef4b0f71caaaf0dbcf
   branch: main
   specs:
     ruby-lsp (0.4.0)
@@ -44,7 +44,7 @@ GIT
 
 GIT
   remote: https://github.com/faker-ruby/faker.git
-  revision: 0f47ff04fec32445703323834ce824f9312a168c
+  revision: edf33cdbbb759206534faa723426c23d3ab45068
   branch: main
   specs:
     faker (3.1.1)
@@ -52,7 +52,7 @@ GIT
 
 GIT
   remote: https://github.com/heartcombo/devise.git
-  revision: 7f419bf99adb9463617be7ccb0852d5f8f7b0317
+  revision: 41e2db212065f2a75a5d73e76d6eb8ecd53a6acf
   branch: main
   specs:
     devise (4.9.0)
@@ -64,7 +64,7 @@ GIT
 
 GIT
   remote: https://github.com/heartcombo/simple_form.git
-  revision: 0ef4a58daae41ab091d25ac1dc3fb4ede35743b1
+  revision: 921ce9c3fc100e1737125ba1b5a2037c03f2de1b
   branch: main
   specs:
     simple_form (5.2.0)
