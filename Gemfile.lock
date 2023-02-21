@@ -28,7 +28,7 @@ GIT
 
 GIT
   remote: https://github.com/alexreisner/geocoder.git
-  revision: 6f752594dd00472835917d475c4d84c1741e1470
+  revision: b70c6cd5acb371d6d6d11a517f3ba248cbfaf6df
   branch: master
   specs:
     geocoder (1.8.1)
@@ -44,7 +44,7 @@ GIT
 
 GIT
   remote: https://github.com/faker-ruby/faker.git
-  revision: edf33cdbbb759206534faa723426c23d3ab45068
+  revision: 541ac1cf0830702e66b75e638da1ca234670b1bd
   branch: main
   specs:
     faker (3.1.1)
