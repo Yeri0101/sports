@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/Shopify/ruby-lsp.git
-  revision: c557ce825193d698c01015319100bf8cc4fdfc46
+  revision: 2699f333981f54fa4d1bc6913269cd9393db023a
   branch: main
   specs:
     ruby-lsp (0.4.1)
@@ -28,7 +28,7 @@ GIT
 
 GIT
   remote: https://github.com/alexreisner/geocoder.git
-  revision: b70c6cd5acb371d6d6d11a517f3ba248cbfaf6df
+  revision: eacc283f17bdccd3ea518150a6c7420d16d115da
   branch: master
   specs:
     geocoder (1.8.1)
@@ -229,7 +229,7 @@ GEM
     nokogiri (1.14.2-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
-    pg (1.4.5)
+    pg (1.4.6)
     prettier_print (1.2.0)
     public_suffix (5.0.1)
     puma (6.1.0)
@@ -303,7 +303,7 @@ GEM
       sprockets (>= 3.0.0)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
-    syntax_tree (6.0.0)
+    syntax_tree (6.0.1)
       prettier_print (>= 1.2.0)
     thor (1.2.1)
     tilt (2.1.0)
