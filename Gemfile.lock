@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/Shopify/ruby-lsp.git
-  revision: 2699f333981f54fa4d1bc6913269cd9393db023a
+  revision: e37d1ad7558f62f85976365bd75ec070bad99bb7
   branch: main
   specs:
     ruby-lsp (0.4.1)
@@ -73,7 +73,7 @@ GIT
 
 GIT
   remote: https://github.com/varvet/pundit.git
-  revision: fa2ba09ce59249122e0fcdb118e2701b1c14d04b
+  revision: 09a8db6e481e3ba76ffd01508181f768e1f95904
   branch: main
   specs:
     pundit (2.3.0)
@@ -232,7 +232,7 @@ GEM
     pg (1.4.6)
     prettier_print (1.2.0)
     public_suffix (5.0.1)
-    puma (6.1.0)
+    puma (6.1.1)
       nio4r (~> 2.0)
     racc (1.6.2)
     rack (2.2.6.2)
@@ -292,7 +292,7 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    sorbet-runtime (0.5.10687)
+    sorbet-runtime (0.5.10689)
     spring (4.1.1)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
