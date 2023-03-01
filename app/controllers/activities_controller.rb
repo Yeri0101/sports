@@ -87,6 +87,8 @@ class ActivitiesController < ApplicationController
         description
         end_date
         image
+        latitude
+        longitude
         name
         postcode
         state

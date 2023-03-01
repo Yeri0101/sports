@@ -1,4 +1,14 @@
 GIT
+  remote: https://github.com/Shopify/ruby-lsp.git
+  revision: e37d1ad7558f62f85976365bd75ec070bad99bb7
+  branch: main
+  specs:
+    ruby-lsp (0.4.1)
+      language_server-protocol (~> 3.17.0)
+      sorbet-runtime
+      syntax_tree (>= 6, < 7)
+
+GIT
   remote: https://github.com/activerecord-hackery/ransack.git
   revision: dbffa8bed3e4cad9d7f51cd9233466ae4b68fb4d
   branch: main
@@ -10,15 +20,15 @@ GIT
 
 GIT
   remote: https://github.com/ai/autoprefixer-rails.git
-  revision: 89c660ae11531870f1a4c94c3de5aad32e024f8e
+  revision: 26a3bf14310c064d6e4b426a4752a6c28a7c43dc
   branch: master
   specs:
-    autoprefixer-rails (10.4.7.0)
+    autoprefixer-rails (10.4.13.0)
       execjs (~> 2)
 
 GIT
   remote: https://github.com/alexreisner/geocoder.git
-  revision: 6f752594dd00472835917d475c4d84c1741e1470
+  revision: eacc283f17bdccd3ea518150a6c7420d16d115da
   branch: master
   specs:
     geocoder (1.8.1)
@@ -34,7 +44,7 @@ GIT
 
 GIT
   remote: https://github.com/faker-ruby/faker.git
-  revision: 0f47ff04fec32445703323834ce824f9312a168c
+  revision: a67007ae0a1b638775f0b67ecc1e32ffa9f4d417
   branch: main
   specs:
     faker (3.1.1)
@@ -42,10 +52,10 @@ GIT
 
 GIT
   remote: https://github.com/heartcombo/devise.git
-  revision: 2d655ea46e0267c05fd6a389fa3156f33fcc9856
+  revision: 41e2db212065f2a75a5d73e76d6eb8ecd53a6acf
   branch: main
   specs:
-    devise (4.9.0.alpha)
+    devise (4.9.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0)
@@ -54,7 +64,7 @@ GIT
 
 GIT
   remote: https://github.com/heartcombo/simple_form.git
-  revision: 159b70aea62443aeb0e32382de3095bcb571ee0e
+  revision: 921ce9c3fc100e1737125ba1b5a2037c03f2de1b
   branch: main
   specs:
     simple_form (5.2.0)
@@ -63,7 +73,7 @@ GIT
 
 GIT
   remote: https://github.com/varvet/pundit.git
-  revision: dd53b6929946405438aab43564f14d630f2eb804
+  revision: 09a8db6e481e3ba76ffd01508181f768e1f95904
   branch: main
   specs:
     pundit (2.3.0)
@@ -154,7 +164,7 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
-    concurrent-ruby (1.2.0)
+    concurrent-ruby (1.2.2)
     connection_pool (2.3.0)
     crass (1.0.6)
     date (3.3.3)
@@ -197,7 +207,7 @@ GEM
     method_source (1.0.0)
     mime-types (3.4.1)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2022.0105)
+    mime-types-data (3.2023.0218.1)
     mini_mime (1.1.2)
     minitest (5.17.0)
     msgpack (1.6.0)
@@ -219,15 +229,13 @@ GEM
     nokogiri (1.14.2-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
-    pg (1.4.5)
+    pg (1.4.6)
     prettier_print (1.2.0)
     public_suffix (5.0.1)
-    puma (6.1.0)
+    puma (6.1.1)
       nio4r (~> 2.0)
     racc (1.6.2)
     rack (2.2.6.2)
-    rack-mini-profiler (3.0.0)
-      rack (>= 1.2.0)
     rack-test (2.0.2)
       rack (>= 1.3)
     rails (7.0.4.2)
@@ -259,7 +267,7 @@ GEM
     rake (13.0.6)
     redis (5.0.6)
       redis-client (>= 0.9.0)
-    redis-client (0.12.1)
+    redis-client (0.13.0)
       connection_pool
     regexp_parser (2.7.0)
     responders (3.1.0)
@@ -271,10 +279,6 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     rexml (3.2.5)
-    ruby-lsp (0.3.8)
-      language_server-protocol (~> 3.17.0)
-      sorbet-runtime
-      syntax_tree (>= 5.0.0, < 6)
     rubyzip (2.3.2)
     sassc (2.4.0)
       ffi (~> 1.9)
@@ -284,11 +288,11 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    selenium-webdriver (4.8.0)
+    selenium-webdriver (4.8.1)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    sorbet-runtime (0.5.10667)
+    sorbet-runtime (0.5.10690)
     spring (4.1.1)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
@@ -299,12 +303,12 @@ GEM
       sprockets (>= 3.0.0)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
-    syntax_tree (5.3.0)
+    syntax_tree (6.0.1)
       prettier_print (>= 1.2.0)
     thor (1.2.1)
-    tilt (2.0.11)
+    tilt (2.1.0)
     timeout (0.3.2)
-    turbo-rails (1.3.3)
+    turbo-rails (1.4.0)
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
       railties (>= 6.0.0)
@@ -355,11 +359,10 @@ DEPENDENCIES
   pg
   puma
   pundit!
-  rack-mini-profiler
   rails
   ransack!
   redis
-  ruby-lsp (~> 0.3.6)
+  ruby-lsp!
   sassc-rails
   selenium-webdriver
   simple_form!
