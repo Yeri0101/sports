@@ -1,12 +1,12 @@
 GIT
   remote: https://github.com/Shopify/ruby-lsp.git
-  revision: e37d1ad7558f62f85976365bd75ec070bad99bb7
+  revision: c12dd2ace11288e7f5985e4c412b2a75e1695152
   branch: main
   specs:
     ruby-lsp (0.4.1)
       language_server-protocol (~> 3.17.0)
       sorbet-runtime
-      syntax_tree (>= 6, < 7)
+      syntax_tree (>= 6.0.2, < 7)
 
 GIT
   remote: https://github.com/activerecord-hackery/ransack.git
@@ -28,7 +28,7 @@ GIT
 
 GIT
   remote: https://github.com/alexreisner/geocoder.git
-  revision: eacc283f17bdccd3ea518150a6c7420d16d115da
+  revision: 590a61f8cc7ff6d0ddc98a4d707dd86914d925a3
   branch: master
   specs:
     geocoder (1.8.1)
@@ -52,7 +52,7 @@ GIT
 
 GIT
   remote: https://github.com/heartcombo/devise.git
-  revision: 41e2db212065f2a75a5d73e76d6eb8ecd53a6acf
+  revision: 7d1dc56fdba2402c452c4224567077b23184637e
   branch: main
   specs:
     devise (4.9.0)
@@ -209,8 +209,8 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2023.0218.1)
     mini_mime (1.1.2)
-    minitest (5.17.0)
-    msgpack (1.6.0)
+    minitest (5.18.0)
+    msgpack (1.6.1)
     net-imap (0.3.4)
       date
       net-protocol
@@ -235,7 +235,7 @@ GEM
     puma (6.1.1)
       nio4r (~> 2.0)
     racc (1.6.2)
-    rack (2.2.6.2)
+    rack (2.2.6.3)
     rack-test (2.0.2)
       rack (>= 1.3)
     rails (7.0.4.2)
@@ -292,7 +292,7 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    sorbet-runtime (0.5.10690)
+    sorbet-runtime (0.5.10705)
     spring (4.1.1)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
@@ -303,7 +303,7 @@ GEM
       sprockets (>= 3.0.0)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
-    syntax_tree (6.0.1)
+    syntax_tree (6.0.2)
       prettier_print (>= 1.2.0)
     thor (1.2.1)
     tilt (2.1.0)
