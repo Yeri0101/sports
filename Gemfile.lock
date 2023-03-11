@@ -73,7 +73,7 @@ GIT
 
 GIT
   remote: https://github.com/varvet/pundit.git
-  revision: 09a8db6e481e3ba76ffd01508181f768e1f95904
+  revision: ec710c757cddb13f896b83ee3d2648ac2899a415
   branch: main
   specs:
     pundit (2.3.0)
@@ -292,7 +292,7 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    sorbet-runtime (0.5.10710)
+    sorbet-runtime (0.5.10712)
     spring (4.1.1)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
