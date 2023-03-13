@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/Shopify/ruby-lsp.git
-  revision: ac7d7132ee0337d5be9aff2646107d7d172644f3
+  revision: d6d2353aa8d2f3601e275df371e90a83dc0139ca
   branch: main
   specs:
     ruby-lsp (0.4.1)
@@ -235,7 +235,7 @@ GEM
     puma (6.1.1)
       nio4r (~> 2.0)
     racc (1.6.2)
-    rack (2.2.6.3)
+    rack (2.2.6.4)
     rack-test (2.0.2)
       rack (>= 1.3)
     rails (7.0.4.2)
