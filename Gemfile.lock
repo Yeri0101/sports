@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/Shopify/ruby-lsp.git
-  revision: d6d2353aa8d2f3601e275df371e90a83dc0139ca
+  revision: 7662549ae42a5cf4cab504144fb997ec61e5ea04
   branch: main
   specs:
     ruby-lsp (0.4.1)
@@ -28,7 +28,7 @@ GIT
 
 GIT
   remote: https://github.com/alexreisner/geocoder.git
-  revision: 590a61f8cc7ff6d0ddc98a4d707dd86914d925a3
+  revision: ee5cfe67c6540c9093114ee22f715f8df72aa9c4
   branch: master
   specs:
     geocoder (1.8.1)
@@ -44,7 +44,7 @@ GIT
 
 GIT
   remote: https://github.com/faker-ruby/faker.git
-  revision: 6ce775b268f14dca447a7df1945607847e706d6a
+  revision: 53843386b662445d1d766f7b4226aa63549954a6
   branch: main
   specs:
     faker (3.1.1)
