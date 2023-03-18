@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/Shopify/ruby-lsp.git
-  revision: 7662549ae42a5cf4cab504144fb997ec61e5ea04
+  revision: 18c61090591c0cba95a9d37dcb2c91c80e491485
   branch: main
   specs:
     ruby-lsp (0.4.1)
@@ -52,7 +52,7 @@ GIT
 
 GIT
   remote: https://github.com/heartcombo/devise.git
-  revision: 7d1dc56fdba2402c452c4224567077b23184637e
+  revision: 232c855c54cc3e471afbd48b6eda8ff164638c09
   branch: main
   specs:
     devise (4.9.0)
