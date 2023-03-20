@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/Shopify/ruby-lsp.git
-  revision: 18c61090591c0cba95a9d37dcb2c91c80e491485
+  revision: 5ceef5f80d0f7453d224880a1d8c58dc132eaa00
   branch: main
   specs:
-    ruby-lsp (0.4.1)
+    ruby-lsp (0.4.2)
       language_server-protocol (~> 3.17.0)
       sorbet-runtime
       syntax_tree (>= 6.0.2, < 7)
@@ -303,7 +303,7 @@ GEM
       sprockets (>= 3.0.0)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
-    syntax_tree (6.0.2)
+    syntax_tree (6.1.0)
       prettier_print (>= 1.2.0)
     thor (1.2.1)
     tilt (2.1.0)
