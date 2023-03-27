@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/Shopify/ruby-lsp.git
-  revision: 0e2467cb1085dfef44b03d97049cbfbf0fe055b9
+  revision: 9a34e57cf95ff355ca9ec4f7c9878d5eaf5ec670
   branch: main
   specs:
     ruby-lsp (0.4.2)
@@ -275,7 +275,7 @@ GEM
     redis-client (0.14.0)
       connection_pool
     regexp_parser (2.7.0)
-    reline (0.3.2)
+    reline (0.3.3)
       io-console (~> 0.5)
     responders (3.1.0)
       actionpack (>= 5.2)
@@ -385,4 +385,4 @@ RUBY VERSION
    ruby 3.2.1p31
 
 BUNDLED WITH
-   2.4.9
+   2.4.10
