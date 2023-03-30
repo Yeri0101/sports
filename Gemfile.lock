@@ -1,12 +1,12 @@
 GIT
   remote: https://github.com/Shopify/ruby-lsp.git
-  revision: 9657d79675d889f37a0c9f5fdfa538e90f9504b2
+  revision: f5dde7177873b3cb0b949c181753b1ac8a61cd41
   branch: main
   specs:
-    ruby-lsp (0.4.2)
+    ruby-lsp (0.4.3)
       language_server-protocol (~> 3.17.0)
       sorbet-runtime
-      syntax_tree (>= 6.0.2, < 7)
+      syntax_tree (>= 6.1.1, < 7)
 
 GIT
   remote: https://github.com/activerecord-hackery/ransack.git
