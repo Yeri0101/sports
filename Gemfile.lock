@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/Shopify/ruby-lsp.git
-  revision: 6f9ef701d5820b4d570efcc1d5b17a540d96ee64
+  revision: 9657d79675d889f37a0c9f5fdfa538e90f9504b2
   branch: main
   specs:
     ruby-lsp (0.4.2)
@@ -44,7 +44,7 @@ GIT
 
 GIT
   remote: https://github.com/faker-ruby/faker.git
-  revision: 4d52bc1e148d5290da10cb2775e244e0023778b0
+  revision: 36cd3825584510cce8f5ab7ad036252b69753435
   branch: main
   specs:
     faker (3.1.1)
@@ -215,7 +215,7 @@ GEM
     mime-types-data (3.2023.0218.1)
     mini_mime (1.1.2)
     minitest (5.18.0)
-    msgpack (1.6.1)
+    msgpack (1.7.0)
     net-imap (0.3.4)
       date
       net-protocol
@@ -295,7 +295,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    selenium-webdriver (4.8.5)
+    selenium-webdriver (4.8.6)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
