@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/Shopify/ruby-lsp.git
-  revision: f5dde7177873b3cb0b949c181753b1ac8a61cd41
+  revision: 37b831610448baff569bb517fcca9b291556d853
   branch: main
   specs:
     ruby-lsp (0.4.3)
@@ -52,7 +52,7 @@ GIT
 
 GIT
   remote: https://github.com/heartcombo/devise.git
-  revision: 367ea427626ea8d9a8315b296535a4d93f311fab
+  revision: 506eaf495da455304ad0a56b9f92d5790a9b86fa
   branch: main
   specs:
     devise (4.9.0)
@@ -237,7 +237,7 @@ GEM
     pg (1.4.6)
     prettier_print (1.2.1)
     public_suffix (5.0.1)
-    puma (6.2.0)
+    puma (6.2.1)
       nio4r (~> 2.0)
     racc (1.6.2)
     rack (2.2.6.4)
@@ -382,7 +382,7 @@ DEPENDENCIES
   webdrivers
 
 RUBY VERSION
-   ruby 3.2.1p31
+   ruby 3.2.2p53
 
 BUNDLED WITH
    2.4.10
