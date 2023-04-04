@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/Shopify/ruby-lsp.git
-  revision: db6befe2be927d6108487468a738fc9594fe9258
+  revision: 1ac69c9b4187bcae056b577122f7f8db2ff96346
   branch: main
   specs:
     ruby-lsp (0.4.3)
@@ -52,10 +52,10 @@ GIT
 
 GIT
   remote: https://github.com/heartcombo/devise.git
-  revision: 3926e6d9eb139cc839faec8ea6c8f8cefa2d95f6
+  revision: 4b72064bfcf076478c5c87818b9536b203f6584f
   branch: main
   specs:
-    devise (4.9.1)
+    devise (4.9.2)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0)
