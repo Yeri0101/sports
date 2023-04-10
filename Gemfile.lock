@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/Shopify/ruby-lsp.git
-  revision: f17579f5f16bf93256811edf7bcf5deb10089779
+  revision: 093c6c8933a1d8ddd18b73eb834f6cee143714be
   branch: main
   specs:
     ruby-lsp (0.4.3)
@@ -147,7 +147,7 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
-    addressable (2.8.3)
+    addressable (2.8.4)
       public_suffix (>= 2.0.2, < 6.0)
     aws_cf_signer (0.1.3)
     bcrypt (3.1.18)
@@ -188,7 +188,7 @@ GEM
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     io-console (0.6.0)
-    irb (1.6.3)
+    irb (1.6.4)
       reline (>= 0.3.0)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
