@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/Shopify/ruby-lsp.git
-  revision: 63e35855ccc1b048450be52aa1e04e0a03859003
+  revision: 870d2970e3a3b4f8aae22bd5743f30d648bbb205
   branch: main
   specs:
-    ruby-lsp (0.4.3)
+    ruby-lsp (0.4.4)
       language_server-protocol (~> 3.17.0)
       sorbet-runtime
       syntax_tree (>= 6.1.1, < 7)
@@ -227,11 +227,11 @@ GEM
       net-protocol
     netrc (0.11.0)
     nio4r (2.5.9)
-    nokogiri (1.14.2-arm64-darwin)
+    nokogiri (1.14.3-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.14.2-x86_64-darwin)
+    nokogiri (1.14.3-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.14.2-x86_64-linux)
+    nokogiri (1.14.3-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.4.6)
@@ -385,4 +385,4 @@ RUBY VERSION
    ruby 3.2.2p53
 
 BUNDLED WITH
-   2.4.11
+   2.4.12
