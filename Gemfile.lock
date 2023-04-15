@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/Shopify/ruby-lsp.git
-  revision: 018b07aeec86d83142ca5bb265e7d400327977c9
+  revision: ed246d768e85a4f05f1b63dc0bc46cf707f10fae
   branch: main
   specs:
     ruby-lsp (0.4.4)
@@ -44,10 +44,10 @@ GIT
 
 GIT
   remote: https://github.com/faker-ruby/faker.git
-  revision: 8bbdedf0cdd780c89b9c66a019b2475eb25562d4
+  revision: fd2fb05feafd673cb63bb761ebce9d366ba94bd7
   branch: main
   specs:
-    faker (3.1.1)
+    faker (3.2.0)
       i18n (>= 1.8.11, < 2)
 
 GIT
@@ -299,7 +299,7 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    sorbet-runtime (0.5.10780)
+    sorbet-runtime (0.5.10782)
     spring (4.1.1)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
