@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/Shopify/ruby-lsp.git
-  revision: e60838fd5681d9875da87aeaff9d99247eab1946
+  revision: 31361a235e3df149ab21be2906cce05f020a0fb5
   branch: main
   specs:
-    ruby-lsp (0.4.4)
+    ruby-lsp (0.4.5)
       language_server-protocol (~> 3.17.0)
       sorbet-runtime
       syntax_tree (>= 6.1.1, < 7)
