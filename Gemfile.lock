@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/Shopify/ruby-lsp.git
-  revision: 2b608f98501dd65f6561c33885ed172bbc407ac0
+  revision: bc802444b921b2c43e5b287f448a314f0ef04e49
   branch: main
   specs:
     ruby-lsp (0.4.5)
@@ -299,7 +299,7 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    sorbet-runtime (0.5.10794)
+    sorbet-runtime (0.5.10796)
     spring (4.1.1)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
@@ -341,7 +341,7 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.6.7)
+    zeitwerk (2.6.8)
 
 PLATFORMS
   arm64-darwin-21
