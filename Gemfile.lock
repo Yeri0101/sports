@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/Shopify/ruby-lsp.git
-  revision: da926f9e2743c7878ffa759c50c0354977d60e5f
+  revision: 966ea3358b77f1d4e35ba2c004ff4bc08190852e
   branch: main
   specs:
-    ruby-lsp (0.4.5)
+    ruby-lsp (0.5.1)
       language_server-protocol (~> 3.17.0)
       sorbet-runtime
       syntax_tree (>= 6.1.1, < 7)
@@ -73,7 +73,7 @@ GIT
 
 GIT
   remote: https://github.com/varvet/pundit.git
-  revision: ec710c757cddb13f896b83ee3d2648ac2899a415
+  revision: 9d3d197718a879fd63c15d533f55a6cdb5fa8853
   branch: main
   specs:
     pundit (2.3.0)
