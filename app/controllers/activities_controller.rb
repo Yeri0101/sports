@@ -42,16 +42,13 @@ class ActivitiesController < ApplicationController
     authorize @activity
 
     if @activity.save
-      redirect_to @activity,
-                  notice:
-                    "The creation of this activity has been successfully completed."
+      redirect_to @activity
     else
       render :new, status: :unprocessable_entity
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     authorize @activity

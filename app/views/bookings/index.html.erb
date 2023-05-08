@@ -1,61 +1,51 @@
-<div class="col-md-8">
-  <div class="mb-5">
-    <h2 class="fs-2">
-      My bookings
-    </h2>
-  </div>
+<div class="col-md-8 mb-5">
+  <h2 class="fs-2">
+    My bookings
+  </h2>
 </div>
+
 <div class="align-items-center d-flex justify-content-start mb-5">
   <%= search_form_for @q, url: bookings_path,
                           html: { class: "d-flex", method: :get },
                           data: { turbo: false } do |f| %>
     <%= f.search_field :activity_name_i_cont_any,
-                       class: "border-0 form-control me-4 shadow-sm",
+                       class: "border-0 form-control me-4 px-5 shadow-sm",
                        placeholder: "Search for a booking" %>
-    <%= f.submit class: "btn btn-light px-4 py-2 shadow-sm",
+    <%= f.submit class: "btn btn-light px-5 py-3 shadow-sm",
                  placeholder: "Search" %>
   <% end %>
 </div>
-<% if @bookings.blank? %>
-  <div class="col-md-6">
-    <div class="border-0 card p-4 rounded-4 shadow-sm">
-      <div class="card-body">
-        <div class="align-items-center d-flex justify-content-between">
-          <h6 class="card-subtitle text-secondary">
-            No activity booked at the moment
-          </h6>
-          <%= link_to "Discover", activities_path, class: "btn btn-bd-green px-4 py-2 shadow" %>
-        </div>
-      </div>
-    </div>
-  </div>
-<% else %>
-  <div class="mb-5 g-5 row">
-    <% @bookings.each do |booking| %>
-      <div class="col-md-6">
-        <div class="border-0 card p-4 rounded-4 shadow-sm">
-          <div class="card-body">
-            <div class="align-items-center d-flex justify-content-between mb-5">
-              <h5 class="card-title fs-5">
-                <%= booking.activity.name %>
-              </h5>
-              <small class="form-text text-secondary">
-                <%= pluralize booking.activity.reviews.size, "review" %>
-              </small>
-            </div>
-            <div class="mb-5">
-              <p class="card-text text-secondary">
-                <%= booking.activity.description %>
-              </p>
-            </div>
-            <div class="align-items-center d-flex justify-content-between">
-              <%= link_to "View", activity_path(booking.activity), class: "btn btn-bd-green px-4 py-2 shadow" %>
-              <%= link_to "Cancel", booking_path(booking.id), class: "btn btn-light px-4 py-2 shadow-sm",
-                                                              data: {turbo_method: :delete, turbo_confirm: "Would you like to continue?"} %>
-            </div>
+
+<div class="mb-5 g-5 row">
+  <% @bookings.each do |booking| %>
+    <div class="col-md-6">
+      <div class="border-0 card p-5 rounded-4 shadow-sm">
+        <% if booking.activity.image.attached? %>
+          <%= cl_image_tag booking.activity.image.key, class: "card-img-top img-fluid mb-5 rounded-4 shadow-sm" %>
+        <% else %>
+          <% false %>
+        <% end %>
+        <div class="card-body">
+          <div class="align-items-center d-flex justify-content-between mb-5">
+            <h5 class="card-title fs-5">
+              <%= booking.activity.name %> <small class="text-secondary">with <%= booking.activity.user.first_name %></small>
+            </h5>
+            <small class="form-text text-secondary">
+              <%= pluralize booking.activity.reviews.size, "review" %>
+            </small>
+          </div>
+          <div class="mb-5">
+            <p class="card-text text-secondary">
+              <%= booking.activity.description %>
+            </p>
+          </div>
+          <div class="align-items-center d-flex justify-content-between">
+            <%= link_to "View", activity_path(booking.activity), class: "btn btn-bd-green px-5 py-3 shadow" %>
+            <%= link_to "Cancel", booking_path(booking.id), class: "btn btn-light px-5 py-3 shadow-sm",
+                                                            data: {turbo_method: :delete, turbo_confirm: "Would you like to continue?"} %>
           </div>
         </div>
       </div>
-    <% end %>
-  </div>
-<% end %>
+    </div>
+  <% end %>
+</div>

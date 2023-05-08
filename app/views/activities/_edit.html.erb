@@ -1,66 +1,64 @@
-<div class="col-md-8">
-  <div class="mb-5">
-    <h2 class="fs-2">
-      Edit this activity
-    </h2>
-  </div>
+<div class="col-md-8 mb-5">
+  <h2 class="fs-2">
+    Edit this activity
+  </h2>
 </div>
+
 <%= simple_form_for @activity, html: { class: "g-4 row"} do |f| %>
-  <div class="col-md-6">
+  <div class="col-md-4">
     <%= f.input :name,
                 as: :string,
-                input_html: { autocomplete: "string", class: "border-0 mb-2 shadow-sm" },
-                placeholder: "Running",
+                input_html: { autocomplete: "string", class: "border-0 px-4 py-3 shadow-sm" },
                 required: true %>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-4">
     <%= f.input :category,
                 as: :select,
                 collection: Activity.categories.keys,
-                input_html: { autocomplete: "integer", class: "border-0 mb-2 shadow-sm" },
+                input_html: { autocomplete: "integer", class: "border-0 px-4 py-3 shadow-sm" },
+                required: true %>
+  </div>
+  <div class="col-md-4">
+    <%= f.input :image,
+                as: :file,
+                input_html: { autocomplete: "file", class: "border-0 px-4 py-3 shadow-sm" },
                 required: true %>
   </div>
   <div class="col-12">
     <div data-controller="character-counter">
       <%= f.input :description,
                   as: :string,
-                  input_html: { autocomplete: "string", class: "border-0 shadow-sm", data: { character_counter_target: "input" } },
+                  input_html: { autocomplete: "string", class: "border-0 px-4 py-3 shadow-sm", data: { character_counter_target: "input" } },
                   required: true %>
       <small class="form-text text-secondary">
         Your description is currently <small data-character-counter-target="counter" class="text-dark"></small> characters long
       </small>
     </div>
   </div>
-  <div class="col-12">
-    <%= f.input :image,
-                as: :file,
-                input_html: { autocomplete: "file", class: "border-0 mb-2 shadow-sm" },
-                required: true %>
-  </div>
   <div class="col-md-6">
     <%= f.input :start_date,
                 as: :string,
-                input_html: { autocomplete: "datetime", class: "border-0 mb-2 shadow-sm" },
+                input_html: { autocomplete: "datetime", class: "border-0 px-4 py-3 shadow-sm" },
                 label: "Start date and time",
                 required: true %>
   </div>
   <div class="col-md-6">
     <%= f.input :end_date,
                 as: :string,
-                input_html: { autocomplete: "datetime", class: "border-0 mb-2 shadow-sm" },
+                input_html: { autocomplete: "datetime", class: "border-0 px-4 py-3 shadow-sm" },
                 label: "End date and time",
                 required: true %>
   </div>
   <div class="col-12">
     <%= f.input :address,
                 as: :string,
-                hint: "Automatically completed",
-                input_html: { autocomplete: "address-line1", class: "border-0 mb-2 shadow-sm" },
-                placeholder: "Rue de Lausanne 64",
+                hint: "Automatically filled in with Mapbox",
+                input_html: { autocomplete: "address-line1", class: "border-0 mb-3 px-4 py-3 shadow-sm" },
                 required: true %>
   </div>
-  <div class="col-md-6 d-flex d-md-flex gap-4 mb-5">
-    <%= f.button :submit, "Update", class: "btn btn-bd-green px-4 py-2 shadow" %>
-    <%= link_to "Cancel", activity_path, class: "btn btn-light px-4 py-2 shadow" %>
+
+  <div class="col-md-6 d-flex d-md-flex gap-4">
+    <%= f.button :submit, "Update", class: "btn btn-bd-green px-5 py-3 shadow" %>
+    <%= link_to "Cancel", activity_path, class: "btn btn-light px-5 py-3 shadow-sm" %>
   </div>
 <% end %>

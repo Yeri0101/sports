@@ -1,12 +1,14 @@
-<div class="border-0 card mb-5 p-4 rounded-4 shadow-sm">
+<div class="border-0 card mb-5 p-5 rounded-4 shadow-sm">
   <div class="card-body">
     <p class="card-text">
-      <%= review.user.first_name %> <%= review.user.last_name.upcase %>
+      <%= review.user.first_name %>
     </p>
-    <div class="align-items-end d-flex justify-content-between">
-      <p class="card-text text-secondary"><%= review.comment %></p>
+    <div class="align-items-center d-flex justify-content-between">
+      <p class="card-text text-secondary">
+        <%= review.comment %>
+      </p>
       <% if policy(review).destroy? %>
-        <%= link_to "Delete", review_path(review), class: "text-dark text-decoration-none",
+        <%= link_to "Delete", review_path(review), class: "btn btn-light px-5 py-3 shadow-sm",
                                                    data: {turbo_method: :delete, turbo_confirm: "Would you like to continue?"} %>
       <% end %>
     </div>

@@ -8,11 +8,11 @@
     <%= simple_form_for [chatroom, message], remote: true, html: { data: { action:"turbo:submit-end->chatroom-subscription#resetForm" } } do |f|%>
       <%= f.input :content,
                   as: :string,
-                  input_html: { autocomplete: "string", class: "border-0 h-100 mb-5 p-5 rounded-4 shadow-sm", data: { character_counter_target: "input" } },
+                  input_html: { autocomplete: "string", class: "border-0 p-5 rounded-4 shadow-sm", data: { character_counter_target: "input" } },
                   label: false,
-                  placeholder: "Send a message to other participants" %>
+                  placeholder: "Send a message to other participants in this activity" %>
       <div class="align-items-center d-flex justify-content-between my-5">
-        <%= f.submit "Send", class: "btn btn-bd-green px-4 py-2 shadow" %>
+        <%= f.submit "Send", class: "btn btn-bd-green px-5 py-3 shadow" %>
         <small class="form-text text-secondary">
           Your message is currently <small data-character-counter-target="counter" class="text-dark"></small> characters long
         </small>

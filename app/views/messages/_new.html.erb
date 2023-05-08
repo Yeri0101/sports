@@ -1,8 +1,8 @@
 <div id="message-<%= message.id %>">
   <div class="align-items-center d-flex justify-content-between mt-5">
     <% if message.user == message.chatroom.activity.user %>
-      <p class="card-text">
-        <%="Organizer"%>
+      <p class="card-text text-secondary">
+        <%="Host"%>
       </p>
     <% else %>
       <small class="form-text text-secondary">

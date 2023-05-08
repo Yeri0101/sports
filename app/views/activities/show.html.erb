@@ -1,34 +1,37 @@
-<div class="col-md-8">
-  <div class="mb-5">
-    <h2 class="fs-2">
-      <%= @activity.name %> <span class="text-secondary">with <%= @activity.user.first_name %></span>
-    </h2>
-  </div>
+<div class="col-md-8 mb-5">
+  <h2 class="fs-2">
+    <%= @activity.name %>
+    <small class="text-secondary">
+      with <%= @activity.user.first_name %>
+      </small>
+  </h2>
 </div>
+
 <div class="align-items-center d-flex justify-content-between mb-5">
   <div class="d-grid d-md-flex">
-    <%= link_to "Back", activities_path, class: "btn btn-light px-4 py-2 shadow" %>
+    <%= link_to "Back", activities_path, class: "btn btn-light px-5 py-3 shadow-sm" %>
   </div>
   <div class="d-grid d-md-flex">
     <% if policy(@activity).edit? %>
-      <%= link_to "Update", edit_activity_path(@activity.id), class: "btn btn-bd-green px-4 py-2 shadow" %>
+      <%= link_to "Update", edit_activity_path(@activity.id), class: "btn btn-bd-green px-5 py-3 shadow" %>
     <% else %>
       <% if policy(@booking).create? %>
         <%= simple_form_for [@activity, @booking] do |f| %>
-          <%= f.button :submit, "Book now", class: "btn btn-bd-green px-4 py-2 shadow-sm" %>
+          <%= f.button :submit, "Book now", class: "btn btn-bd-green px-5 py-3 shadow" %>
         <% end %>
       <% end %>
     <% end %>
   </div>
 </div>
+
 <div class="g-5 row">
-  <div class="col-md-6 mb-5">
+  <div class="col-md-6">
     <div class="mb-5">
       <h5 class="fs-5">
         About this activity
       </h5>
     </div>
-    <div class="border-0 card mb-5 p-4 rounded-4 shadow-sm">
+    <div class="border-0 card mb-5 p-5 rounded-4 shadow-sm">
       <% if @activity.image.attached? %>
         <%= cl_image_tag @activity.image.key, class: "card-img-top img-fluid mb-5 rounded-4 shadow-sm" %>
       <% else %>
@@ -49,7 +52,7 @@
       </div>
     </div>
   </div>
-  <div class="col-md-6 mb-5">
+  <div class="col-md-6">
     <div class="align-items-center d-flex justify-content-between mb-5">
       <h5 class="fs-5">
         Location
@@ -58,10 +61,10 @@
         <%= @activity.address %>
       </small>
     </div>
-    <div class="border-0 card mb-5 p-4 rounded-4 shadow-sm">
+    <div class="border-0 card mb-5 p-5 rounded-4 shadow-sm">
       <div class="card-body">
         <% if @marker %>
-          <div style="height: 553px; width: 100%;" data-controller="map"
+          <div style="height: 520px; width: 100%;" data-controller="map"
                                                    data-map-marker-value="<%= @marker.to_json %>"
                                                    data-map-api-key-value="<%= ENV["MAPBOX_TOKEN"] %>">
           </div>
@@ -72,15 +75,26 @@
     </div>
   </div>
 </div>
+
 <div class="g-5 row">
   <% if @activity.reviews.blank? %>
-    <div class="col-12">
+    <div class="col-md-6">
       <div class="mb-5">
         <h5 class="fs-5">
           Be the first user to leave a review
         </h5>
       </div>
       <%= render "reviews/new", activity: @activity, review: @review %>
+    </div>
+    <div class="col-md-6">
+      <div class="align-items-center d-flex justify-content-between mb-5">
+        <h5 class="fs-5">
+          All reviews
+        </h5>
+        <small class="form-text text-secondary">
+          <%= pluralize @activity.reviews.size, "review" %>
+        </small>
+      </div>
     </div>
   <% else %>
     <div class="col-md-6">
@@ -106,7 +120,8 @@
     </div>
   <% end %>
 </div>
-<div class="mb-5">
+
+<div class="col-12">
   <h5 class="fs-5">
     Chat with other participants
   </h5>

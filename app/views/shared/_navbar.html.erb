@@ -1,6 +1,6 @@
 <nav class="bg-light mb-5 navbar navbar-expand-lg py-5 sticky-top">
   <div class="align-items-center container d-flex justify-content-between">
-    <%= link_to "/", class: "fs-2 navbar-brand" do %>
+    <%= link_to "/", class: "fs-1 navbar-brand" do %>
       Sports & Social
     <% end %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,7 +23,7 @@
               <% if current_user.avatar.attached? %>
                 <%= cl_image_tag current_user.avatar.key, class: "rounded-circle", height: "30px", width: "30px", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, "aria-haspopup": true, "aria-expanded": false %>
               <% else %>
-                <%= image_tag "https://avatar.vercel.sh/rauchg.svg/", class: "rounded-circle", height: "30px", width: "30px", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, "aria-haspopup": true, "aria-expanded": false %>
+                <%= image_tag "https://avatar.vercel.sh/maximilien-lanz.svg/", class: "rounded-circle", height: "30px", width: "30px", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, "aria-haspopup": true, "aria-expanded": false %>
               <% end %>
               <ul class="border-0 dropdown-menu shadow-sm">
                 <li>
@@ -37,7 +37,7 @@
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to "Log in", new_user_session_path, class: "btn btn-light px-4 py-2 rounded-5 shadow-sm" %>
+            <%= link_to "Log in", new_user_session_path, class: "btn btn-light px-5 py-3 shadow-sm" %>
           </li>
         <% end %>
       </ul>

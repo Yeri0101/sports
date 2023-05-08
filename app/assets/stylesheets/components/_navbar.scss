@@ -1,14 +1,17 @@
 .navbar-brand {
-  color: $green-color;
-  font-family: $navigation-brand-font;
-  font-weight: $bold-weight-font;
+  color: rgb(37, 75, 69);
+  font-family: "Syne", sans-serif;
+  font-weight: 700;
 
-  &:active, &:focus, &:hover {
-    color: $green-color;
+  &:active,
+  &:focus,
+  &:hover {
+    color: rgb(37, 75, 69);
     transition: color 0.15s ease-in-out;
   }
 }
+
 .nav-link {
-  color: $green-color;
-  font-family: $navigation-links-font;
+  color: rgb(37, 75, 69);
+  font-family: "Inter", sans-serif;
 }

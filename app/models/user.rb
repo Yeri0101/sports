@@ -6,12 +6,16 @@ class User < ApplicationRecord
          :recoverable,
          :rememberable,
          :validatable
+
   scope :all_except, ->(user) { where.not(id: user) }
+
   has_one_attached :avatar
+
   has_many :activities, dependent: :destroy
   has_many :bookings, dependent: :destroy
   has_many :reviews, dependent: :destroy
   has_many :messages, dependent: :destroy
+
   validates :address, presence: true
   validates :city, presence: true
   validates :country, presence: true

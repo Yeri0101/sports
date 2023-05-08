@@ -1,15 +1,15 @@
-<%= simple_form_for([ activity, review ], html: { class: "g-4"}) do |f| %>
+<%= simple_form_for([ activity, review ], html: { class: "g-4 row"}) do |f| %>
   <div data-controller="character-counter">
     <div class="col-12">
       <%= f.input :comment,
                   as: :string,
                   autofocus: false,
-                  input_html: { class: "border-0 p-5 rounded-4 shadow-sm", data: { character_counter_target: "input" } },
+                  input_html: { class: "border-0 p-5 rounded-4 shadow-sm", data: { character_counter_target: "input" }, style: "height: 176px; width: 100%;" },
                   label: false,
                   placeholder: "An exceptional discovery which I advise you to participate in",
                   required: false %>
       <div class="align-items-center d-flex justify-content-between my-5">
-        <%= f.button :submit, "Comment", class: "btn btn-bd-green px-4 py-2 shadow" %>
+        <%= f.button :submit, "Comment", class: "btn btn-bd-green px-5 py-3 shadow" %>
         <small class="form-text text-secondary">
           Your review is currently <small data-character-counter-target="counter" class="text-dark"></small> characters long
         </small>

@@ -6,6 +6,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
 
     @review.activity = @activity
+
     @review.user = current_user
 
     authorize @review

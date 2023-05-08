@@ -1,10 +1,9 @@
-<div class="col-7">
-  <div class="mb-5">
-    <h2 class="fs-2">
-      Change your password
-    </h2>
-  </div>
+<div class="col-md-8 mb-5">
+  <h2 class="fs-2">
+    Change your password
+  </h2>
 </div>
+
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, class: "g-4 row" }) do |f| %>
   <%= f.error_notification %>
   <%= f.input :reset_password_token, as: :hidden %>
@@ -12,15 +11,16 @@
   <div class="col-12">
     <%= f.input :password,
                 autofocus: true,
-                input_html: { autocomplete: "new-password", class: "border-0 mb-2 shadow-sm" },
+                input_html: { autocomplete: "new-password", class: "border-0 px-4 py-3 shadow-sm" },
                 label: "New password",
                 required: true %>
     <%= f.input :password_confirmation,
-                input_html: { autocomplete: "new-password", class: "border-0 mb-2 shadow-sm" },
+                input_html: { autocomplete: "new-password", class: "border-0 px-4 py-3 shadow-sm" },
                 label: "Confirm your new password",
                 required: true %>
   </div>
+
   <div class="col-md-6 d-flex d-md-flex gap-4">
-    <%= f.button :submit, "Change", class: "btn btn-bd-green px-4 py-2 shadow" %>
+    <%= f.button :submit, "Change", class: "btn btn-bd-green px-5 py-3 shadow" %>
   </div>
 <% end %>

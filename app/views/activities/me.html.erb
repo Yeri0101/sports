@@ -1,75 +1,65 @@
-<div class="col-md-8">
-  <div class="mb-5">
-    <h2 class="fs-2">
-      My activities
-    </h2>
-  </div>
+<div class="col-md-8 mb-5">
+  <h2 class="fs-2">
+    My activities
+  </h2>
 </div>
+
 <div class="align-items-center d-flex justify-content-between mb-5">
   <%= search_form_for @q, url: me_activities_path,
                           html: { class: "d-flex", method: :get },
                           data: { turbo: false } do |f| %>
     <%= f.search_field :description_or_name_or_address_or_reviews_comment_i_cont_any,
-                       class: "border-0 form-control me-4 shadow-sm",
+                       class: "border-0 form-control me-4 px-5 shadow-sm",
                        placeholder: "Search for an activity" %>
-    <%= f.submit class: "btn btn-light px-4 py-2 shadow-sm",
+    <%= f.submit class: "btn btn-light px-5 py-3 shadow-sm",
                  placeholder: "Search" %>
   <% end %>
+
   <div class="d-grid d-md-flex">
     <% if policy(Activity).create? %>
-      <%= link_to new_activity_path, class: "btn btn-bd-green px-4 py-2 shadow" do %>
+      <%= link_to new_activity_path, class: "btn btn-bd-green px-5 py-3 shadow" do %>
         Create
       <% end %>
     <% end %>
   </div>
 </div>
-<% if @activities.blank? %>
-  <div class="col-md-6">
-    <div class="border-0 card p-4 rounded-4 shadow-sm">
-      <div class="card-body">
-        <div class="align-items-center d-flex justify-content-between">
-          <h6 class="card-subtitle text-secondary">
-            No activity created for the moment
-          </h6>
+
+<div class="mb-5 g-5 row">
+  <% @activities.each do |activity| %>
+    <div class="col-md-6">
+      <div class="border-0 card p-5 rounded-4 shadow-sm">
+        <% if activity.image.attached? %>
+          <%= cl_image_tag activity.image.key, class: "card-img-top img-fluid mb-5 rounded-4 shadow-sm" %>
+        <% else %>
+          <% false %>
+        <% end %>
+        <div class="card-body">
+          <% if activity.user == current_user %>
+            <div class="align-items-center d-flex justify-content-between mb-5">
+              <h5 class="card-title fs-5">
+                <%= activity.name %>
+                <small class="text-secondary">
+                  with <%= activity.user.first_name %>
+                </small>
+              </h5>
+              <small class="form-text text-secondary">
+                <%= pluralize activity.reviews.size, "review" %>
+              </small>
+            </div>
+            <div class="mb-5">
+              <p class="card-text text-secondary">
+                <%= activity.description %>
+              </p>
+            </div>
+            <div class="align-items-center d-flex justify-content-between">
+              <%= link_to "View", activity_path(activity.id), class: "btn btn-bd-green px-5 py-3 shadow" %>
+              <% if policy(activity).destroy? %>
+                <%= link_to "Delete", activity_path(activity.id), class: "btn btn-light px-5 py-3 shadow-sm", data: {turbo_method: :delete, turbo_confirm: "Would you like to continue?"} %>
+              <% end %>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
-  </div>
-<% else %>
-  <div class="mb-5 g-5 row">
-    <% @activities.each do |activity| %>
-      <div class="col-md-6">
-        <div class="border-0 card p-4 rounded-4 shadow-sm">
-          <% if activity.image.attached? %>
-            <%= cl_image_tag activity.image.key, class: "card-img-top img-fluid mb-5 rounded-4 shadow-sm" %>
-          <% else %>
-            <% false %>
-          <% end %>
-          <div class="card-body">
-            <% if activity.user == current_user %>
-              <div class="align-items-center d-flex justify-content-between mb-5">
-                <h5 class="card-title fs-5">
-                  <%= activity.name %>
-                </h5>
-                <small class="form-text text-secondary">
-                  <%= pluralize activity.reviews.size, "review" %>
-                </small>
-              </div>
-              <div class="mb-5">
-                <p class="card-text text-secondary">
-                  <%= activity.description %>
-                </p>
-              </div>
-              <div class="align-items-center d-flex justify-content-between">
-                <%= link_to "View", activity_path(activity.id), class: "btn btn-bd-green px-4 py-2 shadow" %>
-                <% if policy(activity).destroy? %>
-                  <%= link_to "Delete", activity_path(activity.id), class: "btn btn-light px-4 py-2 shadow-sm", data: {turbo_method: :delete, turbo_confirm: "Would you like to continue?"} %>
-                <% end %>
-              </div>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
-<% end %>
+  <% end %>
+</div>
