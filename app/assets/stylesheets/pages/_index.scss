@@ -1,8 +1,21 @@
 @import "home";
 
-h1, h2, h3, h4, h5, h6, p, small {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+small {
   margin-bottom: 0;
 }
-small {
-  font-family: $inter-font;
+
+section {
+  height: calc(100vh - 214px);
+}
+
+small,
+span {
+  font-family: "Inter", sans-serif;
 }

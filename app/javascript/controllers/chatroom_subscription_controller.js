@@ -8,7 +8,7 @@ export default class extends Controller {
   connect() {
     this.channel = createConsumer().subscriptions.create(
       { channel: "ChatroomChannel", id: this.chatroomIdValue },
-      { received: data => this.#insertMessageAndScrollDown(data) }
+      { received: (data) => this.#insertMessageAndScrollDown(data) }
     )
   }
 

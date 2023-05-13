@@ -1,28 +1,23 @@
 class BookingsController < ApplicationController
   def index
     @bookings = policy_scope(Booking)
-
     @q = @bookings.ransack(params[:query])
     @bookings = @q.result(distinct: true)
   end
 
   def show
     @booking = Booking.new
-
     authorize @booking
   end
 
   def create
     @activity = Activity.find(params[:activity_id])
     @booking = Booking.new
-
     @booking.user = current_user
     @booking.activity = @activity
-
     authorize @booking
-
     if @booking.save
-      redirect_to @activity, notice: "The booking has been made correctly."
+      redirect_to @activity
     else
       render "activities/show", status: :see_other
     end
@@ -30,11 +25,8 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking = Booking.find(params[:id])
-
     authorize @booking
-
     @booking.destroy
-
     redirect_to bookings_path, status: :unprocessable_entity
   end
 

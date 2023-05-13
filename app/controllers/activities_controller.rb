@@ -3,17 +3,14 @@ class ActivitiesController < ApplicationController
 
   def index
     @activities = policy_scope(Activity)
-
     @q = @activities.ransack(params[:query])
     @activities = @q.result(distinct: true)
   end
 
   def me
     @activities = policy_scope(Activity).where(user: current_user)
-
     @q = @activities.ransack(params[:query])
     @activities = @q.result(distinct: true)
-
     authorize @activities
   end
 
@@ -21,9 +18,7 @@ class ActivitiesController < ApplicationController
     @review = Review.new(activity: @activity, user: current_user)
     @booking = Booking.new(activity: @activity, user: current_user)
     @message = Message.new
-
     authorize @activity
-
     @marker = {
       lat: @activity.latitude,
       lng: @activity.longitude
@@ -32,40 +27,30 @@ class ActivitiesController < ApplicationController
 
   def new
     @activity = Activity.new
-
     authorize @activity
   end
 
   def create
     @activity = current_user.activities.new(activity_params)
-
     authorize @activity
-
     if @activity.save
-      redirect_to @activity,
-                  notice:
-                    "The creation of this activity has been successfully completed."
+      redirect_to @activity
     else
       render :new, status: :unprocessable_entity
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     authorize @activity
-
     @activity.update(activity_params)
-
     redirect_to @activity
   end
 
   def destroy
     @activity = Activity.find(params[:id])
-
     @activity.destroy
-
     redirect_to activities_path, status: :see_other
   end
 
@@ -73,7 +58,6 @@ class ActivitiesController < ApplicationController
 
   def set_activity
     @activity = Activity.find(params[:id])
-
     authorize @activity
   end
 

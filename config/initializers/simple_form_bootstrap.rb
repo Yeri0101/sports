@@ -13,7 +13,7 @@
 # Use this setup block to configure all options available in SimpleForm.
 SimpleForm.setup do |config|
   # Default class for buttons
-  config.button_class = "btn"
+  # config.button_class = "btn"
 
   # Define the default class of the input wrapper of the boolean input.
   config.boolean_label_class = "form-check-label"
@@ -61,7 +61,7 @@ SimpleForm.setup do |config|
           error_class: "is-invalid",
           valid_class: "is-valid"
     b.use :full_error, wrap_with: { class: "invalid-feedback" }
-    b.use :hint, wrap_with: { class: "form-text" }
+    b.use :hint, wrap_with: { class: "form-text text-secondary", tag: :small }
   end
 
   # vertical input for boolean
@@ -75,7 +75,7 @@ SimpleForm.setup do |config|
              valid_class: "is-valid"
       bb.use :label, class: "form-check-label"
       bb.use :full_error, wrap_with: { class: "invalid-feedback" }
-      bb.use :hint, wrap_with: { class: "form-text" }
+      bb.use :hint, wrap_with: { class: "form-text text-secondary", tag: :small }
     end
   end
 
@@ -95,7 +95,7 @@ SimpleForm.setup do |config|
           error_class: "is-invalid",
           valid_class: "is-valid"
     b.use :full_error, wrap_with: { class: "invalid-feedback d-block" }
-    b.use :hint, wrap_with: { class: "form-text" }
+    b.use :hint, wrap_with: { class: "form-text text-secondary", tag: :small }
   end
 
   # vertical input for inline radio buttons and check boxes
@@ -114,7 +114,7 @@ SimpleForm.setup do |config|
           error_class: "is-invalid",
           valid_class: "is-valid"
     b.use :full_error, wrap_with: { class: "invalid-feedback d-block" }
-    b.use :hint, wrap_with: { class: "form-text" }
+    b.use :hint, wrap_with: { class: "form-text text-secondary", tag: :small }
   end
 
   # vertical file input
@@ -130,7 +130,7 @@ SimpleForm.setup do |config|
           error_class: "is-invalid",
           valid_class: "is-valid"
     b.use :full_error, wrap_with: { class: "invalid-feedback" }
-    b.use :hint, wrap_with: { class: "form-text" }
+    b.use :hint, wrap_with: { class: "form-text text-secondary", tag: :small }
   end
 
   # vertical select input
@@ -143,7 +143,7 @@ SimpleForm.setup do |config|
           error_class: "is-invalid",
           valid_class: "is-valid"
     b.use :full_error, wrap_with: { class: "invalid-feedback" }
-    b.use :hint, wrap_with: { class: "form-text" }
+    b.use :hint, wrap_with: { class: "form-text text-secondary", tag: :small }
   end
 
   # vertical multi select
@@ -152,14 +152,14 @@ SimpleForm.setup do |config|
     b.optional :readonly
     b.use :label, class: "form-label"
     b.wrapper class:
-                "d-flex flex-row justify-content-between align-items-center" do |ba|
+                "align-items-center d-flex flex-row justify-content-between" do |ba|
       ba.use :input,
              class: "form-select mx-1",
              error_class: "is-invalid",
              valid_class: "is-valid"
     end
     b.use :full_error, wrap_with: { class: "invalid-feedback d-block" }
-    b.use :hint, wrap_with: { class: "form-text" }
+    b.use :hint, wrap_with: { class: "form-text text-secondary", tag: :small }
   end
 
   # vertical range input
@@ -174,7 +174,7 @@ SimpleForm.setup do |config|
           error_class: "is-invalid",
           valid_class: "is-valid"
     b.use :full_error, wrap_with: { class: "invalid-feedback" }
-    b.use :hint, wrap_with: { class: "form-text" }
+    b.use :hint, wrap_with: { class: "form-text text-secondary", tag: :small }
   end
 
   # horizontal forms
@@ -195,7 +195,7 @@ SimpleForm.setup do |config|
              error_class: "is-invalid",
              valid_class: "is-valid"
       ba.use :full_error, wrap_with: { class: "invalid-feedback" }
-      ba.use :hint, wrap_with: { class: "form-text" }
+      ba.use :hint, wrap_with: { class: "form-text text-secondary", tag: :small }
     end
   end
 
@@ -211,7 +211,7 @@ SimpleForm.setup do |config|
                valid_class: "is-valid"
         bb.use :label, class: "form-check-label"
         bb.use :full_error, wrap_with: { class: "invalid-feedback" }
-        bb.use :hint, wrap_with: { class: "form-text" }
+        bb.use :hint, wrap_with: { class: "form-text text-secondary", tag: :small }
       end
     end
   end
@@ -230,7 +230,7 @@ SimpleForm.setup do |config|
              error_class: "is-invalid",
              valid_class: "is-valid"
       ba.use :full_error, wrap_with: { class: "invalid-feedback d-block" }
-      ba.use :hint, wrap_with: { class: "form-text" }
+      ba.use :hint, wrap_with: { class: "form-text text-secondary", tag: :small }
     end
   end
 
@@ -248,7 +248,7 @@ SimpleForm.setup do |config|
              error_class: "is-invalid",
              valid_class: "is-valid"
       ba.use :full_error, wrap_with: { class: "invalid-feedback d-block" }
-      ba.use :hint, wrap_with: { class: "form-text" }
+      ba.use :hint, wrap_with: { class: "form-text text-secondary", tag: :small }
     end
   end
 
@@ -266,7 +266,7 @@ SimpleForm.setup do |config|
              error_class: "is-invalid",
              valid_class: "is-valid"
       ba.use :full_error, wrap_with: { class: "invalid-feedback" }
-      ba.use :hint, wrap_with: { class: "form-text" }
+      ba.use :hint, wrap_with: { class: "form-text text-secondary", tag: :small }
     end
   end
 
@@ -281,7 +281,7 @@ SimpleForm.setup do |config|
              error_class: "is-invalid",
              valid_class: "is-valid"
       ba.use :full_error, wrap_with: { class: "invalid-feedback" }
-      ba.use :hint, wrap_with: { class: "form-text" }
+      ba.use :hint, wrap_with: { class: "form-text text-secondary", tag: :small }
     end
   end
 
@@ -299,7 +299,7 @@ SimpleForm.setup do |config|
                valid_class: "is-valid"
       end
       ba.use :full_error, wrap_with: { class: "invalid-feedback d-block" }
-      ba.use :hint, wrap_with: { class: "form-text" }
+      ba.use :hint, wrap_with: { class: "form-text text-secondary", tag: :small }
     end
   end
 
@@ -316,7 +316,7 @@ SimpleForm.setup do |config|
              error_class: "is-invalid",
              valid_class: "is-valid"
       ba.use :full_error, wrap_with: { class: "invalid-feedback" }
-      ba.use :hint, wrap_with: { class: "form-text" }
+      ba.use :hint, wrap_with: { class: "form-text text-secondary", tag: :small }
     end
   end
 
@@ -338,7 +338,7 @@ SimpleForm.setup do |config|
           error_class: "is-invalid",
           valid_class: "is-valid"
     b.use :error, wrap_with: { class: "invalid-feedback" }
-    b.optional :hint, wrap_with: { class: "form-text" }
+    b.optional :hint, wrap_with: { class: "form-text text-secondary", tag: :small }
   end
 
   # inline input for boolean
@@ -352,7 +352,7 @@ SimpleForm.setup do |config|
              valid_class: "is-valid"
       bb.use :label, class: "form-check-label"
       bb.use :error, wrap_with: { class: "invalid-feedback" }
-      bb.optional :hint, wrap_with: { class: "form-text" }
+      bb.optional :hint, wrap_with: { class: "form-text text-secondary", tag: :small }
     end
   end
 
@@ -371,7 +371,7 @@ SimpleForm.setup do |config|
              valid_class: "is-valid"
       bb.use :label, class: "form-check-label"
       bb.use :full_error, wrap_with: { tag: "div", class: "invalid-feedback" }
-      bb.use :hint, wrap_with: { class: "form-text" }
+      bb.use :hint, wrap_with: { class: "form-text text-secondary", tag: :small }
     end
   end
 
@@ -395,7 +395,7 @@ SimpleForm.setup do |config|
       ba.optional :append
       ba.use :full_error, wrap_with: { class: "invalid-feedback" }
     end
-    b.use :hint, wrap_with: { class: "form-text" }
+    b.use :hint, wrap_with: { class: "form-text text-secondary", tag: :small }
   end
 
   # Floating Labels form
@@ -415,7 +415,7 @@ SimpleForm.setup do |config|
           valid_class: "is-valid"
     b.use :label
     b.use :full_error, wrap_with: { class: "invalid-feedback" }
-    b.use :hint, wrap_with: { class: "form-text" }
+    b.use :hint, wrap_with: { class: "form-text text-secondary", tag: :small }
   end
 
   # custom multi select
@@ -428,7 +428,7 @@ SimpleForm.setup do |config|
           valid_class: "is-valid"
     b.use :label
     b.use :full_error, wrap_with: { class: "invalid-feedback" }
-    b.use :hint, wrap_with: { class: "form-text" }
+    b.use :hint, wrap_with: { class: "form-text text-secondary", tag: :small }
   end
 
   # The default wrapper to be used by the FormBuilder.

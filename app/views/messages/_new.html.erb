@@ -1,21 +1,20 @@
-<div id="message-<%= message.id %>">
-  <div class="align-items-center d-flex justify-content-between mt-5">
-    <% if message.user == message.chatroom.activity.user %>
-      <p class="card-text">
-        <%="Organizer"%>
-      </p>
+<div class="align-items-center d-flex d-md-flex justify-content-between mt-5" id="message-<%= message.id %>">
+  <div class="align-items-center d-flex d-md-flex mb-3 gap-3 justify-content-start">
+    <% if message.chatroom.activity.user.avatar.attached? %>
+      <%= cl_image_tag message.chatroom.activity.user.avatar.key, class: "rounded-circle",
+                                                                  height: "30px",
+                                                                  width: "30px" %>
     <% else %>
-      <small class="form-text text-secondary">
-        @<%= message.user.username %>
-      </small>
+      <%= image_tag "https://avatar.vercel.sh/rauchg.svg/", class: "rounded-circle",
+                                                            height: "30px",
+                                                            width: "30px" %>
     <% end %>
-    <small class="form-text fst-italic text-secondary">
-      <%= time_ago_in_words(message.created_at) %> ago
-    </small>
+    <% if message.user == message.chatroom.activity.user %>
+      <small>Host</small>
+    <% else %>
+      <small class="text-secondary">@<%= message.user.username %></small>
+    <% end %>
   </div>
-  <div class="mb-5">
-    <p class="card-text">
-      <%= message.content %>
-    </p>
-  </div>
+  <small class="text-secondary"><%= time_ago_in_words(message.created_at) %> ago</small>
 </div>
+<small><%= message.content %></small>

@@ -1,44 +1,39 @@
 <nav class="bg-light mb-5 navbar navbar-expand-lg py-5 sticky-top">
-  <div class="align-items-center container d-flex justify-content-between">
-    <%= link_to "/", class: "fs-2 navbar-brand" do %>
-      Sports & Social
-    <% end %>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <div class="align-items-center container d-flex d-md-flex justify-content-between">
+    <%= link_to "Sports & Social", root_path, class: "fs-1 navbar-brand" %>
+    <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse flex-grow-0 navbar-collapse" id="navbarSupportedContent">
       <ul class="gap-4 mb-lg-0 navbar-nav">
         <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to "Discover", activities_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "My activities", me_activities_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "My bookings", bookings_path, class: "nav-link" %>
-          </li>
-          <li class="align-items-center d-flex dropdown nav-item">
+          <li class="nav-item"><%= link_to "Discover", activities_path, class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "My activities", me_activities_path, class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "My bookings", bookings_path, class: "nav-link" %></li>
+          <li class="align-items-center d-flex d-md-flex dropdown nav-item">
             <div class="dropdown text-end">
               <% if current_user.avatar.attached? %>
-                <%= cl_image_tag current_user.avatar.key, class: "rounded-circle", height: "30px", width: "30px", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, "aria-haspopup": true, "aria-expanded": false %>
+                <%= cl_image_tag current_user.avatar.key, class: "rounded-circle",
+                                                          data: { bs_toggle: "dropdown" }, "aria-expanded": false, "aria-haspopup": true,
+                                                          height: "30px",
+                                                          id: "navbarDropdown",
+                                                          width: "30px" %>
               <% else %>
-                <%= image_tag "https://avatar.vercel.sh/rauchg.svg/", class: "rounded-circle", height: "30px", width: "30px", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, "aria-haspopup": true, "aria-expanded": false %>
+                <%= image_tag "https://avatar.vercel.sh/maximilien-lanz.svg/", class: "rounded-circle",
+                                                                               data: { bs_toggle: "dropdown" }, "aria-expanded": false, "aria-haspopup": true,
+                                                                               height: "30px",
+                                                                               id: "navbarDropdown",
+                                                                               width: "30px" %>
               <% end %>
               <ul class="border-0 dropdown-menu shadow-sm">
-                <li>
-                  <%= link_to "Edit my account", edit_user_registration_path, class: "dropdown-item" %>
-                </li>
-                <li>
-                  <%= link_to "Sign out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item text-secondary" %>
-                </li>
+                <li><%= link_to "Edit my account", edit_user_registration_path, class: "dropdown-item" %></li>
+                <li><%= link_to "Sign out", destroy_user_session_path, class: "dropdown-item text-secondary",
+                                                                       data: { turbo_method: :delete } %></li>
               </ul>
             </div>
           </li>
         <% else %>
-          <li class="nav-item">
-            <%= link_to "Log in", new_user_session_path, class: "btn btn-light px-4 py-2 rounded-5 shadow-sm" %>
-          </li>
+          <li class="nav-item"><%= link_to "Log in", new_user_session_path, class: "btn btn-light px-5 py-3 shadow-sm" %></li>
         <% end %>
       </ul>
     </div>
