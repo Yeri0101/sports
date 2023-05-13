@@ -30,7 +30,6 @@ class ApplicationController < ActionController::Base
         state
       ]
     )
-
     devise_parameter_sanitizer.permit(
       :account_update,
       keys: %i[

@@ -1,17 +1,7 @@
-<div class="col-md-8 mb-5">
-  <h2 class="fs-2">
-    <%= @activity.name %>
-    <small class="text-secondary">
-      with <%= @activity.user.first_name %>
-      </small>
-  </h2>
-</div>
-
-<div class="align-items-center d-flex justify-content-between mb-5">
-  <div class="d-grid d-md-flex">
-    <%= link_to "Back", activities_path, class: "btn btn-light px-5 py-3 shadow-sm" %>
-  </div>
-  <div class="d-grid d-md-flex">
+<h2><%= @activity.name %><small class="text-secondary"> with <%= @activity.user.first_name %></small></h2>
+<div class="align-items-center d-flex d-md-flex justify-content-between my-5">
+  <%= link_to "Back", activities_path, class: "btn btn-light px-5 py-3 shadow-sm" %>
+  <div class="d-grid d-flex d-md-flex">
     <% if policy(@activity).edit? %>
       <%= link_to "Update", edit_activity_path(@activity.id), class: "btn btn-bd-green px-5 py-3 shadow" %>
     <% else %>
@@ -23,96 +13,57 @@
     <% end %>
   </div>
 </div>
-
-<div class="g-5 row">
+<div class="g-5 row row-cols-auto">
   <div class="col-md-6">
-    <div class="mb-5">
-      <h5 class="fs-5">
-        About this activity
-      </h5>
-    </div>
-    <div class="border-0 card mb-5 p-5 rounded-4 shadow-sm">
+    <h5>About this activity</h5>
+    <div class="border-0 card my-5 p-5 rounded-4 shadow-sm">
       <% if @activity.image.attached? %>
         <%= cl_image_tag @activity.image.key, class: "card-img-top img-fluid mb-5 rounded-4 shadow-sm" %>
-      <% else %>
-        <% false %>
       <% end %>
       <div class="card-body">
-        <div class="align-items-center d-flex justify-content-between mb-5">
-          <h5 class="card-title fs-5">
-            <%= @activity.name %>
-          </h5>
-          <small class="form-text text-secondary">
-            <%= @activity.start_date %>
-          </small>
+        <div class="align-items-center d-flex d-md-flex justify-content-between mb-5">
+          <h5 class="card-title"><%= @activity.name %></h5>
+          <small class="card-text text-secondary"><%= @activity.start_date %></small>
         </div>
-        <p class="card-text text-secondary">
-          <%= @activity.description %>
-        </p>
+        <p class="card-text text-secondary"><%= @activity.description %></p>
       </div>
     </div>
   </div>
   <div class="col-md-6">
-    <div class="align-items-center d-flex justify-content-between mb-5">
-      <h5 class="fs-5">
-        Location
-      </h5>
-      <small class="form-text text-secondary">
-        <%= @activity.address %>
-      </small>
+    <div class="align-items-center d-flex d-md-flex justify-content-between mb-5">
+      <h5>Location</h5>
+      <small class="text-secondary"><%= @activity.address %></small>
     </div>
     <div class="border-0 card mb-5 p-5 rounded-4 shadow-sm">
       <div class="card-body">
         <% if @marker %>
-          <div style="height: 520px; width: 100%;" data-controller="map"
-                                                   data-map-marker-value="<%= @marker.to_json %>"
-                                                   data-map-api-key-value="<%= ENV["MAPBOX_TOKEN"] %>">
-          </div>
-        <% else %>
-          <h6 class="card-subtitle text-secondary">Unable to locate this activity</h6>
+          <div data-controller="map" data-map-api-key-value="<%= ENV["MAPBOX_TOKEN"] %>" data-map-marker-value="<%= @marker.to_json %>" style="height: 520px; width: 100%;"></div>
         <% end %>
       </div>
     </div>
   </div>
 </div>
-
-<div class="g-5 row">
+<div class="g-5 row row-cols-auto">
   <% if @activity.reviews.blank? %>
     <div class="col-md-6">
-      <div class="mb-5">
-        <h5 class="fs-5">
-          Be the first user to leave a review
-        </h5>
-      </div>
+      <h5>Be the first user to leave a review</h5>
       <%= render "reviews/new", activity: @activity, review: @review %>
     </div>
     <div class="col-md-6">
-      <div class="align-items-center d-flex justify-content-between mb-5">
-        <h5 class="fs-5">
-          All reviews
-        </h5>
-        <small class="form-text text-secondary">
-          <%= pluralize @activity.reviews.size, "review" %>
-        </small>
+      <div class="align-items-center d-flex d-md-flex justify-content-between">
+        <h5>All reviews</h5>
+        <small class="text-secondary"><%= pluralize @activity.reviews.size, "review" %></small>
       </div>
     </div>
   <% else %>
     <div class="col-md-6">
-      <div class="mb-5">
-        <h5 class="fs-5">
-          Leave a review
-        </h5>
-      </div>
+      <h5>Leave a review</h5>
       <%= render "reviews/new", activity: @activity, review: @review %>
     </div>
     <div class="col-md-6">
-      <div class="align-items-center d-flex justify-content-between mb-5">
-        <h5 class="fs-5">
-          All reviews
-        </h5>
-        <small class="form-text text-secondary">
-          <%= pluralize @activity.reviews.size, "review" %>
-        </small>
+      <div class="align-items-center d-flex d-md-flex justify-content-between mb-5">
+        <h5>All reviews</h5>
+        <small class="text-secondary"><%= pluralize @activity.reviews.size, "review" %></small>
       </div>
       <% @activity.reviews.each do |review| %>
         <%= render "activities/review", review: review %>
@@ -120,10 +71,7 @@
     </div>
   <% end %>
 </div>
-
 <div class="col-12">
-  <h5 class="fs-5">
-    Chat with other participants
-  </h5>
+  <h5>Chat with other participants</h5>
   <%= render "chatrooms/new", activity: @activity, chatroom: @activity.chatroom, message: @message %>
 </div>

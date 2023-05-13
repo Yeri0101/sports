@@ -9,8 +9,8 @@
     "actioncable": "^5.2.8-1",
     "bootstrap": "^5.3.0-alpha3",
     "stimulus-character-counter": "^4.2.0",
-    "webpack": "^5.82.0",
-    "webpack-cli": "^5.1.0"
+    "webpack": "^5.82.1",
+    "webpack-cli": "^5.1.1"
   },
   "scripts": {
     "build": "webpack --config webpack.config.js"

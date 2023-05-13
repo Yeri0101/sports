@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/Shopify/ruby-lsp.git
-  revision: 52193042a44f6798ad6ac35cc4dd992094d59db7
+  revision: e4dbc758dad25b146740bb0d5413b5b57f679b3e
   branch: main
   specs:
     ruby-lsp (0.5.1)
@@ -44,7 +44,7 @@ GIT
 
 GIT
   remote: https://github.com/faker-ruby/faker.git
-  revision: af05321fb7381d59c3ed0ad7f0ae379dcce14741
+  revision: 4bee42acd22d8f5561d1993f36859c768677948b
   branch: main
   specs:
     faker (3.2.0)
@@ -73,7 +73,7 @@ GIT
 
 GIT
   remote: https://github.com/varvet/pundit.git
-  revision: 9d3d197718a879fd63c15d533f55a6cdb5fa8853
+  revision: 1f5f6bec8aa4ad634a491d64b8ef076c11c75870
   branch: main
   specs:
     pundit (2.3.0)
@@ -155,7 +155,7 @@ GEM
     bootsnap (1.16.0)
       msgpack (~> 1.2)
     builder (3.2.4)
-    capybara (3.39.0)
+    capybara (3.39.1)
       addressable
       matrix
       mini_mime (>= 0.1.3)
@@ -168,7 +168,7 @@ GEM
     connection_pool (2.4.0)
     crass (1.0.6)
     date (3.3.3)
-    debug (1.7.2)
+    debug (1.8.0)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
     domain_name (0.5.20190701)
@@ -199,9 +199,9 @@ GEM
       activesupport (>= 6.0.0)
       redis (>= 4.2, < 6)
     language_server-protocol (3.17.0.3)
-    loofah (2.20.0)
+    loofah (2.21.2)
       crass (~> 1.0.2)
-      nokogiri (>= 1.5.9)
+      nokogiri (>= 1.12.0)
     mail (2.8.1)
       mini_mime (>= 0.1.1)
       net-imap
@@ -227,11 +227,11 @@ GEM
       net-protocol
     netrc (0.11.0)
     nio4r (2.5.9)
-    nokogiri (1.14.3-arm64-darwin)
+    nokogiri (1.14.4-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.14.3-x86_64-darwin)
+    nokogiri (1.14.4-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.14.3-x86_64-linux)
+    nokogiri (1.14.4-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.5.3)
@@ -299,7 +299,7 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    sorbet-runtime (0.5.10805)
+    sorbet-runtime (0.5.10826)
     spring (4.1.1)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
@@ -312,7 +312,7 @@ GEM
       railties (>= 6.0.0)
     syntax_tree (6.1.1)
       prettier_print (>= 1.2.0)
-    thor (1.2.1)
+    thor (1.2.2)
     tilt (2.1.0)
     timeout (0.3.2)
     turbo-rails (1.4.0)
@@ -385,4 +385,4 @@ RUBY VERSION
    ruby 3.2.2p53
 
 BUNDLED WITH
-   2.4.12
+   2.4.13

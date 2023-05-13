@@ -1,110 +1,90 @@
-<div class="col-md-8 mb-5">
-  <h2 class="fs-2">
-    Edit my account
-  </h2>
-</div>
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "g-4 row", method: :put }) do |f| %>
+<h2>Edit my account</h2>
+<%= simple_form_for(resource, as: resource_name,
+                              html: { class: "g-4 mt-5 row row-cols-auto", method: :put },
+                              url: registration_path(resource_name)) do |f| %>
   <div class="col-md-4">
-    <%= f.input :first_name,
-                as: :string,
-                autofocus: true,
-                input_html: { autocomplete: "string", class: "border-0 px-4 py-3 shadow-sm" },
-                required: true %>
+    <%= f.input :first_name, as: :string,
+                             autofocus: true,
+                             input_html: { autocomplete: "string", class: "border-0 px-4 py-3 shadow-sm" },
+                             required: true %>
   </div>
   <div class="col-md-4">
-    <%= f.input :last_name,
-                as: :string,
-                input_html: { autocomplete: "string", class: "border-0 px-4 py-3 shadow-sm" },
-                required: true %>
+    <%= f.input :last_name, as: :string,
+                            input_html: { autocomplete: "string", class: "border-0 px-4 py-3 shadow-sm" },
+                            required: true %>
   </div>
   <div class="col-md-2">
-    <%= f.input :country_code,
-                as: :string,
-                input_html: { autocomplete: "tel", class: "border-0 px-4 py-3 shadow-sm" },
-                required: false %>
+    <%= f.input :country_code, as: :string,
+                               input_html: { autocomplete: "tel", class: "border-0 px-4 py-3 shadow-sm" },
+                               required: false %>
   </div>
   <div class="col-md-2">
-    <%= f.input :phone_number,
-                as: :string,
-                input_html: { autocomplete: "tel", class: "border-0 px-4 py-3 shadow-sm" },
-                required: false %>
+    <%= f.input :phone_number, as: :string,
+                               input_html: { autocomplete: "tel", class: "border-0 px-4 py-3 shadow-sm" },
+                               required: false %>
   </div>
   <div class="col-md-4">
-    <%= f.input :email,
-                input_html: { autocomplete: "email", class: "border-0 px-4 py-3 shadow-sm" },
-                label: "E-mail address",
-                required: true %>
+    <%= f.input :email, as: :string,
+                        input_html: { autocomplete: "email", class: "border-0 px-4 py-3 shadow-sm" },
+                        label: "E-mail address",
+                        required: true %>
   </div>
   <div class="col-md-4">
-    <%= f.input :username,
-                as: :string,
-                input_html: { autocomplete: "string", class: "border-0 px-4 py-3 shadow-sm" },
-                required: true %>
+    <%= f.input :username, as: :string,
+                           input_html: { autocomplete: "string", class: "border-0 px-4 py-3 shadow-sm" },
+                           required: true %>
   </div>
   <div class="col-md-4">
-    <%= f.input :avatar,
-                as: :file,
-                input_html: { autocomplete: "file", class: "border-0 px-4 py-3 shadow-sm" },
-                required: false %>
+    <%= f.input :avatar, as: :file,
+                         input_html: { autocomplete: "file", class: "border-0 px-4 py-3 shadow-sm" },
+                         required: false %>
   </div>
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <small class="form-text text-secondary">
-      Currently waiting confirmation for: <%= resource.unconfirmed_email %>
-    </small>
+    <small class="form-text text-secondary">Currently awaiting confirmation for: <%= resource.unconfirmed_email %></small>
   <% end %>
   <div class="col-md-4">
-    <%= f.input :password,
-                input_html: { autocomplete: "new-password", class: "border-0 px-4 py-3 shadow-sm" },
-                label: "New password",
-                required: false %>
+    <%= f.input :password, input_html: { autocomplete: "new-password", class: "border-0 px-4 py-3 shadow-sm" },
+                           label: "New password",
+                           required: false %>
   </div>
   <div class="col-md-4">
-    <%= f.input :password_confirmation,
-                input_html: { autocomplete: "new-password", class: "border-0 px-4 py-3 shadow-sm" },
-                label: "Confirm password",
-                required: false %>
+    <%= f.input :password_confirmation, input_html: { autocomplete: "new-password", class: "border-0 px-4 py-3 shadow-sm" },
+                                        label: "Confirm password",
+                                        required: false %>
   </div>
   <div class="col-md-4">
-    <%= f.input :current_password,
-                hint: "Confirm your changes with your current password",
-                input_html: { autocomplete: "current-password", class: "border-0 mb-3 px-4 py-3 shadow-sm" },
-                required: true %>
+    <%= f.input :current_password, hint: "Confirm your changes with your current password",
+                                   input_html: { autocomplete: "current-password", class: "border-0 mb-3 px-4 py-3 shadow-sm" },
+                                   required: true %>
   </div>
   <div class="col-md-4">
-    <%= f.input :address,
-                as: :string,
-                hint: "Automatically filled in with Mapbox",
-                input_html: { autocomplete: "address-line1", class: "border-0 mb-3 px-4 py-3 shadow-sm" },
-                required: true %>
+    <%= f.input :address, as: :string,
+                          hint: "Automatically filled in with Mapbox",
+                          input_html: { autocomplete: "address-line1", class: "border-0 mb-3 px-4 py-3 shadow-sm" },
+                          required: true %>
   </div>
   <div class="col-md-2">
-    <%= f.input :country,
-                as: :string,
-                input_html: { autocomplete: "country", class: "border-0 px-4 py-3 shadow-sm" },
-                required: true %>
+    <%= f.input :country, as: :string,
+                          input_html: { autocomplete: "country", class: "border-0 px-4 py-3 shadow-sm" },
+                          required: true %>
   </div>
   <div class="col-md-2">
-    <%= f.input :city,
-                as: :string,
-                input_html: { autocomplete: "address-level2", class: "border-0 px-4 py-3 shadow-sm" },
-                required: true %>
+    <%= f.input :city, as: :string,
+                       input_html: { autocomplete: "address-level2", class: "border-0 px-4 py-3 shadow-sm" },
+                       required: true %>
   </div>
   <div class="col-md-2">
-    <%= f.input :state,
-                as: :string,
-                input_html: { autocomplete: "address-level1", class: "border-0 px-4 py-3 shadow-sm" },
-                label: "State",
-                required: true %>
+    <%= f.input :state, as: :string,
+                        input_html: { autocomplete: "address-level1", class: "border-0 px-4 py-3 shadow-sm" },
+                        label: "State",
+                        required: true %>
   </div>
   <div class="col-md-2">
-    <%= f.input :postcode,
-                as: :string,
-                input_html: { autocomplete: "postal-code", class: "border-0 px-4 py-3 shadow-sm" },
-                label: "Postal code",
-                required: true %>
+    <%= f.input :postcode, as: :string,
+                           input_html: { autocomplete: "postal-code", class: "border-0 px-4 py-3 shadow-sm" },
+                           label: "Postal code",
+                           required: true %>
   </div>
-
   <div class="col-md-6 d-flex d-md-flex gap-4">
     <%= f.button :submit, "Update", class: "btn btn-bd-green px-5 py-3 shadow" %>
     <%= link_to "Cancel", activities_path, class: "btn btn-light px-5 py-3 shadow-sm" %>

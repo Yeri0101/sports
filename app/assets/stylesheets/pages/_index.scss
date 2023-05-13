@@ -11,6 +11,10 @@ small {
   margin-bottom: 0;
 }
 
+section {
+  height: calc(100vh - 214px);
+}
+
 small,
 span {
   font-family: "Inter", sans-serif;
