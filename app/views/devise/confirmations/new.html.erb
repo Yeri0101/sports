@@ -1,15 +1,17 @@
 <h2>Resend confirmation instructions</h2>
 <%= simple_form_for(resource, as: resource_name,
-                              html: { class: "g-4 mt-5 row row-cols-auto", method: :post },
+                              html: { class: "g-4 mt-5 row", method: :post },
                               url: confirmation_path(resource_name)) do |f| %>
   <%= f.error_notification %>
   <%= f.full_error :confirmation_token %>
   <div class="col-12">
     <%= f.input :email, as: :string,
                         autofocus: true,
-                        input_html: { autocomplete: "email", class: "border-0 mb-3 px-4 py-3 shadow-sm" },
+                        input_html: { autocomplete: "email", class: "border-0 px-4 py-3 shadow-sm" },
                         required: true,
                         value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
   </div>
-  <%= f.button :submit, "Resend", class: "btn btn-bd-green px-5 py-3 shadow" %>
+  <div class="col-12">
+    <%= f.button :submit, "Resend", class: "btn --btn-bd-green px-5 py-3 shadow" %>
+  </div>
 <% end %>

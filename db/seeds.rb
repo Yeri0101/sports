@@ -37,13 +37,14 @@ User.create!(
   email: "maximilien.lanz@lewagon.com",
   first_name: "Maximilien",
   last_name: "LANZ",
-  password:
-    Faker::Internet.password(
-      min_length: 12,
-      max_length: 22,
-      mix_case: true,
-      special_characters: true
-    ),
+  # password:
+    # Faker::Internet.password(
+      # min_length: 12,
+      # max_length: 22,
+      # mix_case: true,
+      # special_characters: true
+    # ),
+  password: "2G[>NWivD8YZ5<S@#(d^tA",
   phone_number: "76 373 33 77",
   postcode: "1110",
   state: "Canton de Vaud",
@@ -76,7 +77,7 @@ Activity.create!(
   address: "Brügglifeld 7, 5000 Aarau, Switzerland",
   category: "Football",
   description:
-    "Today we are in the middle of the football World Cup in Qatar. I invite you to join me in building a team that could become the best of all.",
+    "We are currently in the middle of the FIFA World Cup in Qatar. I invite you to join me in building a soccer team that will become the best ever.",
   end_date: "2022-12-25 11:00:00 UTC",
   name: "Football",
   start_date: "2022-12-25 10:00:00 UTC",

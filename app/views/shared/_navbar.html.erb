@@ -5,13 +5,19 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse flex-grow-0 navbar-collapse" id="navbarSupportedContent">
-      <ul class="gap-4 mb-lg-0 navbar-nav">
+      <ul class="gap-5 me-auto mb-lg-0 navbar-nav">
         <% if user_signed_in? %>
-          <li class="nav-item"><%= link_to "Discover", activities_path, class: "nav-link" %></li>
-          <li class="nav-item"><%= link_to "My activities", me_activities_path, class: "nav-link" %></li>
-          <li class="nav-item"><%= link_to "My bookings", bookings_path, class: "nav-link" %></li>
+          <li class="nav-item">
+            <a aria-current="page" class="<%= active_class(activities_path) %> nav-link" href="<%= activities_path %>">Discover</a>
+          </li>
+          <li class="nav-item">
+            <a aria-current="page" class="<%= active_class(me_activities_path) %> nav-link" href="<%= me_activities_path %>">My activities</a>
+          </li>
+          <li class="nav-item">
+            <a aria-current="page" class="<%= active_class(bookings_path) %> nav-link" href="<%= bookings_path %>">My bookings</a>
+          </li>
           <li class="align-items-center d-flex d-md-flex dropdown nav-item">
-            <div class="dropdown text-end">
+            <div class="dropdown">
               <% if current_user.avatar.attached? %>
                 <%= cl_image_tag current_user.avatar.key, class: "rounded-circle",
                                                           data: { bs_toggle: "dropdown" }, "aria-expanded": false, "aria-haspopup": true,
@@ -25,7 +31,7 @@
                                                                                id: "navbarDropdown",
                                                                                width: "30px" %>
               <% end %>
-              <ul class="border-0 dropdown-menu shadow-sm">
+              <ul class="border-0 dropdown-menu mt-3 shadow-sm">
                 <li><%= link_to "Edit my account", edit_user_registration_path, class: "dropdown-item" %></li>
                 <li><%= link_to "Sign out", destroy_user_session_path, class: "dropdown-item text-secondary",
                                                                        data: { turbo_method: :delete } %></li>

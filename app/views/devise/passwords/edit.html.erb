@@ -1,6 +1,6 @@
 <h2>Change your password</h2>
 <%= simple_form_for(resource, as: resource_name,
-                              html: { class: "g-4 mt-5 row row-cols-auto", method: :put },
+                              html: { class: "g-4 mt-5 row", method: :put },
                               url: password_path(resource_name)) do |f| %>
   <%= f.error_notification %>
   <%= f.input :reset_password_token, as: :hidden %>
@@ -14,5 +14,7 @@
                                         label: "Confirm your new password",
                                         required: true %>
   </div>
-  <%= f.button :submit, "Change", class: "btn btn-bd-green px-5 py-3 shadow" %>
+  <div class="col-12">
+    <%= f.button :submit, "Change", class: "btn --btn-bd-green px-5 py-3 shadow" %>
+  </div>
 <% end %>

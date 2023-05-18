@@ -1,51 +1,54 @@
 <h2>Create a new activity</h2>
-<%= simple_form_for @activity, html: { class: "g-4 mt-5 row row-cols-auto" } do |f| %>
+<%= simple_form_for @activity, html: {class: "g-4 mt-5 row"} do |f| %>
   <div class="col-md-4">
     <%= f.input :name, as: :string,
-                       input_html: { autocomplete: "string", class: "border-0 px-4 py-3 shadow-sm" },
-                       placeholder: "Running",
+                       input_html: {autocomplete: "string", class: "border-0 px-4 py-3 shadow-sm"},
+                       placeholder: "Boxing",
                        required: true %>
   </div>
   <div class="col-md-4">
     <%= f.input :category, as: :select,
                            collection: Activity.categories.keys,
-                           input_html: { autocomplete: "integer", class: "border-0 px-4 py-3 shadow-sm" },
+                           input_html: {autocomplete: "integer", class: "border-0 px-4 py-3 shadow-sm"},
                            required: true %>
   </div>
   <div class="col-md-4">
     <%= f.input :image, as: :file,
-                        input_html: { autocomplete: "file", class: "border-0 px-4 py-3 shadow-sm" },
+                        input_html: {autocomplete: "file", class: "border-0 px-4 py-3 shadow-sm"},
                         required: false %>
   </div>
-  <div class="col-12" data-controller="character-counter">
-    <%= f.input :description, as: :string,
-                              input_html: { autocomplete: "string", class: "border-0 px-4 py-3 shadow-sm", data: { character_counter_target: "input" } },
-                              required: true %>
-    <small class="form-text text-secondary">Your description is currently <small data-character-counter-target="counter" class="text-dark"></small> characters long</small>
-  </div>
   <div class="col-md-6">
-    <%= f.input :start_date, as: :string,
-                             input_html: { autocomplete: "datetime", class: "border-0 px-4 py-3 shadow-sm" },
+    <%= f.input :address, as: :string,
+                          hint: "Automatically filled in with Mapbox",
+                          input_html: {autocomplete: "address-line1", class: "border-0 mb-3 px-4 py-3 shadow-sm"},
+                          placeholder: "Rue de Lausanne 64, CH-1020 Renens, Switzerland",
+                          required: true %>
+  </div>
+  <div class="col-md-6" data-controller="character-counter">
+    <%= f.input :description, as: :string,
+                              input_html: {autocomplete: "string", class: "border-0 px-4 py-3 shadow-sm", data: {character_counter_target: "input"}},
+                              placeholder: "I will be your opponent if you want to come and let off steam in the boxing ring.",
+                              required: true %>
+    <small class="form-text text-secondary">Your description is currently
+      <small data-character-counter-target="counter" class="form-text text-dark"></small> characters long
+    </small>
+  </div>
+  <div class="col-12">
+    <%= f.input :start_date, as: :datetime,
+                             input_html: {autocomplete: "datetime", class: "border-0 px-4 py-3 shadow-sm"},
                              label: "Start date and time",
                              placeholder: "08.05.2023",
                              required: true %>
   </div>
-  <div class="col-md-6">
-    <%= f.input :end_date, as: :string,
-                           input_html: { autocomplete: "datetime", class: "border-0 px-4 py-3 shadow-sm" },
+  <div class="col-12">
+    <%= f.input :end_date, as: :datetime,
+                           input_html: {autocomplete: "datetime", class: "border-0 px-4 py-3 shadow-sm"},
                            label: "End date and time",
                            placeholder: "12.05.2023",
                            required: true %>
   </div>
-  <div class="col-12">
-    <%= f.input :address, as: :string,
-                          hint: "Automatically filled in with Mapbox",
-                          input_html: { autocomplete: "address-line1", class: "border-0 mb-3 px-4 py-3 shadow-sm" },
-                          placeholder: "Rue de Lausanne 64, 1020 Renens, Switzerland",
-                          required: true %>
-  </div>
-  <div class="col-md-6 d-flex d-md-flex gap-4">
-    <%= f.button :submit, "Create", class: "btn btn-bd-green px-5 py-3 shadow" %>
+  <div class="col-md-6 d-flex d-grid d-md-flex mb-5 gap-5">
+    <%= f.button :submit, "Create", class: "btn --btn-bd-green px-5 py-3 shadow" %>
     <%= link_to "Cancel", me_activities_path, class: "btn btn-light px-5 py-3 shadow" %>
   </div>
 <% end %>

@@ -1,7 +1,7 @@
 <h2>Create your account</h2>
 <%= simple_form_for(resource, as: resource_name,
                               data: { turbo: false },
-                              html: { class: "g-4 mt-5 row row-cols-auto" },
+                              html: {class: "g-4 mt-5 row"},
                               url: registration_path(resource_name)) do |f| %>
   <div class="col-md-4">
     <%= f.input :first_name, as: :string,
@@ -25,7 +25,7 @@
   <div class="col-md-2">
     <%= f.input :phone_number, as: :string,
                                input_html: { autocomplete: "tel", class: "border-0 px-4 py-3 shadow-sm" },
-                               placeholder: "76 123 45 67",
+                               placeholder: "(0) 76 123 45 67",
                                required: false %>
   </div>
   <div class="col-md-4">
@@ -47,7 +47,7 @@
                          required: false %>
   </div>
   <div class="col-md-6">
-    <%= f.input :password, hint: ("#{@minimum_password_length} characters minimum with special characters" if @minimum_password_length),
+    <%= f.input :password, hint: ("#{ @minimum_password_length } characters minimum with special characters" if @minimum_password_length),
                            input_html: { autocomplete: "new-password", class: "border-0 mb-3 px-4 py-3 shadow-sm" },
                            required: true %>
   </div>
@@ -86,11 +86,11 @@
     <%= f.input :postcode, as: :string,
                            input_html: { autocomplete: "postal-code", class: "border-0 px-4 py-3 shadow-sm" },
                            label: "Postal code",
-                           placeholder: "1020",
+                           placeholder: "CH-1020",
                            required: true %>
   </div>
-  <div class="col-md-6 d-flex d-md-flex gap-4">
-    <%= f.button :submit, "Create an account", class: "btn btn-bd-green px-5 py-3 shadow" %>
+  <div class="col-md-6 d-flex d-grid d-md-flex mb-5 gap-5">
+    <%= f.button :submit, "Create an account", class: "btn --btn-bd-green px-5 py-3 shadow" %>
     <%= link_to "Cancel", root_path, class: "btn btn-light px-5 py-3 shadow-sm" %>
   </div>
 <% end %>

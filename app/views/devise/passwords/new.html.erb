@@ -1,6 +1,6 @@
 <h2>Reset your password</h2>
 <%= simple_form_for(resource, as: resource_name,
-                              html: { class: "g-4 mt-5 row row-cols-auto", method: :post },
+                              html: { class: "g-4 mt-5 row", method: :post },
                               url: password_path(resource_name)) do |f| %>
   <%= f.error_notification %>
   <div class="col-12">
@@ -11,8 +11,8 @@
                         placeholder: "yerinto.martinez@lewagon.com",
                         required: true %>
   </div>
-  <div class="col-md-6 d-flex d-md-flex gap-4">
-    <%= f.button :submit, "Send", class: "btn btn-bd-green px-5 py-3 shadow" %>
+  <div class="col-md-6 d-flex d-grid d-md-flex mb-5 gap-5">
+    <%= f.button :submit, "Send", class: "btn --btn-bd-green px-5 py-3 shadow" %>
     <%= link_to "Cancel", user_session_path, class: "btn btn-light px-5 py-3 shadow-sm" %>
   </div>
 <% end %>

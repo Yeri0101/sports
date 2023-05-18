@@ -1,7 +1,7 @@
 <h2>Log in</h2>
 <%= simple_form_for(resource, as: resource_name,
                               data: { turbo: false },
-                              html: { class: "g-4 mt-5 row row-cols-auto" },
+                              html: { class: "g-4 mt-5 row" },
                               url: session_path(resource_name)) do |f| %>
   <div class="col-12">
     <%= f.input :email, autofocus: true,
@@ -17,10 +17,11 @@
   <div class="col-12">
     <%= f.input :remember_me, class: "form-check-input shadow-sm",
                               label: "Remember me",
+                              required: false,
                               as: :boolean if devise_mapping.rememberable? %>
   </div>
-  <div class="col-md-6 d-flex d-md-flex gap-4">
-    <%= f.button :submit, "Log in", class: "btn btn-bd-green px-5 py-3 shadow" %>
+  <div class="col-md-6 d-flex d-grid d-md-flex mb-5 gap-5">
+    <%= f.button :submit, "Log in", class: "btn --btn-bd-green px-5 py-3 shadow" %>
     <%= link_to "Forgot your password?", new_password_path(resource_name), class: "btn btn-light px-5 py-3 shadow-sm" %>
   </div>
 <% end %>

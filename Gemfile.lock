@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/Shopify/ruby-lsp.git
-  revision: e4dbc758dad25b146740bb0d5413b5b57f679b3e
+  revision: 8b5a32f78a8b18a971da0f8e06cb9b6402956179
   branch: main
   specs:
     ruby-lsp (0.5.1)
@@ -44,7 +44,7 @@ GIT
 
 GIT
   remote: https://github.com/faker-ruby/faker.git
-  revision: 4bee42acd22d8f5561d1993f36859c768677948b
+  revision: 85ff60305465ee07927802420d659d99622af2be
   branch: main
   specs:
     faker (3.2.0)
@@ -73,7 +73,7 @@ GIT
 
 GIT
   remote: https://github.com/varvet/pundit.git
-  revision: 1f5f6bec8aa4ad634a491d64b8ef076c11c75870
+  revision: 5b22078621cf0249d39dc8c8bb0e037cae779fb0
   branch: main
   specs:
     pundit (2.3.0)
@@ -199,7 +199,7 @@ GEM
       activesupport (>= 6.0.0)
       redis (>= 4.2, < 6)
     language_server-protocol (3.17.0.3)
-    loofah (2.21.2)
+    loofah (2.21.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
     mail (2.8.1)
@@ -227,11 +227,11 @@ GEM
       net-protocol
     netrc (0.11.0)
     nio4r (2.5.9)
-    nokogiri (1.14.4-arm64-darwin)
+    nokogiri (1.15.0-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.14.4-x86_64-darwin)
+    nokogiri (1.15.0-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.14.4-x86_64-linux)
+    nokogiri (1.15.0-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.5.3)
@@ -299,7 +299,7 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    sorbet-runtime (0.5.10826)
+    sorbet-runtime (0.5.10832)
     spring (4.1.1)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)

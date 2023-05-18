@@ -1,18 +1,22 @@
-<div class="col-12" data-chatroom-subscription-chatroom-id-value="<%= activity.chatroom.id %>" data-controller="character-counter chatroom-subscription">
+<div data-chatroom-subscription-chatroom-id-value="<%= activity.chatroom.id %>" data-controller="character-counter chatroom-subscription">
   <div data-chatroom-subscription-target="messages">
     <% chatroom.messages.each do |message| %>
       <%= render "messages/new", message: message %>
     <% end %>
   </div>
-  <%= simple_form_for [chatroom, message], html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" } },
+  <%= simple_form_for [chatroom, message], html: {data: {action: "turbo:submit-end->chatroom-subscription#resetForm"}},
                                            remote: true do |f|%>
     <%= f.input :content, as: :string,
-                          input_html: { autocomplete: "string", class: "border-0 mt-5 p-5 rounded-4 shadow-sm", data: { character_counter_target: "input" } },
+                          autofocus: false,
+                          input_html: {class: "border-0 mt-5 p-5 rounded-4 shadow-sm", data: {character_counter_target: "input"}, style: "height: 176px; width: 100%;"},
                           label: false,
-                          placeholder: "Send a message to other participants in this activity" %>
+                          placeholder: "Send a message to other participants in this activity",
+                          required: false %>
     <div class="align-items-center d-flex d-md-flex justify-content-between my-5">
-      <%= f.submit "Send", class: "btn btn-bd-green px-5 py-3 shadow" %>
-      <small class="form-text text-secondary">Your message is currently <small class="text-dark" data-character-counter-target="counter"></small> characters long</small>
+      <%= f.submit "Send", class: "btn --btn-bd-green px-5 py-3 shadow" %>
+      <small class="form-text text-secondary">Your message is currently
+        <small class="form-text text-dark" data-character-counter-target="counter"></small> characters long
+      </small>
     </div>
   <% end %>
 </div>
