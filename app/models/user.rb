@@ -7,7 +7,7 @@ class User < ApplicationRecord
          :rememberable,
          :validatable
 
-  scope :all_except, ->(user) {where.not(id: user)}
+  scope :all_except, ->(user) { where.not(id: user) }
 
   has_one_attached :avatar
 

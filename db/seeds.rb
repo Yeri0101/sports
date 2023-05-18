@@ -37,13 +37,14 @@ User.create!(
   email: "maximilien.lanz@lewagon.com",
   first_name: "Maximilien",
   last_name: "LANZ",
-  password:
-    Faker::Internet.password(
-      min_length: 12,
-      max_length: 22,
-      mix_case: true,
-      special_characters: true
-    ),
+  # password:
+    # Faker::Internet.password(
+      # min_length: 12,
+      # max_length: 22,
+      # mix_case: true,
+      # special_characters: true
+    # ),
+  password: "2G[>NWivD8YZ5<S@#(d^tA",
   phone_number: "76 373 33 77",
   postcode: "1110",
   state: "Canton de Vaud",

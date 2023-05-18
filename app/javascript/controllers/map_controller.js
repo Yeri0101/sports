@@ -1,4 +1,4 @@
-import {Controller} from "@hotwired/stimulus"
+import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static values = {
     apiKey: String,
@@ -27,6 +27,6 @@ export default class extends Controller {
   #fitMapToMarkers() {
     const bounds = new mapboxgl.LngLatBounds()
     bounds.extend([this.markerValue.lng, this.markerValue.lat])
-    this.map.fitBounds(bounds, {duration: 0, maxZoom: 15, padding: 70})
+    this.map.fitBounds(bounds, { duration: 0, maxZoom: 15, padding: 70 })
   }
 }

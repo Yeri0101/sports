@@ -1,17 +1,17 @@
 <h2>Log in</h2>
 <%= simple_form_for(resource, as: resource_name,
-                              data: {turbo: false},
-                              html: {class: "g-4 mt-5 row"},
+                              data: { turbo: false },
+                              html: { class: "g-4 mt-5 row" },
                               url: session_path(resource_name)) do |f| %>
   <div class="col-12">
     <%= f.input :email, autofocus: true,
-                        input_html: {autocomplete: "email", class: "border-0 px-4 py-3 shadow-sm"},
+                        input_html: { autocomplete: "email", class: "border-0 px-4 py-3 shadow-sm" },
                         label: "E-mail address",
                         placeholder: "sylvain.maslard@lewagon.com",
                         required: true %>
   </div>
   <div class="col-12">
-    <%= f.input :password, input_html: {autocomplete: "current-password", class: "border-0 px-4 py-3 shadow-sm"},
+    <%= f.input :password, input_html: { autocomplete: "current-password", class: "border-0 px-4 py-3 shadow-sm" },
                            required: true %>
   </div>
   <div class="col-12">

@@ -1,16 +1,16 @@
 <h2>Change your password</h2>
 <%= simple_form_for(resource, as: resource_name,
-                              html: {class: "g-4 mt-5 row", method: :put},
+                              html: { class: "g-4 mt-5 row", method: :put },
                               url: password_path(resource_name)) do |f| %>
   <%= f.error_notification %>
   <%= f.input :reset_password_token, as: :hidden %>
   <%= f.full_error :reset_password_token %>
   <div class="col-12">
     <%= f.input :password, autofocus: true,
-                           input_html: {autocomplete: "new-password", class: "border-0 px-4 py-3 shadow-sm"},
+                           input_html: { autocomplete: "new-password", class: "border-0 px-4 py-3 shadow-sm" },
                            label: "New password",
                            required: true %>
-    <%= f.input :password_confirmation, input_html: {autocomplete: "new-password", class: "border-0 px-4 py-3 shadow-sm"},
+    <%= f.input :password_confirmation, input_html: { autocomplete: "new-password", class: "border-0 px-4 py-3 shadow-sm" },
                                         label: "Confirm your new password",
                                         required: true %>
   </div>

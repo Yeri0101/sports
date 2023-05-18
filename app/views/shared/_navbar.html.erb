@@ -20,13 +20,13 @@
             <div class="dropdown">
               <% if current_user.avatar.attached? %>
                 <%= cl_image_tag current_user.avatar.key, class: "rounded-circle",
-                                                          data: {bs_toggle: "dropdown"}, "aria-expanded": false, "aria-haspopup": true,
+                                                          data: { bs_toggle: "dropdown" }, "aria-expanded": false, "aria-haspopup": true,
                                                           height: "30px",
                                                           id: "navbarDropdown",
                                                           width: "30px" %>
               <% else %>
                 <%= image_tag "https://avatar.vercel.sh/maximilien-lanz.svg/", class: "rounded-circle",
-                                                                               data: {bs_toggle: "dropdown"}, "aria-expanded": false, "aria-haspopup": true,
+                                                                               data: { bs_toggle: "dropdown" }, "aria-expanded": false, "aria-haspopup": true,
                                                                                height: "30px",
                                                                                id: "navbarDropdown",
                                                                                width: "30px" %>
@@ -34,7 +34,7 @@
               <ul class="border-0 dropdown-menu mt-3 shadow-sm">
                 <li><%= link_to "Edit my account", edit_user_registration_path, class: "dropdown-item" %></li>
                 <li><%= link_to "Sign out", destroy_user_session_path, class: "dropdown-item text-secondary",
-                                                                       data: {turbo_method: :delete} %></li>
+                                                                       data: { turbo_method: :delete } %></li>
               </ul>
             </div>
           </li>

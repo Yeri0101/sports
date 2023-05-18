@@ -1,6 +1,6 @@
 <h2>Resend unlocking instructions</h2>
 <%= simple_form_for(resource, as: resource_name,
-                              html: {class: "g-4 mt-5 row", method: :post},
+                              html: { class: "g-4 mt-5 row", method: :post },
                               url: unlock_path(resource_name)) do |f| %>
   <%= f.error_notification %>
   <%= f.full_error :unlock_token %>

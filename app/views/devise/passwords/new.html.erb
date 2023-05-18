@@ -1,12 +1,12 @@
 <h2>Reset your password</h2>
 <%= simple_form_for(resource, as: resource_name,
-                              html: {class: "g-4 mt-5 row", method: :post},
+                              html: { class: "g-4 mt-5 row", method: :post },
                               url: password_path(resource_name)) do |f| %>
   <%= f.error_notification %>
   <div class="col-12">
     <%= f.input :email, autofocus: true,
                         hint: "We will send you an e-mail with instructions to reset your password",
-                        input_html: {autocomplete: "email", class: "border-0 mb-3 px-4 py-3 shadow-sm"},
+                        input_html: { autocomplete: "email", class: "border-0 mb-3 px-4 py-3 shadow-sm" },
                         label: "E-mail address",
                         placeholder: "yerinto.martinez@lewagon.com",
                         required: true %>

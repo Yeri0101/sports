@@ -3,7 +3,7 @@
   <div class="col-md-4">
     <%= f.input :name, as: :string,
                        input_html: {autocomplete: "string", class: "border-0 px-4 py-3 shadow-sm"},
-                       placeholder: "Running",
+                       placeholder: "Boxing",
                        required: true %>
   </div>
   <div class="col-md-4">
@@ -27,6 +27,7 @@
   <div class="col-md-6" data-controller="character-counter">
     <%= f.input :description, as: :string,
                               input_html: {autocomplete: "string", class: "border-0 px-4 py-3 shadow-sm", data: {character_counter_target: "input"}},
+                              placeholder: "I will be your opponent if you want to come and let off steam in the boxing ring.",
                               required: true %>
     <small class="form-text text-secondary">Your description is currently
       <small data-character-counter-target="counter" class="form-text text-dark"></small> characters long
