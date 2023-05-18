@@ -1,16 +1,16 @@
+.dropdown-item {
+  &:active, &:focus, &:hover {
+    background-color: inherit;
+  }
+}
 .navbar-brand {
   color: rgb(37, 75, 69);
   font-family: "Syne", sans-serif;
   font-weight: 700;
-
-  &:active,
-  &:focus,
-  &:hover {
+  &:active, &:focus, &:hover {
     color: rgb(37, 75, 69);
-    transition: color 0.15s ease-in-out;
   }
 }
-
 .nav-link {
   color: rgb(37, 75, 69);
   font-family: "Inter", sans-serif;

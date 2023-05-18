@@ -4,26 +4,23 @@ abbr[title] {
   text-decoration-skip-ink: none;
   -webkit-text-decoration: none;
 }
-
 .form-check-input[type="checkbox"] {
   border: none;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
 }
-
-.form-check-input:checked,
-.form-check-input.is-valid:checked {
+.form-check-input:checked, .form-check-input.is-valid:checked {
   background-color: rgb(37, 75, 69);
   border-color: rgb(37, 75, 69);
 }
-
 .form-check-input.is-valid ~ .form-check-label {
   color: rgb(37, 75, 69);
 }
-
 .form-text {
   margin-top: 0;
 }
-
 input[type="search"] {
   text-align: center;
+}
+legend ~ div.form-check:first-of-type {
+  clear: left;
 }

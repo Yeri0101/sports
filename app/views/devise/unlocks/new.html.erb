@@ -1,6 +1,6 @@
 <h2>Resend unlocking instructions</h2>
 <%= simple_form_for(resource, as: resource_name,
-                              html: { class: "g-4 mt-5 row row-cols-auto", method: :post },
+                              html: {class: "g-4 mt-5 row", method: :post},
                               url: unlock_path(resource_name)) do |f| %>
   <%= f.error_notification %>
   <%= f.full_error :unlock_token %>
@@ -10,5 +10,7 @@
                         label: "E-mail address",
                         required: true %>
   </div>
-  <%= f.button :submit, "Resend", class: "btn btn-bd-green px-5 py-3 shadow" %>
+  <div class="col-12">
+    <%= f.button :submit, "Resend", class: "btn --btn-bd-green px-5 py-3 shadow" %>
+  </div>
 <% end %>

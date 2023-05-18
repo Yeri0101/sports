@@ -1,47 +1,49 @@
 <h2>Edit this activity</h2>
-<%= simple_form_for @activity, html: { class: "g-4 mt-5 row row-cols-auto"} do |f| %>
+<%= simple_form_for @activity, html: {class: "g-4 mt-5 row"} do |f| %>
   <div class="col-md-4">
     <%= f.input :name, as: :string,
-                       input_html: { autocomplete: "string", class: "border-0 px-4 py-3 shadow-sm" },
+                       input_html: {autocomplete: "string", class: "border-0 px-4 py-3 shadow-sm"},
                        required: true %>
   </div>
   <div class="col-md-4">
     <%= f.input :category, as: :select,
                            collection: Activity.categories.keys,
-                           input_html: { autocomplete: "integer", class: "border-0 px-4 py-3 shadow-sm" },
+                           input_html: {autocomplete: "integer", class: "border-0 px-4 py-3 shadow-sm"},
                            required: true %>
   </div>
   <div class="col-md-4">
     <%= f.input :image, as: :file,
-                        input_html: { autocomplete: "file", class: "border-0 px-4 py-3 shadow-sm" },
+                        input_html: {autocomplete: "file", class: "border-0 px-4 py-3 shadow-sm"},
                         required: true %>
   </div>
-  <div class="col-12" data-controller="character-counter">
-    <%= f.input :description, as: :string,
-                              input_html: { autocomplete: "string", class: "border-0 px-4 py-3 shadow-sm", data: { character_counter_target: "input" } },
-                              required: true %>
-    <small class="form-text text-secondary">Your description is currently <small data-character-counter-target="counter" class="text-dark"></small> characters long</small>
-  </div>
   <div class="col-md-6">
-    <%= f.input :start_date, as: :string,
-                             input_html: { autocomplete: "datetime", class: "border-0 px-4 py-3 shadow-sm" },
+    <%= f.input :address, as: :string,
+                          hint: "Automatically filled in with Mapbox",
+                          input_html: {autocomplete: "address-line1", class: "border-0 mb-3 px-4 py-3 shadow-sm"},
+                          required: true %>
+  </div>
+  <div class="col-md-6" data-controller="character-counter">
+    <%= f.input :description, as: :string,
+                              input_html: {autocomplete: "string", class: "border-0 px-4 py-3 shadow-sm", data: {character_counter_target: "input"}},
+                              required: true %>
+    <small class="form-text text-secondary">Your description is currently
+      <small data-character-counter-target="counter" class="form-text text-dark"></small> characters long
+    </small>
+  </div>
+  <div class="col-12">
+    <%= f.input :start_date, as: :datetime,
+                             input_html: {autocomplete: "datetime", class: "border-0 px-4 py-3 shadow-sm"},
                              label: "Start date and time",
                              required: true %>
   </div>
-  <div class="col-md-6">
-    <%= f.input :end_date, as: :string,
-                           input_html: { autocomplete: "datetime", class: "border-0 px-4 py-3 shadow-sm" },
+  <div class="col-12">
+    <%= f.input :end_date, as: :datetime,
+                           input_html: {autocomplete: "datetime", class: "border-0 px-4 py-3 shadow-sm"},
                            label: "End date and time",
                            required: true %>
   </div>
-  <div class="col-12">
-    <%= f.input :address, as: :string,
-                          hint: "Automatically filled in with Mapbox",
-                          input_html: { autocomplete: "address-line1", class: "border-0 mb-3 px-4 py-3 shadow-sm" },
-                          required: true %>
-  </div>
-  <div class="col-md-6 d-flex d-md-flex gap-4">
-    <%= f.button :submit, "Update", class: "btn btn-bd-green px-5 py-3 shadow" %>
+  <div class="col-md-6 d-flex d-grid d-md-flex mb-5 gap-5">
+    <%= f.button :submit, "Update", class: "btn --btn-bd-green px-5 py-3 shadow" %>
     <%= link_to "Cancel", activity_path, class: "btn btn-light px-5 py-3 shadow-sm" %>
   </div>
 <% end %>

@@ -1,21 +1,13 @@
-@import "home";
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-small {
+body, html {
+  font-family: "Syne", sans-serif;
+  font-weight: 400;
+}
+h1, h2, h5, p, small {
   margin-bottom: 0;
 }
-
 section {
   height: calc(100vh - 214px);
 }
-
-small,
-span {
+small {
   font-family: "Inter", sans-serif;
 }

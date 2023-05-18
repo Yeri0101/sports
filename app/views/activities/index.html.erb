@@ -1,28 +1,31 @@
 <h2>Discover</h2>
 <div class="align-items-center d-flex d-md-flex justify-content-start my-5">
-  <%= search_form_for @q, data: { turbo: false },
-                          html: { class: "d-flex d-md-flex", method: :get },
+  <%= search_form_for @q, data: {turbo: false},
+                          html: {class: "d-flex d-md-flex", method: :get},
                           url: activities_path do |f| %>
-    <%= f.search_field :description_or_name_or_address_or_reviews_comment_i_cont_any, class: "border-0 form-control me-4 px-5 shadow-sm",
+    <%= f.search_field :description_or_name_or_address_or_reviews_comment_i_cont_any, class: "border-0 form-control me-5 px-5 shadow-sm",
                                                                                       placeholder: "Search for a keyword" %>
     <%= f.submit class: "btn btn-light px-5 py-3 shadow-sm",
                  placeholder: "Search" %>
   <% end %>
 </div>
-<div class="g-5 mb-5 row row-cols-auto">
+<div class="g-5 mb-5 row">
   <% @activities.each do |activity| %>
-    <div class="col-md-6">
+    <div class="col-lg-6 col-md-12">
       <div class="border-0 card p-5 rounded-4 shadow-sm">
         <% if activity.image.attached? %>
           <%= cl_image_tag activity.image.key, class: "card-img-top mb-5 rounded-4 shadow-sm" %>
         <% end %>
         <div class="card-body">
           <div class="align-items-center d-flex d-md-flex justify-content-between mb-5">
-            <h5 class="card-title"><%= activity.name %><small class="text-secondary"> with <%= activity.user.first_name %></small></h5>
+            <h5 class="card-title">
+              <%= activity.name %>
+              <small class="text-secondary"> with <%= activity.user.first_name %></small>
+            </h5>
             <small class="card-text text-secondary"><%= pluralize activity.reviews.size, "review" %></small>
           </div>
           <p class="card-text text-secondary"><%= activity.description %></p>
-          <%= link_to "View", activity_path(activity.id), class: "btn btn-bd-green mt-5 px-5 py-3 shadow" %>
+          <%= link_to "View", activity_path(activity.id), class: "btn --btn-bd-green mt-5 px-5 py-3 shadow" %>
         </div>
       </div>
     </div>
