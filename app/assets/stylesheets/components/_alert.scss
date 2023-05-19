@@ -1,0 +1,12 @@
+.alert-dark {
+  --bs-alert-color: rgb(0, 0, 0);
+  --bs-alert-bg: rgb(248, 249, 250);
+  --bs-alert-border-color: rgb(248, 249, 250);
+  --bs-alert-link-color: rgb(0, 0, 0);
+}
+.alert-success {
+  --bs-alert-color: rgb(255, 255, 255);
+  --bs-alert-bg: rgb(37, 75, 69);
+  --bs-alert-border-color: rgb(37, 75, 69);
+  --bs-alert-link-color: rgb(255, 255, 255);
+}

@@ -17,7 +17,9 @@ class BookingsController < ApplicationController
     @booking.activity = @activity
     authorize @booking
     if @booking.save
-      redirect_to @activity
+      redirect_to @activity,
+                  notice:
+                    "Booking completed"
     else
       render "activities/show", status: :see_other
     end

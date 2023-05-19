@@ -34,7 +34,9 @@ class ActivitiesController < ApplicationController
     @activity = current_user.activities.new(activity_params)
     authorize @activity
     if @activity.save
-      redirect_to @activity
+      redirect_to @activity,
+                  notice:
+                    "Creation completed"
     else
       render :new, status: :unprocessable_entity
     end
