@@ -1,7 +1,7 @@
 <h2>My bookings</h2>
 <div class="align-items-center d-flex d-md-flex justify-content-start my-5">
-  <%= search_form_for @q, data: {turbo: false},
-                          html: {class: "d-flex d-md-flex", method: :get},
+  <%= search_form_for @q, data: { turbo: false },
+                          html: { class: "d-flex d-md-flex", method: :get },
                           url: bookings_path do |f| %>
     <%= f.search_field :activity_name_i_cont_any, class: "border-0 form-control me-5 px-5 shadow-sm",
                                                   placeholder: "Search for a booking" %>
@@ -28,7 +28,7 @@
           <div class="align-items-center d-flex d-md-flex justify-content-between mt-5">
             <%= link_to "View", activity_path(booking.activity), class: "btn --btn-bd-green px-5 py-3 shadow" %>
             <%= link_to "Cancel", booking_path(booking.id), class: "btn btn-light px-5 py-3 shadow-sm",
-                                                            data: {turbo_confirm: "Would you like to continue?", turbo_method: :delete} %>
+                                                            data: { turbo_confirm: "Would you like to continue?", turbo_method: :delete } %>
           </div>
         </div>
       </div>
