@@ -8,7 +8,9 @@ class ReviewsController < ApplicationController
     @review.user = current_user
     authorize @review
     if @review.save
-      redirect_to @activity
+      redirect_to @activity,
+                  notice: "Your review has been left",
+                  status: :see_other
     else
       @booking = Booking.new(activity: @activity, user: current_user)
       render "activities/show", status: :unprocessable_entity
@@ -19,7 +21,9 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     authorize @review
     @review.destroy
-    redirect_to activity_path(@review.activity), status: :see_other
+    redirect_to activity_path(@review.activity),
+                notice: "Your review has been withdrawn",
+                status: :see_other
   end
 
   private

@@ -1,10 +1,14 @@
 <% if notice %>
-  <div class="alert alert-success border-0 bottom-0 m-3 position-fixed px-5 py-3 shadow-sm start-0 z-3" role="alert">
-    <%= notice %>
+  <div class="position-relative">
+    <div class="alert alert-success bottom-0 m-3 position-fixed px-5 py-3 shadow-sm start-0 z-3" role="alert">
+      <%= notice %>
+    </div>
   </div>
 <% end %>
 <% if alert %>
-  <div class="alert alert-dark border-0 bottom-0 m-3 position-fixed px-5 py-3 shadow-sm start-0 z-3" role="alert">
-    <%= alert %>
+  <div class="position-relative">
+    <div class="alert alert-dark bottom-0 m-3 position-fixed px-5 py-3 shadow-sm start-0 z-3" role="alert">
+      <%= alert %>
+    </div>
   </div>
 <% end %>

@@ -30,7 +30,7 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.destroy
     redirect_to bookings_path,
-                notice: "Your booking has been destroyed",
+                notice: "Your booking has been cancelled",
                 status: :unprocessable_entity
   end
 
