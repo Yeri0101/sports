@@ -31,7 +31,7 @@
                                                                                id: "navbarDropdown",
                                                                                width: "30px" %>
               <% end %>
-              <ul class="border-0 dropdown-menu mt-3 shadow-sm">
+              <ul class="border-0 dropdown-menu mt-3 p-3 shadow-sm">
                 <li><%= link_to "Edit my account", edit_user_registration_path, class: "dropdown-item" %></li>
                 <li><%= link_to "Sign out", destroy_user_session_path, class: "dropdown-item text-secondary",
                                                                        data: { turbo_method: :delete } %></li>
