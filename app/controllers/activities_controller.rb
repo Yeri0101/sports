@@ -35,8 +35,8 @@ class ActivitiesController < ApplicationController
     authorize @activity
     if @activity.save
       redirect_to @activity,
-                  notice:
-                    "Creation completed"
+                  notice: "Your activity has been created",
+                  status: :created
     else
       render :new, status: :unprocessable_entity
     end
@@ -47,13 +47,17 @@ class ActivitiesController < ApplicationController
   def update
     authorize @activity
     @activity.update(activity_params)
-    redirect_to @activity
+    redirect_to @activity,
+                notice: "Your activity has been updated",
+                status: :created
   end
 
   def destroy
     @activity = Activity.find(params[:id])
     @activity.destroy
-    redirect_to activities_path, status: :see_other
+    redirect_to activities_path,
+                notice: "Your activity has been destroyed",
+                status: :see_other
   end
 
   private
