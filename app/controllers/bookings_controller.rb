@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
     authorize @booking
     if @booking.save
       redirect_to @activity,
-                  notice: "Your booking has been confirmed",
+                  notice: "Your booking has been successfully confirmed",
                   status: :see_other
     else
       render "activities/show", status: :see_other
@@ -30,7 +30,7 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.destroy
     redirect_to bookings_path,
-                notice: "Your booking has been cancelled",
+                notice: "Your booking has been successfully cancelled",
                 status: :unprocessable_entity
   end
 

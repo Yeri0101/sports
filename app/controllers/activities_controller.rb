@@ -35,7 +35,7 @@ class ActivitiesController < ApplicationController
     authorize @activity
     if @activity.save
       redirect_to @activity,
-                  notice: "Your activity has been created",
+                  notice: "Your activity has been successfully created",
                   status: :see_other
     else
       render :new, status: :unprocessable_entity
@@ -48,7 +48,7 @@ class ActivitiesController < ApplicationController
     authorize @activity
     @activity.update(activity_params)
     redirect_to @activity,
-                notice: "Your activity has been updated",
+                notice: "Your activity has been successfully updated",
                 status: :see_other
   end
 
@@ -56,7 +56,7 @@ class ActivitiesController < ApplicationController
     @activity = Activity.find(params[:id])
     @activity.destroy
     redirect_to activities_path,
-                notice: "Your activity has been destroyed",
+                notice: "Your activity has been successfully deleted",
                 status: :unprocessable_entity
   end
 
@@ -72,15 +72,12 @@ class ActivitiesController < ApplicationController
       %i[
         address
         category
-        city
-        country
         description
         end_date
         image
         latitude
         longitude
         name
-        postcode
         state
         start_date
       ]
