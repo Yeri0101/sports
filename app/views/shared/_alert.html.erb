@@ -1,16 +1,12 @@
 <% if notice %>
-  <div class="position-relative">
-    <div class="alert alert-dismissible alert-success end-0 fade position-absolute shadow-sm show top-50 translate-middle-y" role="alert">
-      <%= notice %>
-      <button aria-label="Close" class="btn-close" data-bs-dismiss="alert" type="button"></button>
-    </div>
+  <div class="alert alert-light align-items-center bottom-0 d-flex d-md-flex end-0 gap-2 m-3 position-fixed shadow-sm z-3" role="alert">
+    <i class="ph-fill ph-check-circle"></i>
+    <%= notice %>
   </div>
 <% end %>
 <% if alert %>
-  <div class="position-relative">
-    <div class="alert alert-dark alert-dismissible end-0 fade position-absolute shadow-sm show top-50 translate-middle-y" role="alert">
-      <%= alert %>
-      <button aria-label="Close" class="btn-close" data-bs-dismiss="alert" type="button"></button>
-    </div>
+  <div class="alert alert-light align-items-center bottom-0 d-flex d-md-flex end-0 gap-2 m-3 position-fixed shadow-sm z-3" role="alert">
+    <i class="ph-fill ph-x-circle"></i>
+    <%= alert %>
   </div>
 <% end %>
