@@ -299,7 +299,7 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    sorbet-runtime (0.5.10837)
+    sorbet-runtime (0.5.10840)
     spring (4.1.1)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
