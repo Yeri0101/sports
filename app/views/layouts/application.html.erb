@@ -30,9 +30,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter&family=Syne:wght@400;800&display=swap">
   </head>
   <body class="bg-light">
-    <%= render "shared/navbar" %>
-    <%= render "shared/alert" %>
+    <div class="container-fluid">
+      <%= render "shared/alert" %>
+    </div>
     <div class="container">
+      <%= render "shared/navbar" %>
       <%= yield %>
     </div>
   </body>

@@ -1,12 +1,16 @@
 <% if notice %>
   <div class="alert alert-light align-items-center bottom-0 d-flex d-md-flex end-0 m-3 position-fixed shadow-sm z-3" role="alert">
-    <i class="bi flex-shrink-0 me-2 ph-fill ph-check-circle"></i>
+    <div class="flex-shrink-0 me-2">
+      <i class="ph-fill ph-check-circle"></i>
+    </div>
     <%= notice %>
   </div>
 <% end %>
 <% if alert %>
   <div class="alert alert-light align-items-center bottom-0 d-flex d-md-flex end-0 m-3 position-fixed shadow-sm z-3" role="alert">
-    <i class="bi flex-shrink-0 me-2 ph-fill ph-x-circle"></i>
+    <div class="flex-shrink-0 me-2">
+      <i class="ph-fill ph-check-circle"></i>
+    </div>
     <%= alert %>
   </div>
 <% end %>
