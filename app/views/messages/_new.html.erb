@@ -27,7 +27,7 @@
           <i aria-expanded="false" aria-haspopup="true" class="fs-5 ph-bold ph-dots-three" data-bs-toggle="dropdown" id="navbarDropdown"></i>
           <ul class="border-0 dropdown-menu mt-3 p-3 rounded-4 shadow-sm">
             <li><%= link_to "Delete", chatroom_path(message), class: "dropdown-item",
-                                                            data: { turbo_confirm: "Would you like to continue?", turbo_method: :delete } %></li>
+                                                              data: { turbo_confirm: "Would you like to continue?", turbo_method: :delete } %></li>
           </ul>
         </li>
       <% end %>

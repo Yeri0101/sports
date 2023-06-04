@@ -1,0 +1,7 @@
+<div class="border-0 card my-5 p-5 rounded-4 shadow-sm">
+  <div class="card-body">
+    <% if @marker %>
+      <div class="rounded-4 shadow-sm" data-controller="map" data-map-api-key-value="<%= ENV["MAPBOX_TOKEN"] %>" data-map-marker-value="<%= @marker.to_json %>" style="height: 512px; width: 100%;"></div>
+    <% end %>
+  </div>
+</div>
