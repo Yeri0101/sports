@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+  skip_before_action :authenticate_user!
+
   def create
     @chatroom = Chatroom.find(params[:chatroom_id])
     @message = Message.new(message_params)
@@ -19,6 +21,6 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:content)
+    params.require(:message).permit(%i[content])
   end
 end

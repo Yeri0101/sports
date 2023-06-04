@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/Shopify/ruby-lsp.git
-  revision: 8b5a32f78a8b18a971da0f8e06cb9b6402956179
+  revision: 966cd8a77f4bdc0c686f15546c1d998dcc02be5e
   branch: main
   specs:
     ruby-lsp (0.5.1)
@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: https://github.com/activerecord-hackery/ransack.git
-  revision: dbffa8bed3e4cad9d7f51cd9233466ae4b68fb4d
+  revision: 4b036f01ba85992a057d76d7c20db96503f90bdf
   branch: main
   specs:
     ransack (4.0.0)
@@ -28,23 +28,23 @@ GIT
 
 GIT
   remote: https://github.com/alexreisner/geocoder.git
-  revision: de6be6790646accbe6e377145ea60a7a3c1d5730
+  revision: cb9a1cb16418b507e4edaa6f711e78acb4f03e62
   branch: master
   specs:
     geocoder (1.8.1)
 
 GIT
   remote: https://github.com/cloudinary/cloudinary_gem.git
-  revision: f5043a0b87bf31f93ca43c1349f46dd0e63719cc
+  revision: b5346523ad1dbf6cc730c366f494a5d69bcfb278
   branch: master
   specs:
-    cloudinary (1.25.0)
+    cloudinary (1.26.0)
       aws_cf_signer
       rest-client (>= 2.0.0)
 
 GIT
   remote: https://github.com/faker-ruby/faker.git
-  revision: 85ff60305465ee07927802420d659d99622af2be
+  revision: dda407066868ef9d680efb96f39534ad40ebf89d
   branch: main
   specs:
     faker (3.2.0)
@@ -185,7 +185,7 @@ GEM
     http-accept (1.7.0)
     http-cookie (1.0.5)
       domain_name (~> 0.5)
-    i18n (1.13.0)
+    i18n (1.14.0)
       concurrent-ruby (~> 1.0)
     io-console (0.6.0)
     irb (1.6.4)
@@ -237,7 +237,7 @@ GEM
     pg (1.5.3)
     prettier_print (1.2.1)
     public_suffix (5.0.1)
-    puma (6.2.2)
+    puma (6.3.0)
       nio4r (~> 2.0)
     racc (1.6.2)
     rack (2.2.7)
@@ -260,8 +260,9 @@ GEM
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
-    rails-html-sanitizer (1.5.0)
-      loofah (~> 2.19, >= 2.19.1)
+    rails-html-sanitizer (1.6.0)
+      loofah (~> 2.21)
+      nokogiri (~> 1.14)
     railties (7.0.5)
       actionpack (= 7.0.5)
       activesupport (= 7.0.5)
@@ -275,7 +276,7 @@ GEM
     redis-client (0.14.1)
       connection_pool
     regexp_parser (2.8.0)
-    reline (0.3.4)
+    reline (0.3.5)
       io-console (~> 0.5)
     responders (3.1.0)
       actionpack (>= 5.2)
@@ -299,7 +300,7 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    sorbet-runtime (0.5.10844)
+    sorbet-runtime (0.5.10863)
     spring (4.1.1)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)

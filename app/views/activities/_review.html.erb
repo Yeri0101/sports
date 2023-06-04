@@ -1,13 +1,35 @@
 <div class="border-0 card mb-5 p-5 rounded-4 shadow-sm">
-  <div class="card-body">
+  <div class="bg-transparent border-0 card-header">
     <div class="align-items-center d-flex d-md-flex justify-content-between">
-      <p class="card-text"><%= review.user.first_name %></p>
+      <div class="align-items-center d-flex d-md-flex">
+        <div class="flex-shrink-0 me-3">
+          <% if review.user.avatar.attached? %>
+            <%= cl_image_tag review.user.avatar.key, class: "rounded-circle",
+                                                     height: "30px",
+                                                     width: "30px" %>
+          <% else %>
+            <%= image_tag "https://avatar.vercel.sh/vercel.svg/", class: "rounded-circle",
+                                                                  height: "30px",
+                                                                  width: "30px" %>
+          <% end %>
+        </div>
+        <div>
+          <h6 class="card-title"><%= review.user.first_name %></h6>
+          <small class="card-text text-secondary"><%= review.created_at %></small>
+        </div>
+			</div>
       <% if policy(review).destroy? %>
-        <a class="nav-link" data-turbo-confirm="Would you like to continue?" data-turbo-method="delete" href="<%= review_path(review) %>">
-          <i class="ph-bold ph-trash-simple"></i>
-        </a>
+      <li class="dropdown list-unstyled">
+        <i aria-expanded="false" aria-haspopup="true" class="fs-5 ph-bold ph-dots-three" data-bs-toggle="dropdown" id="navbarDropdown"></i>
+        <ul class="border-0 dropdown-menu mt-3 p-3 rounded-4 shadow-sm">
+          <li><%= link_to "Delete", review_path(review), class: "dropdown-item",
+                                                         data: { turbo_confirm: "Would you like to continue?", turbo_method: :delete } %></li>
+        </ul>
+      </li>
       <% end %>
-    </div>
-    <p class="card-text text-secondary"><%= review.comment %></p>
+		</div>
+  </div>
+  <div class="card-body">
+    <p class="card-text"><%= review.comment %></p>
   </div>
 </div>

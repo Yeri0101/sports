@@ -23,24 +23,26 @@
       <% if @activity.image.attached? %>
         <%= cl_image_tag @activity.image.key, class: "card-img-top img-fluid mb-5 rounded-4 shadow-sm" %>
       <% end %>
-      <div class="card-body">
-        <div class="align-items-center d-flex d-md-flex justify-content-between mb-5">
+      <div class="bg-transparent border-0 card-header">
+        <div class="align-items-center d-flex d-md-flex justify-content-between mb-4">
           <h5 class="card-title"><%= @activity.name %></h5>
           <small class="card-text text-secondary"><%= @activity.start_date %></small>
         </div>
+      </div>
+      <div class="card-body">
         <p class="card-text text-secondary"><%= @activity.description %></p>
       </div>
     </div>
   </div>
   <div class="col-md-6">
     <div class="align-items-center d-flex d-md-flex justify-content-between">
-      <h5>Location</h5>
+      <h5>Where you will be</h5>
       <small class="text-secondary"><%= @activity.address %></small>
     </div>
     <div class="border-0 card my-5 p-5 rounded-4 shadow-sm">
       <div class="card-body">
         <% if @marker %>
-          <div class="rounded-4 shadow-sm" data-controller="map" data-map-api-key-value="<%= ENV["MAPBOX_TOKEN"] %>" data-map-marker-value="<%= @marker.to_json %>" style="height: 520px; width: 100%;"></div>
+          <div class="rounded-4 shadow-sm" data-controller="map" data-map-api-key-value="<%= ENV["MAPBOX_TOKEN"] %>" data-map-marker-value="<%= @marker.to_json %>" style="height: 512px; width: 100%;"></div>
         <% end %>
       </div>
     </div>
@@ -49,23 +51,23 @@
 <div class="g-5 row">
   <% if @activity.reviews.blank? %>
     <div class="col-md-6">
-      <h5>Be the first user to leave a review</h5>
+      <h5>Be the first to leave your review</h5>
       <%= render "reviews/new", activity: @activity, review: @review %>
     </div>
     <div class="col-md-6">
       <div class="align-items-center d-flex d-md-flex justify-content-between">
-        <h5>All reviews</h5>
+        <h5>All reviews left</h5>
         <small class="text-secondary"><%= pluralize @activity.reviews.size, "review" %></small>
       </div>
     </div>
   <% else %>
     <div class="col-md-6">
-      <h5>Leave a review</h5>
+      <h5>Leave your review</h5>
       <%= render "reviews/new", activity: @activity, review: @review %>
     </div>
     <div class="col-md-6">
       <div class="align-items-center d-flex d-md-flex justify-content-between mb-5">
-        <h5>All reviews</h5>
+        <h5>All reviews left</h5>
         <small class="text-secondary"><%= pluralize @activity.reviews.size, "review" %></small>
       </div>
       <% @activity.reviews.each do |review| %>
@@ -75,6 +77,8 @@
   <% end %>
 </div>
 <div class="col-12">
-  <h5>Chat with other participants</h5>
+  <div class="mb-5">
+    <h5>Discuss with others</h5>
+  </div>
   <%= render "chatrooms/new", activity: @activity, chatroom: @activity.chatroom, message: @message %>
 </div>
