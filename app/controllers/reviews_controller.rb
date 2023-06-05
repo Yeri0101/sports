@@ -23,7 +23,7 @@ class ReviewsController < ApplicationController
     @review.destroy
     redirect_to activity_path(@review.activity),
                 notice: "Your review has been successfully removed",
-                status: :unprocessable_entity
+                status: :see_other
   end
 
   private

@@ -57,7 +57,7 @@ class ActivitiesController < ApplicationController
     @activity.destroy
     redirect_to activities_path,
                 notice: "Your activity has been successfully deleted",
-                status: :unprocessable_entity
+                status: :see_other
   end
 
   private

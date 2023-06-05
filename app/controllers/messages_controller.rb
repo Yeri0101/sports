@@ -1,6 +1,4 @@
 class MessagesController < ApplicationController
-  skip_before_action :authenticate_user!
-
   def create
     @chatroom = Chatroom.find(params[:chatroom_id])
     @message = Message.new(message_params)
@@ -16,6 +14,15 @@ class MessagesController < ApplicationController
     else
       render "chatrooms/show", status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @message = Message.find(params[:id])
+    authorize @message
+    @message.destroy
+    redirect_to activity_path(@message.chatroom.activity),
+                notice: "Your message has been successfully deleted",
+                status: :see_other
   end
 
   private

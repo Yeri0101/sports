@@ -31,7 +31,7 @@ class BookingsController < ApplicationController
     @booking.destroy
     redirect_to bookings_path,
                 notice: "Your booking has been successfully cancelled",
-                status: :unprocessable_entity
+                status: :see_other
   end
 
   private
