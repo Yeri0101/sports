@@ -1,9 +1,4 @@
 <div data-chatroom-subscription-chatroom-id-value="<%= activity.chatroom.id %>" data-controller="character-counter chatroom-subscription">
-  <div data-chatroom-subscription-target="messages">
-    <% chatroom.messages.each do |message| %>
-      <%= render "messages/new", message: message %>
-    <% end %>
-  </div>
   <%= simple_form_for [chatroom, message], html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" } },
                                            remote: true do |f|%>
     <%= f.input :content, as: :string,

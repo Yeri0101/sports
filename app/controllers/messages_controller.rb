@@ -8,11 +8,11 @@ class MessagesController < ApplicationController
     if @message.save
       ChatroomChannel.broadcast_to(
         @chatroom,
-        render_to_string(partial: "new", locals: { message: @message })
+        render_to_string(locals: { message: @message }, partial: "feed")
       )
       head :ok
     else
-      render "chatrooms/show", status: :unprocessable_entity
+      render "activities/show", status: :unprocessable_entity
     end
   end
 
