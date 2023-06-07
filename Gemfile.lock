@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/Shopify/ruby-lsp.git
-  revision: 66f4b788c5c7516b4073e85ae17eba500e00434a
+  revision: efb1d9a1b947565e33759be5d4d148f31617a506
   branch: main
   specs:
     ruby-lsp (0.5.1)
@@ -296,7 +296,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    selenium-webdriver (4.9.1)
+    selenium-webdriver (4.10.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
