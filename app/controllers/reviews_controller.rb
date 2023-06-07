@@ -13,7 +13,7 @@ class ReviewsController < ApplicationController
                   status: :see_other
     else
       @booking = Booking.new(activity: @activity, user: current_user)
-      render "activities/show", status: :unprocessable_entity
+      render :feed, status: :unprocessable_entity
     end
   end
 

@@ -40,7 +40,15 @@ class Activity < ApplicationRecord
   end
 
   def self.ransackable_associations(auth_object = nil)
-    %w[bookings chatroom image_attachment image_blob reviews user users]
+    %w[
+      bookings
+      chatroom
+      image_attachment
+      image_blob
+      reviews
+      user
+      users
+    ]
   end
 
   def self.ransackable_attributes(auth_object = nil)

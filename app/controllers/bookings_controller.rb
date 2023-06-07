@@ -21,7 +21,7 @@ class BookingsController < ApplicationController
                   notice: "Your booking has been successfully confirmed",
                   status: :see_other
     else
-      render "activities/show", status: :see_other
+      render :new, status: :unprocessable_entity
     end
   end
 

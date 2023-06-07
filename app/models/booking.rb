@@ -5,10 +5,19 @@ class Booking < ApplicationRecord
   private
 
   def self.ransackable_associations(auth_object = nil)
-    %w[activity user]
+    %w[
+      activity
+      user
+    ]
   end
 
   def self.ransackable_attributes(auth_object = nil)
-    %w[activity_id created_at id updated_at user_id]
+    %w[
+      activity_id
+      created_at
+      id
+      updated_at
+      user_id
+    ]
   end
 end
