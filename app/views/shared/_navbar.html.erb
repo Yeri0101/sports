@@ -18,26 +18,24 @@
               <a aria-current="page" class="<%= active_class(bookings_path) %> nav-link" href="<%= bookings_path %>">My bookings</a>
             </li>
             <li class="align-items-center d-flex d-md-flex dropdown nav-item">
-              <div class="dropdown">
-                <% if current_user.avatar.attached? %>
-                  <%= cl_image_tag current_user.avatar.key, class: "rounded-circle",
-                                                            data: { bs_toggle: "dropdown" }, "aria-expanded": false, "aria-haspopup": true,
-                                                            height: "30px",
-                                                            id: "navbarDropdown",
-                                                            width: "30px" %>
-                <% else %>
-                  <%= image_tag "https://avatar.vercel.sh/maximilien-lanz.svg/", class: "rounded-circle",
-                                                                                 data: { bs_toggle: "dropdown" }, "aria-expanded": false, "aria-haspopup": true,
-                                                                                 height: "30px",
-                                                                                 id: "navbarDropdown",
-                                                                                 width: "30px" %>
-                <% end %>
-                <ul class="border-0 dropdown-menu mt-3 p-3 shadow-sm">
-                  <li><%= link_to "Edit my account", edit_user_registration_path, class: "dropdown-item" %></li>
-                  <li><%= link_to "Sign out", destroy_user_session_path, class: "dropdown-item text-secondary",
-                                                                         data: { turbo_method: :delete } %></li>
-                </ul>
-              </div>
+              <% if current_user.avatar.attached? %>
+                <%= cl_image_tag current_user.avatar.key, class: "rounded-circle",
+                                                          data: { bs_toggle: "dropdown" }, "aria-expanded": false, "aria-haspopup": true,
+                                                          height: "30px",
+                                                          id: "navbarDropdown",
+                                                          width: "30px" %>
+              <% else %>
+                <%= image_tag "https://avatar.vercel.sh/maximilien-lanz.svg/", class: "rounded-circle",
+                                                                               data: { bs_toggle: "dropdown" }, "aria-expanded": false, "aria-haspopup": true,
+                                                                               height: "30px",
+                                                                               id: "navbarDropdown",
+                                                                               width: "30px" %>
+              <% end %>
+              <ul class="border-0 dropdown-menu mt-3 p-3 rounded-4 shadow-sm">
+                <li><%= link_to "Edit my account", edit_user_registration_path, class: "dropdown-item" %></li>
+                <li><%= link_to "Sign out", destroy_user_session_path, class: "dropdown-item text-secondary",
+                                                                       data: { turbo_method: :delete } %></li>
+              </ul>
             </li>
           <% else %>
             <li class="nav-item"><%= link_to "Log in", new_user_session_path, class: "btn btn-light px-5 py-3 shadow-sm" %></li>

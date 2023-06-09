@@ -16,14 +16,16 @@
         <% if activity.image.attached? %>
           <%= cl_image_tag activity.image.key, class: "card-img-top mb-5 rounded-4 shadow-sm" %>
         <% end %>
-        <div class="card-body">
-          <div class="align-items-center d-flex d-md-flex justify-content-between mb-5">
+        <div class="bg-transparent border-0 card-header">
+          <div class="align-items-center d-flex d-md-flex justify-content-between mb-4">
             <h5 class="card-title">
               <%= activity.name %>
               <small class="text-secondary"> with <%= activity.user.first_name %></small>
             </h5>
             <small class="card-text text-secondary"><%= pluralize activity.reviews.size, "review" %></small>
           </div>
+        </div>
+        <div class="card-body">
           <p class="card-text text-secondary"><%= activity.description %></p>
           <%= link_to "View", activity_path(activity.id), class: "btn --btn-bd-green mt-5 px-5 py-3 shadow" %>
         </div>

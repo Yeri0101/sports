@@ -8,17 +8,26 @@ class MessagesController < ApplicationController
     if @message.save
       ChatroomChannel.broadcast_to(
         @chatroom,
-        render_to_string(partial: "new", locals: { message: @message })
+        render_to_string(locals: { message: @message }, partial: "feed"),
       )
       head :ok
     else
-      render "chatrooms/show", status: :unprocessable_entity
+      render :feed, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @message = Message.find(params[:id])
+    authorize @message
+    @message.destroy
+    redirect_to activity_path(@message.chatroom.activity),
+                notice: "Your message has been successfully deleted",
+                status: :see_other
   end
 
   private
 
   def message_params
-    params.require(:message).permit(:content)
+    params.require(:message).permit(%i[content])
   end
 end

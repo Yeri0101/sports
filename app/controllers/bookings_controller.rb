@@ -21,7 +21,7 @@ class BookingsController < ApplicationController
                   notice: "Your booking has been successfully confirmed",
                   status: :see_other
     else
-      render "activities/show", status: :see_other
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -31,7 +31,7 @@ class BookingsController < ApplicationController
     @booking.destroy
     redirect_to bookings_path,
                 notice: "Your booking has been successfully cancelled",
-                status: :unprocessable_entity
+                status: :see_other
   end
 
   private

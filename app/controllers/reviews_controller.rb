@@ -13,7 +13,7 @@ class ReviewsController < ApplicationController
                   status: :see_other
     else
       @booking = Booking.new(activity: @activity, user: current_user)
-      render "activities/show", status: :unprocessable_entity
+      render :feed, status: :unprocessable_entity
     end
   end
 
@@ -23,7 +23,7 @@ class ReviewsController < ApplicationController
     @review.destroy
     redirect_to activity_path(@review.activity),
                 notice: "Your review has been successfully removed",
-                status: :unprocessable_entity
+                status: :see_other
   end
 
   private
