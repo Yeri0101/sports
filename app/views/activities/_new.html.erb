@@ -2,6 +2,7 @@
 <%= simple_form_for @activity, html: { class: "g-4 mt-5 row" } do |f| %>
   <div class="col-md-4">
     <%= f.input :name, as: :string,
+                       autofocus: true,
                        input_html: { autocomplete: "string", class: "border-0 px-4 py-3 shadow-sm" },
                        placeholder: "Boxing",
                        required: true %>
