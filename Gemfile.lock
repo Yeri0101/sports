@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/Shopify/ruby-lsp.git
-  revision: 2a6591e399ceef407c25ce85a280a33a140fb80c
+  revision: 3d78133e116cbdf0b1a69ced134565448c022da9
   branch: main
   specs:
-    ruby-lsp (0.6.0)
+    ruby-lsp (0.6.1)
       language_server-protocol (~> 3.17.0)
       sorbet-runtime
       syntax_tree (>= 6.1.1, < 7)
@@ -44,7 +44,7 @@ GIT
 
 GIT
   remote: https://github.com/faker-ruby/faker.git
-  revision: dda407066868ef9d680efb96f39534ad40ebf89d
+  revision: 4558f1bb9bb80c13b2ff0e3fcad78ac02c7f5515
   branch: main
   specs:
     faker (3.2.0)
