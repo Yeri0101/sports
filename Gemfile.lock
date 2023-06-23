@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/Shopify/ruby-lsp.git
-  revision: 43420eba3763262c9504d00cb24c1c97d28f8d28
+  revision: 3255b45b91a49d2b796fe98616b5d64d14c8a4a0
   branch: main
   specs:
     ruby-lsp (0.6.1)
