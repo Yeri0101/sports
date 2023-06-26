@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/Shopify/ruby-lsp.git
-  revision: c46a3b2dd1925a21c5480c25bb3486d09eca4a41
+  revision: faaa84d61fbeb49556a1ea2dbf728d54613fb8d2
   branch: main
   specs:
     ruby-lsp (0.6.2)
@@ -28,7 +28,7 @@ GIT
 
 GIT
   remote: https://github.com/alexreisner/geocoder.git
-  revision: be846b8090fc0f33cb8bb3c0ea5f91912a200c66
+  revision: a692545419f2e8fcc613c70bf6fb05edb8dc0aa3
   branch: master
   specs:
     geocoder (1.8.1)
