@@ -3,6 +3,7 @@ class Activity < ApplicationRecord
        %i[
          Basketball
          Bicycle
+         Boxing
          Football
          Running
          Snowboard
