@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/Shopify/ruby-lsp.git
-  revision: a66edb2571e8ed7e47e0e1419736a1774bf72021
+  revision: ce122b96959d51c404420f9b7b1ba03f25c31bf7
   branch: main
   specs:
     ruby-lsp (0.6.2)
@@ -28,7 +28,7 @@ GIT
 
 GIT
   remote: https://github.com/alexreisner/geocoder.git
-  revision: 2dc9254620e076fd3a70f95f78d8760f5114f4e5
+  revision: b8951959c473e6136a3dce204fca54fb47464f7c
   branch: master
   specs:
     geocoder (1.8.1)
@@ -44,7 +44,7 @@ GIT
 
 GIT
   remote: https://github.com/faker-ruby/faker.git
-  revision: 4558f1bb9bb80c13b2ff0e3fcad78ac02c7f5515
+  revision: a342e3e2200ca7862ef30e8e54bddc215dbd1ff8
   branch: main
   specs:
     faker (3.2.0)
@@ -188,7 +188,7 @@ GEM
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     io-console (0.6.0)
-    irb (1.7.0)
+    irb (1.7.1)
       reline (>= 0.3.0)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
@@ -258,8 +258,9 @@ GEM
       activesupport (= 7.0.6)
       bundler (>= 1.15.0)
       railties (= 7.0.6)
-    rails-dom-testing (2.0.3)
-      activesupport (>= 4.2.0)
+    rails-dom-testing (2.1.1)
+      activesupport (>= 5.0.0)
+      minitest
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.6.0)
       loofah (~> 2.21)
@@ -301,7 +302,7 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    sorbet-runtime (0.5.10894)
+    sorbet-runtime (0.5.10899)
     spring (4.1.1)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
