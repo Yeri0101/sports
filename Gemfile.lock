@@ -35,7 +35,7 @@ GIT
 
 GIT
   remote: https://github.com/cloudinary/cloudinary_gem.git
-  revision: f45926555a713139c1734f56e10c719b2b661927
+  revision: 960dd60f6bec25d23d9b818927f745cf615eebf2
   branch: master
   specs:
     cloudinary (1.26.0)
@@ -302,7 +302,7 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    sorbet-runtime (0.5.10900)
+    sorbet-runtime (0.5.10902)
     spring (4.1.1)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
