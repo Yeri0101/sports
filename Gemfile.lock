@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/Shopify/ruby-lsp.git
-  revision: df6cd53cc2ef3e16836f8ad5c0023bbaec09b591
+  revision: a446a975e2354dee28b32b84745978249e0b96de
   branch: main
   specs:
     ruby-lsp (0.6.2)
@@ -44,7 +44,7 @@ GIT
 
 GIT
   remote: https://github.com/faker-ruby/faker.git
-  revision: 58013e0d26908b56f9132a5fcb8631625ee54bb1
+  revision: 9ee707d20bc8ea96b0292d88157cf85a4e6acf6e
   branch: main
   specs:
     faker (3.2.0)
