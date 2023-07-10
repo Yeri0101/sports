@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/Shopify/ruby-lsp.git
-  revision: b0c2f8b6441ca17b8ed88af6f28af859c169168a
+  revision: 1ad32004c2383480755edea1620630075ee04c18
   branch: main
   specs:
     ruby-lsp (0.6.2)
@@ -35,7 +35,7 @@ GIT
 
 GIT
   remote: https://github.com/cloudinary/cloudinary_gem.git
-  revision: 960dd60f6bec25d23d9b818927f745cf615eebf2
+  revision: 7082738d143919c08859e8792f65144ca7420e30
   branch: master
   specs:
     cloudinary (1.26.0)
@@ -44,7 +44,7 @@ GIT
 
 GIT
   remote: https://github.com/faker-ruby/faker.git
-  revision: d7a2174d28836b330a290f5a1ef6c83f7f1e554c
+  revision: e689abb1078bc103b15b45359a773ad4711e2f44
   branch: main
   specs:
     faker (3.2.0)
