@@ -2,6 +2,7 @@
 <%= simple_form_for @activity, html: { class: "g-4 mt-5 row" } do |f| %>
   <div class="col-md-4">
     <%= f.input :name, as: :string,
+                       autofocus: true,
                        input_html: { autocomplete: "string", class: "border-0 px-4 py-3 shadow-sm" },
                        placeholder: "Boxing",
                        required: true %>
@@ -21,7 +22,7 @@
     <%= f.input :address, as: :string,
                           hint: "Automatically filled in with Mapbox",
                           input_html: { autocomplete: "address-line1", class: "border-0 mb-3 px-4 py-3 shadow-sm" },
-                          placeholder: "Rue de Lausanne 64, 1020 Renens, Switzerland",
+                          placeholder: "Mühlentalstrasse 266, 8200 Schaffhausen, Switzerland",
                           required: true %>
   </div>
   <div class="col-md-6" data-controller="character-counter">
@@ -37,14 +38,12 @@
     <%= f.input :start_date, as: :datetime,
                              input_html: { autocomplete: "datetime", class: "border-0 px-4 py-3 shadow-sm" },
                              label: "Start date and time",
-                             placeholder: "08.05.2023",
                              required: true %>
   </div>
   <div class="col-12">
     <%= f.input :end_date, as: :datetime,
                            input_html: { autocomplete: "datetime", class: "border-0 px-4 py-3 shadow-sm" },
                            label: "End date and time",
-                           placeholder: "12.05.2023",
                            required: true %>
   </div>
   <div class="col-md-6 d-flex d-grid d-md-flex mb-5 gap-5">
